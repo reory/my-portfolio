@@ -13,7 +13,7 @@
         "out": "smart_file_agent.html",
         "category": "AI & Agents",
         "desc": "Agentic AI pipeline demonstration in pure Python.",
-        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+        "thumbnail": "images/agentic_system.png"
     },
     {
         "title": "Web Atlas",
