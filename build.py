@@ -73,6 +73,8 @@ def build_portfolio():
 
 def generate_home_page(projects):
 
+    categories = sorted(list(set(p['category'] for p in projects)))
+
     # Template for the homepage list
     home_template = """
     <!DOCTYPE html>
@@ -86,14 +88,29 @@ def generate_home_page(projects):
             .card:hover { border-color: #007bff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
             .tag { font-size: 0.8em; color: #666; text-transform: uppercase; }
             a { text-decoration: none; color: #007bff; font-weight: bold; }
+
+            /* Style for the new filter UI*/
+            .filter-nav { margin-bottom: 30px; background: #f4f4f4; padding: 15px; border-radius: 8px; }
+            select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 200px; }
         </style>
     </head>
     <body>
         <h1>My Project Portfolio</h1>
         <p>A collection of my work in Python, Data Visualisation, Data Engineering, and AI.</p>
-        <div class="grid">
+        
+        <div class="filter-nav">
+            <label for="catSelect"><strong>Filter by Category:</strong> </label>
+            <select id="catSelect" onchange="filterSelection()">
+                <option value="all">All Projects</option>
+                {% for cat in categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select> 
+        </div>     
+        
+        <div class="grid" id="projectGrid">
             {% for p in projects %}
-            <div class="card">
+            <div class="card" data-category="{{ p.category }}">
                 {% if p.thumbnail %}
                 <img src="{{ p.thumbnail }}" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 {% endif %}
@@ -105,13 +122,30 @@ def generate_home_page(projects):
             </div>
             {% endfor %}
         </div>
+
+        <script>
+        function filterSelection() {
+            var input = document.getElementById("catSelect");
+            var filter = input.value;
+            var cards = document.getElementsByClassName("card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var category = cards[i].getAttribute("data-category");
+                if (filter === "all" || category === filter) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+        </script>
     </body>
     </html>
     """
     try:
         t = Template(home_template)
         with open("docs/index.html", "w", encoding="utf-8") as f:
-            f.write(t.render(projects=projects))
+            f.write(t.render(projects=projects, categories=categories))
         logging.info("Home Page (index.html) successfully generated in /docs")
     except Exception as e:
         logging.error(f"Failed to generate home page: {e}")

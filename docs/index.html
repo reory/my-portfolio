@@ -2,7 +2,7 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <title>My 2026 Portfolio</title>
+        <title>My Portfolio</title>
         <style>
             body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
             .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
@@ -10,14 +10,59 @@
             .card:hover { border-color: #007bff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
             .tag { font-size: 0.8em; color: #666; text-transform: uppercase; }
             a { text-decoration: none; color: #007bff; font-weight: bold; }
+
+            /* Style for the new filter UI*/
+            .filter-nav { margin-bottom: 30px; background: #f4f4f4; padding: 15px; border-radius: 8px; }
+            select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 200px; }
         </style>
     </head>
     <body>
         <h1>My Project Portfolio</h1>
         <p>A collection of my work in Python, Data Visualisation, Data Engineering, and AI.</p>
-        <div class="grid">
+        
+        <div class="filter-nav">
+            <label for="catSelect"><strong>Filter by Category:</strong> </label>
+            <select id="catSelect" onchange="filterSelection()">
+                <option value="all">All Projects</option>
+                
+                <option value="AI & Agents">AI & Agents</option>
+                
+                <option value="Automation">Automation</option>
+                
+                <option value="Data Engineering">Data Engineering</option>
+                
+                <option value="Data Science">Data Science</option>
+                
+                <option value="Desktop Apps">Desktop Apps</option>
+                
+                <option value="Developer Tools">Developer Tools</option>
+                
+                <option value="Forensics">Forensics</option>
+                
+                <option value="Full Stack">Full Stack</option>
+                
+                <option value="Machine Learning">Machine Learning</option>
+                
+                <option value="Mobile & Web">Mobile & Web</option>
+                
+                <option value="Multimedia">Multimedia</option>
+                
+                <option value="SEO & Network Analysis">SEO & Network Analysis</option>
+                
+                <option value="SRE & DevOps">SRE & DevOps</option>
+                
+                <option value="Security">Security</option>
+                
+                <option value="Visualisation">Visualisation</option>
+                
+                <option value="Web Apps">Web Apps</option>
+                
+            </select> 
+        </div>     
+        
+        <div class="grid" id="projectGrid">
             
-            <div class="card">
+            <div class="card" data-category="Automation">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -28,7 +73,7 @@
                 <a href="image_resizer.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Mobile & Web">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -39,7 +84,7 @@
                 <a href="bus_app.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Full Stack">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -50,7 +95,7 @@
                 <a href="finance_app.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Data Science">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -61,7 +106,7 @@
                 <a href="geo_loan.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Desktop Apps">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -72,7 +117,7 @@
                 <a href="health_tracker.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Data Science">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -83,7 +128,7 @@
                 <a href="city_dashboard.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Multimedia">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -94,7 +139,7 @@
                 <a href="internet_radio.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Machine Learning">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -105,7 +150,7 @@
                 <a href="fraud_detector.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Data Science">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -116,7 +161,7 @@
                 <a href="nhs_dashboard.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Security">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -127,7 +172,7 @@
                 <a href="password_sim.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Developer Tools">
                 
                 <img src="images/pydescope.png" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -138,7 +183,7 @@
                 <a href="pydescope.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Web Apps">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -149,7 +194,7 @@
                 <a href="reposync.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="SRE & DevOps">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -160,7 +205,7 @@
                 <a href="uptime_pinger.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="AI & Agents">
                 
                 <img src="images/agentic_system.png" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -171,7 +216,7 @@
                 <a href="smart_file_agent.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Visualisation">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -182,7 +227,7 @@
                 <a href="text2flow.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Data Engineering">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -193,7 +238,7 @@
                 <a href="pop_tracker.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Automation">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -204,7 +249,7 @@
                 <a href="real_estate_scraper.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="SEO & Network Analysis">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -215,7 +260,7 @@
                 <a href="web_atlas.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Data Engineering">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -226,7 +271,7 @@
                 <a href="traffic_analysis.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Forensics">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -237,7 +282,7 @@
                 <a href="word_vault.html">View Project →</a>
             </div>
             
-            <div class="card">
+            <div class="card" data-category="Automation">
                 
                 <img src="https://placehold.co/600x400?text=Coming+Soon" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
                 
@@ -249,6 +294,23 @@
             </div>
             
         </div>
+
+        <script>
+        function filterSelection() {
+            var input = document.getElementById("catSelect");
+            var filter = input.value;
+            var cards = document.getElementsByClassName("card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var category = cards[i].getAttribute("data-category");
+                if (filter === "all" || category === filter) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+        </script>
     </body>
     </html>
     
