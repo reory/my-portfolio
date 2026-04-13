@@ -40,4 +40,4 @@ This engine currently manages **22 repositories**, including:
 
 ---
 
-* **Built by Roy Peters** 
+* **Built by Roy Peters** 😁[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/roy-p-74980b382/)
