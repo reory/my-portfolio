@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geo Loan UK Predictor | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Geo Loan UK Predictor</h1>
+        <h1>🗺️ Geo-Loan UK Predictor</h1>
+
+<p><img src="https://img.shields.io/github/last-commit/reory/geo-loan-uk-predictor?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/geo-loan-uk-predictor?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/Faker-Data_Generation-ff69b4?style=flat-square" alt="Faker" />
+<img src="https://img.shields.io/badge/Flet-UI_Framework-04d9ff?style=flat-square&logo=flutter" alt="Flet" />
+<img src="https://img.shields.io/badge/Folium-Geospatial-77b829?style=flat-square&logo=leaflet" alt="Folium" />
+<img src="https://img.shields.io/badge/SciPy-Mathematics-8caae6?style=flat-square&logo=scipy" alt="SciPy" />
+<img src="https://img.shields.io/badge/Pandas-Data_Analysis-150458?style=flat-square&logo=pandas" alt="Pandas" />
+<img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" /></p>
+
+<p>A high-performance Python dashboard for visualizing and analyzing loan risk across the United Kingdom. This application uses SciPy for statistical risk modeling, Flet for a modern UI, and MySQL for persistent data storage.</p>
+
+<hr />
+
+<h1>🚀 Key Features</h1>
+
+<p>Nationwide Risk Mapping: Interactive Heatmaps generated with Folium.</p>
+
+<p>Statistical Analysis: Real-time Z-score and DTI (Debt-to-Income) calculations.</p>
+
+<p>Full-Stack CRUD: Add, Delete, and Update borrowers with a safety-first UI.</p>
+
+<p>Secure Architecture: Environment-based credential management.</p>
+
+<hr />
+
+<p><details>
+  <summary>🧮 How the Geo-Loan Engine Works</summary></p>
+
+<p>The risk engine uses a Three-Step Statistical Pipeline:</p>
+
+<p>HOW THE SciPy MATH WORKS:
+* LEVEL THE FIELD: Credit scores (700) and Debt ratios (0.3) are different sizes. 
+We use Z-Scores to turn them into 'distance from average' so we can compare them fairly.
+* THE SCORE: Risk = (High Debt) - (Good Credit) - (Work Experience).
+* THE SQUASH: The result could be any number. We use a 'Sigmoid' function to 
+squish that number into a simple 0 to 1 scale (0% to 100% risk).
+* THE GRADE: Scores are labeled: 'Safe', 'Caution', or 'High Risk'.</p>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>📸Screenshots </summary></p>
+
+<p><img src="screenshots/dashboard1.png" alt="Screenshot of the dashboard interface" />
+<img src="screenshots/dashboard2.png" alt="Screenshot of adding a new loanee" />
+<img src="screenshots/dashboard3.png" alt="screenshot of adding a new loanee" />
+<img src="screenshots/dashboard4.png" alt="screenshot of new applications entered" />
+<img src="screenshots/MySQL_db.png" alt="screenshot of the database" /></p>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>Demo Video</summary></p>
+
+<p><img src="demo.mp4" alt="Video of the dashboard" /></p>
+
+<p></details></p>
+
+<hr />
+
+<h1>🛠️ Installation &amp; Setup</h1>
+
+<h2>Prerequisites</h2>
+
+<p>Python 3.10+</p>
+
+<p>MySQL Server (Running locally or hosted)</p>
+
+<p>Virtual Environment (Recommended)</p>
+
+<h2>Database Configuration</h2>
+
+<p>Run the following SQL command in your MySQL terminal to prepare the table:</p>
+
+<pre><code>CREATE TABLE loans (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    borrower_name VARCHAR(100),
+    amount DECIMAL(15,2),           
+    outcode VARCHAR(10),
+    is_defaulted TINYINT(1),        
+    credit_score INT,
+    years_employed INT,
+    debt_to_income DECIMAL(5,2),   
+    risk_score DECIMAL(5,3) DEFAULT NULL,
+    risk_grade VARCHAR(20) DEFAULT NULL
+);
+</code></pre>
+
+<h2>Environment Secrets</h2>
+
+<p>Create a file named .env in the root directory and add your credentials:</p>
+
+<pre><code>DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password_here
+DB_NAME=geoloan_db
+</code></pre>
+
+<h2>Install Dependencies</h2>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<hr />
+
+<h2>Populating Data</h2>
+
+<p>Once your database table is created and your .env is configured, you must 
+populate the system with synthetic UK borrower data
+Note: To reset your data at any time, run TRUNCATE TABLE loans; in your 
+MySQL terminal before running the seeder again.</p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>run_seeder.py
+</code></pre>
+</div>
+
+<p>"After running the seeder, 
+your console will confirm 'Successfully inserted 500 records'."</p>
+
+<hr />
+
+<h1>📂 Project Structure</h1>
+
+<pre><code>├── main.py                # App entry point &amp; UI Logic
+├── run_seeder.py          # IMPORTANT: Database Populater  
+├── .env                   # Private credentials (ignored by Git)
+├── .gitignore             
+├── requirements.txt       # Project dependencies
+├── database/
+│   ├── connection.py      # Secure MySQL handshake
+│   └── queries.py         # SQL CRUD operations
+├── models/
+│   └── predictor.py       # SciPy Risk Engine
+└── ui/
+    ├── app_layout.py      # Flet UI Components
+    └── map_generator.py   # Folium Map Logic
+</code></pre>
+
+<hr />
+
+<h2>🚦 How to Run</h2>
+
+<p>Ensure your MySQL server is active.
+Run the boot sequence:</p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>main.py
+</code></pre>
+</div>
+
+<p>Click "Launch Analysis" to process the data and open the interactive map.</p>
+
+<h2>🧪 To run the full test suite</h2>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pytest
+</code></pre>
+</div>
+
+<h2>📄 To view the coverage report</h2>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>models<span class="w"> </span>--cov<span class="o">=</span>database<span class="w"> </span>--cov-report<span class="o">=</span>html
+</code></pre>
+</div>
+
+<hr />
+
+<p><details>
+  <summary>🛠️ The Core Tech Stack</summary></p>
+
+<ul>
+<li><strong>Faker:</strong> * Purpose: A library for generating synthetic data (fake names, addresses, emails).</li>
+</ul>
+
+<p>Usage: Used in your run_seeder.py to create 600+ realistic borrower records instantly so you didn't have to type them in manually.</p>
+
+<ul>
+<li><strong>Flet:</strong> * Purpose: A framework that brings Google's Flutter UI to Python.</li>
+</ul>
+
+<p>Usage: This is your Frontend. It handles the window, the buttons, the input forms, and the "Dark Mode" dashboard you see on your screen.</p>
+
+<ul>
+<li><strong>Folium:</strong> * Purpose: A library that creates interactive maps using Leaflet.js.</li>
+</ul>
+
+<p>Usage: It takes the coordinates (Latitude/Longitude) and generates that HTML map with the colored dots for your risk zones.</p>
+
+<ul>
+<li><strong>SciPy:</strong> * Purpose: A scientific library for complex mathematical algorithms.</li>
+</ul>
+
+<p>Usage: You used it to calculate Z-Scores. It compares a borrower's debt against the average of the whole group to determine if they are "High Risk" or "Safe."</p>
+
+<ul>
+<li><strong>Pandas:</strong> * Purpose: The "Swiss Army Knife" of data manipulation.</li>
+</ul>
+
+<p>Usage: It acts as a bridge. It pulls data from MySQL, cleans it up, and passes it to Folium and SciPy in a neat table format (a "DataFrame").</p>
+
+<ul>
+<li><strong>MySQL:</strong> * Purpose: A Relational Database Management System (RDBMS).</li>
+</ul>
+
+<p>Usage: Your Persistent Storage. It ensures that if you close the app, your 600 borrowers aren't deleted—they are saved safely in a local database.</p>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🧠 Technical Challenges &amp; Solutions</summary></p>
+
+<ul>
+<li><p>Geospatial Data Integrity: * Challenge: Standardizing messy UK Postcode data for mapping.</p></li>
+<li><p>Solution: Implemented a Regular Expression (Regex) validation layer to extract 
+"Outcodes," ensuring 100% compatibility with the Folium map engine.</p></li>
+<li><p>Statistical Modeling: * Challenge: Creating a dynamic risk rating from static borrower data.</p></li>
+<li><p>Solution: Leveraged SciPy's Z-Score functions to normalize multi-variable inputs (DTI, Credit Score), creating a weighted risk algorithm.</p></li>
+<li><p>Security &amp; Scalability: * Challenge: Protecting sensitive database credentials in a public repository.</p></li>
+<li><p>Solution: Architected a Decoupled Configuration using .env files and python-dotenv, keeping secrets out of Version Control (Git).</p></li>
+<li><p>Full-Stack Syncing: * Challenge: Handling high-volume database inserts without UI lag.</p></li>
+<li><p>Solution: Built a modular CRUD backend in MySQL and integrated it with an asynchronous Flet frontend for a smooth user experience.</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🛣️ Roadmap Features</summary></p>
+
+<ul>
+<li><p>[ ] User Authentication: Implement a secure Login/Sign-up system with hashed passwords using bcrypt to protect lender data.</p></li>
+<li><p>[ ] Advanced Filtering: Build a sidebar in Flet to filter the map in real-time by Loan Amount, Risk Grade, or specific UK Outcode regions.</p></li>
+<li><p>[ ] Predictive Machine Learning: Move beyond static Z-scores to a trained Scikit-Learn model that predicts loan default probability based on historical UK financial trends.</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<ul>
+<li><strong>Built by Roy Peters</strong> <a href="https://www.linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-Roy%20Peters-blue?logo=linkedin" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

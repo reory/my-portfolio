@@ -1,0 +1,171 @@
+[
+    {
+        "title": "Pydescope",
+        "md": "readmes/pydescope.md",
+        "out": "pydescope.html",
+        "category": "Developer Tools",
+        "desc": "Static analysis tool for Python dependency mapping.",
+        "thumbnail": "images/pydescope.png"
+    },
+    {
+        "title": "Smart File Agent",
+        "md": "readmes/smart_file_agent.md",
+        "out": "smart_file_agent.html",
+        "category": "AI & Agents",
+        "desc": "Agentic AI pipeline demonstration in pure Python.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Web Atlas",
+        "md": "readmes/web_atlas.md",
+        "out": "web_atlas.html",
+        "category": "SEO & Network Analysis",
+        "desc": "Transforming Screaming Frog exports into interactive graphs.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },  
+    {
+        "title": "Bus App",
+        "md": "readmes/bus_app.md",
+        "out": "bus_app.html",
+        "category": "Mobile & Web",
+        "desc": "Transit application using Django and Kivy.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+        
+    },
+    {
+        "title": "Geo Loan UK Predictor",
+        "md": "readmes/geo_loan.md",
+        "out": "geo_loan.html",
+        "category": "Data Science",
+        "desc": "Financial analytics dashboard for UK loan risk.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Health Tracker App",
+        "md": "readmes/health_tracker.md",
+        "out": "health_tracker.html",
+        "category": "Desktop Apps",
+        "desc": "Flet-based health tracking with SQLite storage.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Interactive City Dashboard",
+        "md": "readmes/city_dashboard.md",
+        "out": "city_dashboard.html",
+        "category": "Data Science",
+        "desc": "Geospatial Dash app with Wikipedia integration.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Internet Radio Python",
+        "md": "readmes/internet_radio.md",
+        "out": "internet_radio.html",
+        "category": "Multimedia",
+        "desc": "CustomTkinter radio app powered by VLC.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Invoice Fraud Detector",
+        "md": "readmes/fraud_detector.md",
+        "out": "fraud_detector.html",
+        "category": "Machine Learning",
+        "desc": "End-to-end ML microservice using XGBoost.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "NHS Performance Dashboard",
+        "md": "readmes/nhs_dashboard.md",
+        "out": "nhs_dashboard.html",
+        "category": "Data Science",
+        "desc": "Clinical Intelligence suite using DuckDB.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Password Strength Sim",
+        "md": "readmes/password_sim.md",
+        "out": "password_sim.html",
+        "category": "Security",
+        "desc": "Password analysis tool with NumPy and CustomTkinter.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "West Yorkshire Traffic Analysis",
+        "md": "readmes/traffic_analysis.md",
+        "out": "traffic_analysis.html",
+        "category": "Data Engineering",
+        "desc": "Traffic incident hotspot pipeline and Data Visual tool.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Finance App",
+        "md": "readmes/finance_app.md",
+        "out": "finance_app.html",
+        "category": "Full Stack",
+        "desc": "Personal finance analytics with PostgreSQL and Django.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Bulk Image Resizer",
+        "md": "readmes/image_resizer.md",
+        "out": "image_resizer.html",
+        "category": "Automation",
+        "desc": "High-performance multithreaded image optimization.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Word Counter Vault",
+        "md": "readmes/word_vault.md",
+        "out": "word_vault.html",
+        "category": "Forensics",
+        "desc": "Linguistic intelligence suite using Django and DuckDB.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "UK Population Tracker",
+        "md": "readmes/uk_pop_tracker.md",
+        "out": "pop_tracker.html",
+        "category": "Data Engineering",
+        "desc": "Full-stack platform with Polars and MongoDB.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Work Logger",
+        "md": "readmes/work_logger.md",
+        "out": "work_logger.html",
+        "category": "Automation",
+        "desc": "Excel-to-SQL ETL pipeline with SQLAlchemy.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "RepoSync",
+        "md": "readmes/reposync.md",
+        "out": "reposync.html",
+        "category": "Web Apps",
+        "desc": "Portfolio builder using Reflex and Python 3.13.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Text2Flow",
+        "md": "readmes/text2flow.md",
+        "out": "text2flow.html",
+        "category": "Visualisation",
+        "desc": "FastAPI tool for Graphviz flowcharts.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "Site Uptime Pinger",
+        "md": "readmes/uptime_pinger.md",
+        "out": "uptime_pinger.html",
+        "category": "SRE & DevOps",
+        "desc": "Production-ready website monitoring tool.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    },
+    {
+        "title": "UK Real Estate Scraper",
+        "md": "readmes/uk_real_estate_scraper.md",
+        "out": "real_estate_scraper.html",
+        "category": "Automation",
+        "desc": "Selenium-based scraper for secured platforms.",
+        "thumbnail": "https://placehold.co/600x400?text=Coming+Soon"
+    }
+]

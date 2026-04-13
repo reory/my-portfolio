@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UK Population Tracker | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>UK Population Tracker</h1>
+        <h1>UK Population Tracker GB</h1>
+
+<ul>
+<li>An end-to-end data engineering and visualization platform that transforms raw UK     population data into actionable geographic insights.</li>
+</ul>
+
+<p><img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+<img src="https://img.shields.io/github/repo-size/reory/uk-population-tracker?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/github/last-commit/reory/uk-population-tracker?cacheSeconds=60" alt="Last Commit" /></p>
+
+<p><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+<img src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
+<img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+<img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
+<img src="https://img.shields.io/badge/Polars-%23CD792C.svg?style=for-the-badge&logo=polars&logoColor=white" alt="Polars" />
+<img src="https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly" />
+<img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+<img src="https://img.shields.io/badge/Data_Gen-Faker-blue?style=for-the-badge" alt="Faker" />
+<img src="https://img.shields.io/badge/Data_Gen-Mimesis-green?style=for-the-badge" alt="Mimesis" />
+<img src="https://img.shields.io/badge/GeoPandas-%23139C5C.svg?style=for-the-badge&logo=geopandas&logoColor=white" alt="GeoPandas" /></p>
+
+<hr />
+
+<h2>🚀 Features</h2>
+
+<ul>
+<li><p>Full-Stack Pipeline: Built a complete data flow using Python to process ONS data and MongoDB for persistent storage.</p></li>
+<li><p>Geospatial Intelligence: Integrated Geopandas and Matplotlib to generate high-fidelity choropleth maps with custom silver-on-charcoal styling.</p></li>
+<li><p>Interactive Analytics: Developed a dynamic dashboard using Flask and Plotly, allowing users to toggle between population totals, net changes, and percentage shifts.</p></li>
+<li><p>Responsive UI: Crafted a sleek "Dark Mode" interface featuring Hero Stat Cards that provide an instant narrative of the UK's top-performing regions.</p></li>
+</ul>
+
+<p><details>
+  <summary>📸 Gallery &amp; Interface</summary></p>
+
+<p>Below are snapshots of the application in action, highlighting the Dark/Silver aesthetic and the interactive data layers.</p>
+
+<h3>1. Main Dashboard</h3>
+
+<p><em>Overview of the Stat cards and latest population snapshots.</em>
+<img src="screenshots/7.png" alt="Dashboard Screenshot" /></p>
+
+<h3>2. Population Trends</h3>
+
+<p><em>Interactive bar charts showing percentage change across the 12 UK regions.</em>
+<img src="screenshots/1.png" alt="Bar Chart Graph Main Overview" />
+<img src="screenshots/8.png" alt="Line Chart Overview" />
+<img src="screenshots/1a.png" alt="Region Overview" /></p>
+
+<h3>3. Geospatial Analytics</h3>
+
+<p><em>Interactive choropleth maps generated via Geopandas and Plotly.</em>
+<img src="screenshots/4.png" alt="UK Population Tracker Maps" />
+<img src="screenshots/5.png" alt="UK Population Tracker Maps" />
+<img src="screenshots/6.png" alt="UK Population Tracker Maps" />
+<img src="screenshots/3.png" alt="Interactve Map" />
+<img src="screenshots/2.png" alt="Interactive Map" /></p>
+
+<p></details></p>
+
+<hr />
+
+<h2>🎥 Project Demo</h2>
+
+<p>See the <strong>Interactive UK Population Tracker</strong> in action. This video demonstrates the seamless navigation between the dashboard, regional trends, and the interactive Plotly maps.</p>
+
+<p align="center">
+  <video src="demo.mp4" width="800" controls muted>
+    Your browser does not support the video tag.
+  </video>
+</p>
+
+<blockquote>
+  <p><strong>Note:</strong> If the video does not load, you can find the raw file <a href="./demo.mp4">here</a>.</p>
+</blockquote>
+
+<hr />
+
+<h2>⚙️ Installation &amp; Setup</h2>
+
+<p>Follow these steps to get the environment running locally using Git Bash:</p>
+
+<h3>1. Clone the Repository</h3>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span><span class="o">[</span>https://github.com/reory/uk-population-tracker.git<span class="o">](</span>https://github.com/reory/uk-population-tracker.git<span class="o">)</span>
+<span class="nb">cd</span><span class="w"> </span>uk-population-tracker
+</code></pre>
+</div>
+
+<h3>2. Set Up a Virtual Environment</h3>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/Scripts/activate
+</code></pre>
+</div>
+
+<h3>3. Data Dependencies</h3>
+
+<ul>
+<li><strong>GeoPackage (.gpkg):</strong> The boundary data for UK regions is located in the <code>/data</code> folder. </li>
+<li>The application uses <code>pyogrio</code> and <code>geopandas</code> to interface with this file automatically. </li>
+<li>Ensure the file <code>uk_regions.gpkg</code> remains in the <code>/data</code> directory for the map engine to function.</li>
+</ul>
+
+<h3>4. Install Dependencies</h3>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<h3>5. Data Initialization (Faker &amp; Mimesis)</h3>
+
+<p>Run the ingestion script to generate the synthetic dataset, inject noise, and populate your MongoDB instance:</p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>processing.mongo_client
+</code></pre>
+</div>
+
+<h3>6. Generate Visual Assets</h3>
+
+<p>Pre-render the static maps before launching the dashboard:</p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>processing.map_regions
+</code></pre>
+</div>
+
+<h3>7. Run the Application</h3>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>run.py
+</code></pre>
+</div>
+
+<p>The Flask dashboard will be live at http://127.0.0.1:5000/</p>
+
+<hr />
+
+<h2>🧪 Testing</h2>
+
+<p>This project uses <code>pytest</code> and <code>mongomock</code>.
+To run the full suite:
+<code>pytest</code></p>
+
+<p>To skip live database checks:
+<code>pytest -m "not live"</code></p>
+
+<hr />
+
+<p><details>
+  <summary>🛠️ Tech Stack &amp; Data Engineering</summary></p>
+
+<ul>
+<li><p>Backend: <strong>Python 3.x</strong>, <strong>Flask</strong> (Web Framework)</p></li>
+<li><p>Database: <strong>MongoDB</strong> (Atlas/Community)</p></li>
+<li><p>Synthetic Data Generation: <strong>Faker:</strong> Used to generate a baseline of realistic regional entities and metadata.</p></li>
+<li><p><strong>Mimesis:</strong> Leveraged for high-performance generation of large-scale population sets.</p></li>
+<li><p>Data Augmentation: Applied custom Noise Injection algorithms to baseline data to simulate realistic percentage changes and growth fluctuations over a multi-year timeline.</p></li>
+<li><p>Data Analysis: <strong>Polars &amp; Pandas</strong></p></li>
+<li><p>Geospatial: <strong>Geopandas, Shapely</strong></p></li>
+<li><p>Frontend: <strong>HTML5, CSS3, Plotly.js</strong></p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>📊 Key Features</summary></p>
+
+<ul>
+<li><p>Latest Snapshot: Real-time retrieval of the most recent database entry.</p></li>
+<li><p>Multi-View Maps: Static regional analysis with formatted "Millions" labels for report-ready exports.</p></li>
+<li><p>Interactive Drill-Down: Hover-enabled Plotly maps for granular data exploration.</p></li>
+<li><p>Automated Pipeline: Custom processing modules that handle data cleaning and map generation in one command.</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🗺️ V2 Roadmap (The Drill-Down)</summary></p>
+
+<p>The next phase of the project focuses on Granular Urban Analytics:</p>
+
+<ul>
+<li><p>City Drill-Downs: Users will be able to click on a region (starting with London) to explore a new layer of data.</p></li>
+<li><p>Borough-Level Mapping: Integration of ONS Local Authority District (LAD) GeoPackages to map the 32 London Boroughs.</p></li>
+<li><p>Urban Comparison: Expanding the drill-down feature to other major UK cities like Manchester, Birmingham, and Leeds.</p></li>
+<li><p>Predictive Modeling: Using historical trends to forecast population growth over the next 5 years.</p></li>
+<li><p>Use prophet along with pandas for high quality forecasting for data.</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>📝 Notes</summary></p>
+
+<ul>
+<li><strong>Data Privacy:</strong> All data used in this demonstration is synthetically generated via Faker and Mimesis. No real ONS individual records were accessed or stored.</li>
+<li><strong>Performance:</strong> By utilizing Polars for the initial data joins and aggregation, the pipeline is capable of handling millions of rows while maintaining a sub-second response time for the dashboard.</li>
+<li><strong>Compatibility:</strong> Designed for modern browsers. Best viewed in Chrome or Edge for full Plotly interactivity.</li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🙏 Acknowledgments</summary></p>
+
+<ul>
+<li><strong>The ONS Open Geography Portal</strong> for providing the boundary GeoJSON/GeoPackage files.</li>
+<li><strong>The Open Source Community</strong> for the incredible tools (Flask, Polars, MongoDB) that make projects like this possible.</li>
+<li><strong>Showcase Viewers:</strong> Thank you for taking the time to explore this project! Feedback is always welcome.</li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><strong>Built by Roy Peters</strong> <a href="https://www.linkedin.com/in/roy-p-74980b382/">contact details 😁</a></p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Tracker App | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Health Tracker App</h1>
+        <h1>Health Tracker App</h1>
+
+<p><img src="https://img.shields.io/badge/Python-3.11-blue" alt="Python" />
+<img src="https://img.shields.io/badge/Platform-Flet-orange" alt="Platform" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+<img src="https://img.shields.io/github/last-commit/reory/Health-Tracker-App?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/Health-Tracker-App?cacheSeconds=60" alt="Repo Size" /></p>
+
+<p>A modern, modular health‑tracking application built with Python and Flet.<br />
+It’s designed to manage medications, reminders, schedules, appointments, and user health data.<br />
+The architecture follows a clean separation of concerns with repositories, validators, services, and a background scheduler.</p>
+
+<hr />
+
+<h1>⭐ Features</h1>
+
+<h2>💊 Medication Management</h2>
+
+<ul>
+<li>Add, edit, and view medications  </li>
+<li>Dosage tracking  </li>
+<li>Notes and status indicators  </li>
+</ul>
+
+<h2>⏰ Scheduling and Reminders</h2>
+
+<ul>
+<li>Daily and weekly schedules  </li>
+<li>Custom reminder offsets  </li>
+<li>Automated reminder event generation  </li>
+<li>Background scheduler thread  </li>
+<li>UI notifications via Flet’s SnackBars  </li>
+</ul>
+
+<h2>📅 Appointments</h2>
+
+<ul>
+<li>Create and manage appointments  </li>
+<li>Notes, location, date, and time  </li>
+</ul>
+
+<h2>📈 Intake Logs</h2>
+
+<ul>
+<li>Track when medication was taken  </li>
+<li>Validation to ensure data integrity  </li>
+</ul>
+
+<h2>👤 User Profile</h2>
+
+<ul>
+<li>Basic user information  </li>
+<li>Editable profile screen  </li>
+</ul>
+
+<h2>⚙️ Settings</h2>
+
+<ul>
+<li>Toggle notifications  </li>
+<li>App preferences  </li>
+</ul>
+
+<hr />
+
+<p><details>
+  <summary>📸 Screenshots</summary></p>
+
+<h2>Dashboard</h2>
+
+<p><img src="screenshots/dashboard.png" alt="Dashboard" /></p>
+
+<h2>Appointments</h2>
+
+<p><img src="screenshots/appointments_screen.png" alt="Appointments" /></p>
+
+<h2>Add Appointment</h2>
+
+<p><img src="screenshots/add_appointment_screen.png" alt="Add Appointment" /></p>
+
+<h2>Edit Appointment</h2>
+
+<p><img src="screenshots/edit_appointment_screen.png" alt="Edit Appointment" /></p>
+
+<h2>Medications</h2>
+
+<p><img src="screenshots/edit_medication_screen.png" alt="Medications" /></p>
+
+<h2>Schedules</h2>
+
+<p><img src="screenshots/edit_schedulescreen.png" alt="Schedules" /></p>
+
+<h2>Settings</h2>
+
+<p><img src="screenshots/settings_screen.png" alt="Settings" /></p>
+
+<h2>Dark Mode</h2>
+
+<p><img src="screenshots/settingsdarkmode.png" alt="Dark Mode" /></p>
+
+<h2>User Profile</h2>
+
+<p><img src="screenshots/userprofilescreenupdated.png" alt="User Profile" /></p>
+
+<h2>Analytics Dashboard</h2>
+
+<p><img src="screenshots/analyticsdashboard.png" alt="Analytics Dashboard" /></p>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🧱 Architecture Overview</summary></p>
+
+<p>The project is structured into clear, maintainable layers.</p>
+
+<h2>🎨 UI Layer (Flet Views)</h2>
+
+<ul>
+<li>Screens for medications, appointments, schedules, dashboard, settings, and more  </li>
+</ul>
+
+<h2>📦 TypedPage</h2>
+
+<ul>
+<li>A custom subclass of <code>ft.Page</code> that acts as a dependency container  </li>
+</ul>
+
+<h2>🗄 Repositories</h2>
+
+<ul>
+<li>Handle all database interactions  </li>
+</ul>
+
+<h2>🛡 Validators</h2>
+
+<ul>
+<li>Ensure data integrity before saving  </li>
+</ul>
+
+<h2>🔧 Services</h2>
+
+<ul>
+<li>Business logic for schedules, reminders, notifications, and intake logs  </li>
+</ul>
+
+<h2>🧮 ScheduleEngine</h2>
+
+<ul>
+<li>Expands schedules into actual datetime events  </li>
+</ul>
+
+<h2>🕒 SchedulerService</h2>
+
+<ul>
+<li>Background thread that checks for due reminders every minute</li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>📂 Project Structure</summary></p>
+
+<pre><code>health_app/
+│
+├── data/
+├── models/
+├── screens/
+├── services/
+├── validators/
+├── ui_types/
+├── main.py
+└── README.md
+</code></pre>
+
+<p></details></p>
+
+<hr />
+
+<h1>🚀 Installation</h1>
+
+<h2>1. Clone the repository</h2>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/Health-Tracker-App.git
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="c1"># windows</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<span class="c1"># mac/linux</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</code></pre>
+</div>
+
+<hr />
+
+<h1>Run the App</h1>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>main.py
+</code></pre>
+</div>
+
+<hr />
+
+<p><details>
+  <summary>🗺 Roadmap</summary></p>
+
+<p>Planned enhancements and future improvements:</p>
+
+<ul>
+<li>[ ] Add medication refill reminders  </li>
+<li>[ ] Add data export/import (JSON or CSV)</li>
+<li>[ ] Add Analytics Integration (In Development): Utilizing Matplotlib and Numpy 
+for health trend visualization</li>
+<li>[ ] Add charts for intake history  </li>
+<li>[ ] Add cloud sync or optional online backup  </li>
+<li>[ ] Add multi‑user profiles - Using FAKER.</li>
+<li>[ ] Add theme customisation (colour palettes)  </li>
+<li>[ ] Add optional biometric lock (Windows Hello / Touch ID)</li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🧪 Test File</summary></p>
+
+<p>A stripped‑down test file (test.py) is included for isolating UI behaviour.</p>
+
+<h1>Run the the Test Suite</h1>
+
+<div class="codehilite">
+<pre><span></span><code>pytest
+</code></pre>
+</div>
+
+<p></details></p>
+
+<hr />
+
+<h1>🤝 Contributions</h1>
+
+<p>Contributions are welcome as always.</p>
+
+<hr />
+
+<h1>👤 Author — Roy Peters</h1>
+
+<p>Enjoy architecting clean, maintainable Python applications with clarity and purpose for everyone. <a href="https://www.linkedin.com/in/roy-p-74980b382/">Click here for contact details 😁</a></p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus App | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Bus App</h1>
+        <h1>Bus Tracker</h1>
+
+<p><img src="https://img.shields.io/badge/python-3.11-blue" alt="Python Version" />
+<img src="https://img.shields.io/badge/license-MIT-green" alt="License" />
+<img src="https://img.shields.io/github/repo-size/reory/bus_app" alt="Repo Size" />
+<img src="https://img.shields.io/github/last-commit/reory/bus_app" alt="Last Commit" />
+<img src="https://img.shields.io/badge/tests-17%20passing-brightgreen" alt="Tests" /></p>
+
+<p><img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+<img src="https://img.shields.io/badge/Kivy-3776AB?style=for-the-badge&logo=kivy&logoColor=white" alt="Kivy" />
+<img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge" alt="Pytest" /></p>
+
+<p>A full-stack transit app featuring a  Django REST framework and a Multi-threaded Kivy mobile interface.</p>
+
+<p>A Reliable transit apps require robust front-end logic. I built this UK Bus Tracker (v1) as a Proof of Concept to demonstrate a mobile-ready UI (Kivy) capable of processing transit data. To ensure a consistent demo experience without API rate-limiting, v1 utilizes a mocked data engine that simulates real-world bus arrivals.</p>
+
+<hr />
+
+<p><details>
+  <summary>📱 App Gallery</summary></p>
+
+<p align="center">
+  <img src="screenshots/alerts_screen.png" width="250" alt="Alert Screen">
+  <img src="screenshots/login_screen.png" width="250" alt="Login Screen">
+  <img src="screenshots/maps_screen.png" width="250" alt="Maps Screen">
+  <img src="screenshots/prediction_screen.png" width="250" alt="Prediction Screen">
+  <img src="screenshots/select_route_screen.png" width="250" alt="Routes Screen">
+  <img src="screenshots/stops_screen.png" width="250" alt="Stops Screen">
+</p>
+
+<h2></details></h2>
+
+<h2>🚀 Features</h2>
+
+<ul>
+<li><strong>17/17 Passing Unit Tests</strong>✅ </li>
+<li><strong>Mocked Time</strong> - (Proof of concept)</li>
+<li><strong>Multi-threaded Kivy UI</strong></li>
+<li><strong>Django REST Framework Backend</strong> (Scalable app structure)</li>
+</ul>
+
+<hr />
+
+<h2>📦 Installation</h2>
+
+<ol>
+<li><strong>Clone the repository and install:</strong></li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/bus_app.git
+<span class="nb">cd</span><span class="w"> </span>bus_app
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</code></pre>
+</div>
+
+<hr />
+
+<h2>Usage</h2>
+
+<p>This project requires both the backend and frontend to be running simultaneously.</p>
+
+<ol>
+<li><p><strong>Start the backend:</strong> </p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span>
+</code></pre>
+</div></li>
+<li><p><strong>Start the frontend:</strong></p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>main.py
+</code></pre>
+</div></li>
+</ol>
+
+<hr />
+
+<h2>Project Structure</h2>
+
+<div class="codehilite">
+<pre><span></span><code>bus_app/
+├── api/                  # Main API Gateway &amp; GTFS Imports
+├── bus_backend/          # Project Core
+│   ├── apps/             # Modular Business Logic
+│   │   ├── notifications/# User alerts &amp; notifications
+│   │   ├── realtime/     # Live bus tracking data
+│   │   ├── routes/       # GTFS route &amp; stop management
+│   │   └── users/        # Custom user models &amp; auth
+│   └── settings.py       # Global configuration
+├── frontend/             # Kivy Mobile Application
+├── tests/                # 17 Unit tests (Backend &amp; Frontend)
+├── manage.py             # Django management script
+└── main.py               # Kivy entry point
+</code></pre>
+</div>
+
+<hr />
+
+<h2>Testing🚦</h2>
+
+<p>The project includes a comprehensive suite of 17 tests covering models, serializers, and the Kivy UI logic.</p>
+
+<p>To run the tests:</p>
+
+<div class="codehilite">
+<pre><span></span><code>pytest
+</code></pre>
+</div>
+
+<hr />
+
+<h2>Technologies Used</h2>
+
+<ul>
+<li>Python 3.x</li>
+<li>Django (REST framework)</li>
+<li>Kivy (UI Framework)</li>
+<li>Pytest (Testing)</li>
+<li>Celery (Task scheduling)</li>
+</ul>
+
+<hr />
+
+<h2>Notes</h2>
+
+<ul>
+<li>Version 1.0 Initial release. </li>
+<li>17 passing unit tests. </li>
+<li>Ensure the Django backend is running before starting the Kivy frontend.</li>
+</ul>
+
+<p><strong>Built By Roy Peters</strong> <a href="https://www.linkedin.com/in/roy-p-74980b382/">Click here for contact details 😁</a></p>
+
+    </div>
+</body>
+</html>

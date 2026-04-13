@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive City Dashboard | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Interactive City Dashboard</h1>
+        <p align="center">
+  <strong>🌍 Interactive City Dashboard</strong><br>
+  <em>Explore world cities with an interactive map, charts, and live data</em>
+</p>
+
+<p align="center">
+
+  <!-- Python version -->
+  <img src="https://img.shields.io/badge/Python-3.11-blue" alt="Python 3.11">
+
+  <!-- License -->
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License">
+
+  <!-- Repo size -->
+  <img src="https://img.shields.io/github/repo-size/reory/Interactive-City-Dashboard" alt="Repo Size">
+
+  <!-- Last commit -->
+  <img src="https://img.shields.io/github/last-commit/reory/Interactive-City-Dashboard" alt="Last Commit">
+
+  <!-- Stars -->
+  <img src="https://img.shields.io/github/stars/reory/Interactive-City-Dashboard?style=social" alt="GitHub Stars">
+
+</p>
+
+<h1>🗺️ Interactive City Map + Population Dashboard</h1>
+
+<ul>
+<li>A fully interactive Dash application that visualises world cities with:</li>
+<li>A dynamic Mapbox map</li>
+<li>A responsive population bar chart</li>
+<li>A collapsible Wikipedia-powered city information panel</li>
+<li>A clean light/dark theme system</li>
+<li>Multiple layout modes (side-by-side, stacked, wide, minimalist, pro)</li>
+<li>A modular, test-driven architecture designed for clarity and maintainability</li>
+</ul>
+
+<p>This project demonstrates professional-grade Dash engineering, clean separation of concerns, and a fully tested callback + layout system.</p>
+
+<hr />
+
+<h2>🚀Features</h2>
+
+<h3>Interactive Map</h3>
+
+<ul>
+<li>Click any city to update the dashboard</li>
+<li>Map auto-centres and highlights the selected city</li>
+<li>Built using Plotly Mapbox</li>
+</ul>
+
+<h3>Population Chart</h3>
+
+<ul>
+<li>Shows population for the selected city</li>
+<li>Automatically scales the y-axis</li>
+<li>Theme-aware styling</li>
+</ul>
+
+<h3>Wikipedia Summary Panel</h3>
+
+<ul>
+<li>Collapsible “City Information” panel</li>
+<li>Fetches live summaries via a service layer</li>
+<li>Clean separation between UI and data fetching</li>
+</ul>
+
+<h3>Light/Dark Themes</h3>
+
+<ul>
+<li>Full theme propagation across map, chart, and layout</li>
+<li>Smooth transitions</li>
+</ul>
+
+<h3>Multiple Layout Modes</h3>
+
+<ul>
+<li>Side-by-side</li>
+<li>Stacked</li>
+<li>Sidebar</li>
+<li>Wide map focus</li>
+<li>Chart focus</li>
+<li>Minimalist</li>
+<li>Three-column “Pro” layout</li>
+</ul>
+
+<h3>Testing</h3>
+
+<ul>
+<li>Layout tests</li>
+<li>Callback unit tests</li>
+<li>Integration tests using Dash’s callback map</li>
+</ul>
+
+<hr />
+
+<h2>Demo</h2>
+
+<h3>🎥 Video Preview</h3>
+
+<p>Click below to watch the 1 minute demo:</p>
+
+<p><a href="Demo.mp4">▶️ View Demo Video</a></p>
+
+<hr />
+
+<p><details>
+   <summary>📸Screenshots</summary></p>
+
+<h3>Dashboard (Light Mode)</h3>
+
+<p><img src="screenshots/dashboard.png" alt="Dashboard Light" /></p>
+
+<h3>Dashboard (Dark Mode)</h3>
+
+<p><img src="screenshots/dashboard-darkmode.png" alt="Dashboard Dark" /></p>
+
+<h3>City Views</h3>
+
+<p><img src="screenshots/cities%201.png" alt="City 1" />
+<img src="screenshots/cities%202.png" alt="City 2" />
+<img src="screenshots/cities%203.png" alt="City 3" />
+<img src="screenshots/cities%204.png" alt="City 4" />
+<img src="screenshots/cities%205.png" alt="City 5" /></p>
+
+<p></details></p>
+
+<hr />
+
+<h2>⚒️ Project Structure</h2>
+
+<div class="codehilite">
+<pre><span></span><code>project_flask_api/
+│
+├── api.py                     # Dash app entrypoint
+│
+├── data/
+│   └── populations.py         # City dataset
+│
+├── services/
+│   └── wiki.py                # Wikipedia summary fetcher
+│
+├── components/
+│   ├── map_builder.py         # Map figure builder
+│   ├── charts.py              # Population chart builder
+│   ├── details_panel.py       # Wiki/details panel builder
+│   └── theme.py               # Light/Dark theme definitions
+│
+├── layout/
+│   └── layout.py              # serve_layout() → full UI tree
+│
+├── callbacks/
+│   └── callbacks.py           # Pure callback logic + register_callbacks()
+│
+└── tests/
+    ├── test_layout.py
+    ├── test_callbacks.py
+    └── test_integration_app.py
+</code></pre>
+</div>
+
+<hr />
+
+<h2>💻 Installation</h2>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/Interactive-City-Dashboard.git
+<span class="nb">cd</span><span class="w"> </span>Interactive-City-Dashboard
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<h2>Running the App</h2>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>api.py
+</code></pre>
+</div>
+
+<p>Then open:
+http://127.0.0.1:8050</p>
+
+<h2>🧪 Running Tests</h2>
+
+<div class="codehilite">
+<pre><span></span><code>pytest<span class="w"> </span>-q
+</code></pre>
+</div>
+
+<ul>
+<li><p>The suite includes:</p></li>
+<li><p>Layout structure validation</p></li>
+<li><p>Callback logic tests</p></li>
+<li><p>Integration tests using Dash’s callback registry</p></li>
+</ul>
+
+<hr />
+
+<h2>🏢 Architecture Principles</h2>
+
+<p>This project follows:</p>
+
+<p>Pure functions
+- All callback logic is pure and testable.</p>
+
+<p>Separation of concerns
+- Layout = static UI</p>
+
+<ul>
+<li><p>Callbacks = behaviour</p></li>
+<li><p>Components = reusable UI builders</p></li>
+<li><p>Services = external data</p></li>
+<li><p>Data = static datasets</p></li>
+</ul>
+
+<p>Predictable state
+- No hidden globals, no side effects.</p>
+
+<p>Test-driven structure
+- Every major part of the app is validated.</p>
+
+<hr />
+
+<h2>💻 Deployment</h2>
+
+<p>This app can be deployed to:</p>
+
+<ul>
+<li>Heroku</li>
+<li>Render</li>
+<li>Azure App Service</li>
+<li>Docker</li>
+<li>Gunicorn + Nginx</li>
+<li>Expose the server object in api.py:</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="n">server</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">server</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h2>🤝 Contributing</h2>
+
+<p>Pull requests are welcome.
+For major changes, open an issue first to discuss what you’d like to change.</p>
+
+<hr />
+
+<h2>📃 License</h2>
+
+<p>MIT License — free to use, modify, and distribute.</p>
+
+<hr />
+
+<p><strong>Built by Roy Peters</strong> <a href="https://www.linkedin.com/in/roy-p-74980b382/">Click here for contact details 😁</a></p>
+
+    </div>
+</body>
+</html>

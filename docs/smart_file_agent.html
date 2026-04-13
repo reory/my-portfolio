@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart File Agent | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Smart File Agent</h1>
+        <h1>🗄️ Smart File Agent</h1>
+
+<ul>
+<li>A tiny, educational demonstration of an agentic AI pipeline — no LLMs, no APIs, just pure Python.</li>
+</ul>
+
+<p><img src="https://img.shields.io/github/last-commit/reory/smart_file_agent?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/smart_file_agent?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></p>
+
+<hr />
+
+<h1>🧠 Overview</h1>
+
+<p>Smart File Agent is a tiny, self‑contained demonstration of an agentic 
+AI pipeline — built entirely in Python</p>
+
+<p>It mirrors the architecture shown in the “How Agentic AI Works” diagram:</p>
+
+<ul>
+<li><p>Input Sources → file ingestion</p></li>
+<li><p>AI Processing → request analysis + planning</p></li>
+<li><p>Action Layer → tool execution (summarise, bulletify)</p></li>
+<li><p>Output → clean Markdown summary</p></li>
+</ul>
+
+<p>This project is intentionally small and easy to understand.</p>
+
+<hr />
+
+<h1>📸 Screenshots</h1>
+
+<ul>
+<li>Smart File Agent is a miniature implementation of the agentic‑AI pipeline shown below — it ingests a file, analyses the user’s request, plans the steps, executes tools, and produces a structured output exactly like the Input → Processing → Action → Output flow in the diagram.</li>
+</ul>
+
+<hr />
+
+<p><img src="smart_file_agent/agent/screenshots/agentic_system.png" alt="" /></p>
+
+<hr />
+
+<h1>🏗️ Project Structure</h1>
+
+<pre><code>smart_file_agent/
+│
+├── smart_file_agent/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── agent/
+│   │   ├── __init__.py
+│   │   ├── agent_core.py
+|   |   ├── logging_config.py
+│   │   ├── ingestion.py
+│   │   ├── processing.py
+│   │   ├── tools.py
+│   │   └── output.py
+│
+├── venv/
+├── README.md
+└── project_notes.txt
+</code></pre>
+
+<hr />
+
+<h1>🧩 How It Works (Mapped to Agentic AI Architecture)</h1>
+
+<h2>Input Sources → ingestion.py</h2>
+
+<ul>
+<li>Loads the file text</li>
+<li>Extracts metadata (name, size, extension)</li>
+</ul>
+
+<h2>AI Processing → processing.py</h2>
+
+<ul>
+<li>Analyses the user’s request</li>
+<li>Chooses a mode (summary or bullet summary)</li>
+<li>Plans the steps the agent should take</li>
+</ul>
+
+<h2>Action Layer → tools.py</h2>
+
+<ul>
+<li>Implements two tiny rule‑based tools:</li>
+<li>summarise_text() → extracts first sentence, longest sentence, keywords</li>
+<li>bulletify() → converts sentences into bullet points</li>
+</ul>
+
+<h2>Agent Orchestration → agent_core.py</h2>
+
+<ul>
+<li>Runs the pipeline and executes each planned step in order</li>
+<li>Produces a structured result dictionary</li>
+</ul>
+
+<h2>Output Layer → output.py</h2>
+
+<ul>
+<li>Formats the final Markdown summary</li>
+</ul>
+
+<hr />
+
+<h1>▶️ Running the Agent</h1>
+
+<p>From the project root:</p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>smart_file_agent.main
+</code></pre>
+</div>
+
+<p>You’ll be prompted for:
+- File path
+- What you want the agent to do</p>
+
+<h2>Example:</h2>
+
+<p>Enter file path: (<strong>File path of any text document you have</strong>)
+What would you like to do? <strong>bulletify</strong></p>
+
+<h2>💬 Supported Prompts</h2>
+
+<p>You can speak to the agent naturally.
+Here are some example prompts:</p>
+
+<h2>Summaries</h2>
+
+<ul>
+<li>summarise this</li>
+<li>give me a summary</li>
+<li>summarise the file</li>
+<li>what is this file about</li>
+</ul>
+
+<h2>Bullet summaries</h2>
+
+<ul>
+<li>bulletify</li>
+<li>give me bullet points</li>
+<li>turn this into bullets</li>
+<li>bullet summary please</li>
+</ul>
+
+<p>The agent detects the intent and chooses the correct mode.</p>
+
+<h2>🧪 Example Output</h2>
+
+<ul>
+<li>AGENT OUTPUT</li>
+</ul>
+
+<h2>Summary of project_notes.txt</h2>
+
+<p><strong>Mode:</strong> bullet<em>summary
+<strong>Steps:</strong> extract</em>text, summarise, bulletify</p>
+
+<ul>
+<li>Summary:</li>
+<li>Opening idea: ...</li>
+<li>Key detail: ...</li>
+<li>Keywords: ...</li>
+</ul>
+
+<hr />
+
+<h1>🎯 Why This Project Exists</h1>
+
+<p>This project demonstrates:</p>
+
+<ul>
+<li><p>how agentic systems work internally</p></li>
+<li><p>how to build a reasoning → planning → action pipeline</p></li>
+<li><p>how to structure a Python agent project</p></li>
+<li><p>how to simulate LLM behaviour without external dependencies</p></li>
+<li><p>It’s intentionally tiny, readable, and educational.</p></li>
+</ul>
+
+<hr />
+
+<h1>🛣️ Roadmap Features</h1>
+
+<ul>
+<li><p>[ ] Add a reasoning trace (“Thought → Action → Result”)</p></li>
+<li><p>[ ] Add a memory system</p></li>
+<li><p>[ ] A reasoning trace (LLM‑style)</p></li>
+<li><p>[ ] Add a tool registry</p></li>
+<li><p>[ ] Add a local LLM mode (Ollama)</p></li>
+<li><p>[ ] Add a FastAPI interface</p></li>
+</ul>
+
+<hr />
+
+<h1>📝 Notes</h1>
+
+<ul>
+<li>It was enjoyable to build this. If you have any ideas on how to collaborate and 
+improve this project please let me know.</li>
+</ul>
+
+<hr />
+
+<ul>
+<li><strong>Built by Roy Peters</strong> 😁<a href="https://linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UK Real Estate Scraper | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>UK Real Estate Scraper</h1>
+        <h1>🏠 UK Real Estate Scraper (Technical Challenge)</h1>
+
+<p><img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+<img src="https://img.shields.io/github/repo-size/reory/UK-Real-Estate-Scraper?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/github/last-commit/reory/UK-Real-Estate-Scraper?cacheSeconds=60" alt="Last Commit" /></p>
+
+<p align="center">
+
+  <!-- Core Language -->
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+
+  <!-- Web Scraping & Automation -->
+  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" />
+  <img src="https://img.shields.io/badge/BeautifulSoup-4B8BBE?style=for-the-badge&logo=python&logoColor=white" />
+
+  <!-- Data Validation -->
+  <img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" />
+
+</p>
+
+<h2>🎯 Project Overview</h2>
+
+<p>A specialized web scraping tool built to extract property data from highly secured UK real estate platforms. This project was a deep dive into bypassing modern anti-bot measures and handling dynamic JavaScript rendering using browser automation.</p>
+
+<h2>🛠️ Tech Stack</h2>
+
+<ul>
+<li><strong>Language:</strong> Python 3.13.7</li>
+<li><strong>Automation:</strong> Selenium WebDriver</li>
+<li><strong>Parsing:</strong> BeautifulSoup4 (lxml)</li>
+<li><strong>Environment:</strong> Virtual Environments (venv)</li>
+</ul>
+
+<hr />
+
+<p><details>
+  <summary>🚀 The Journey: Overcoming Technical Hurdles</summary></p>
+
+<p>This project was significantly more challenging than any other standard scraping tasks due to the target's security layers. It was rewarding to finally get some data.</p>
+
+<h3>The Scrapy vs. JS Wall</h3>
+
+<p>Initially attempted using <strong>Scrapy</strong>, which failed to capture data because the property listings were injected via Asynchronous JavaScript. The site returned a 200 OK but with a nearly empty HTML body (4KB).</p>
+
+<h3>Selenium Pivot</h3>
+
+<p>Switched to <strong>Selenium</strong> to simulate a real user environment. 
+* <strong>Custom Binary Pathing:</strong> Configured the script to point directly to the Chrome binary to resolve environment-specific conflicts.
+* <strong>Stealth Configuration:</strong> Implemented <code>AutomationControlled</code> flags and custom User-Agents to reduce the bot fingerprint.</p>
+
+<h3>Handling Dynamic Content</h3>
+
+<ul>
+<li><strong>Explicit Waits:</strong> Used <code>WebDriverWait</code> to ensure elements were present before extraction.</li>
+<li><strong>Scroll-to-View:</strong> Implemented a JavaScript scroll trigger to bypass "lazy-loading" mechanisms that hide property data until user interaction is detected.</li>
+</ul>
+
+<h3>Bypassing Interstitials</h3>
+
+<p>Handled complex cookie consent banners that visually obstructed the data layer, using XPath selectors to clear the UI "fog."</p>
+
+<h2>📊 Data Output</h2>
+
+<p>The scraper successfully extracted property titles and pricing into a structured JSON format: Below is one of them.</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Church Gate&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;£290,000&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+
+<p></details></p>
+
+<hr />
+
+<h2>⚙️ Prerequisites</h2>
+
+<p>Before running the scraper, ensure you have the following installed:</p>
+
+<ol>
+<li><strong>Google Chrome</strong>: This scraper uses the Chrome browser to render JavaScript. <a href="https://www.google.com/chrome/">Download Google Chrome here</a>.</li>
+<li><strong>Python 3.10+</strong>: Developed and tested on Python 3.13.7.</li>
+<li><strong>Chrome Driver</strong>: Automatically managed via <code>webdriver-manager</code>, but requires Chrome to be installed in the default system path.</li>
+</ol>
+
+<hr />
+
+<h2>🚀 How to Run</h2>
+
+<ol>
+<li><strong>Clone the repository</strong>:</li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span><span class="o">[</span>https://github.com/yourusername/real_estate_web_scraper.git<span class="o">](</span>https://github.com/reory/real_estate_web_scraper.git<span class="o">)</span>
+<span class="nb">cd</span><span class="w"> </span>real_estate_web_scraper
+</code></pre>
+</div>
+
+<hr />
+
+<ol start="2">
+<li><strong>set up virtual environment</strong></li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="c1"># On Windows:</span>
+.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</code></pre>
+</div>
+
+<hr />
+
+<ol start="2">
+<li><strong>Install dependences</strong></li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>selenium<span class="w"> </span>beautifulsoup4<span class="w"> </span>lxml<span class="w"> </span>webdriver-manager
+</code></pre>
+</div>
+
+<hr />
+
+<ol start="3">
+<li><strong>Configuration</strong>:</li>
+</ol>
+
+<p>Open crack<em>uk</em>property.py and ensure the chrome<em>options.binary</em>location points 
+to your chrome.exe</p>
+
+<hr />
+
+<ol start="4">
+<li><strong>Execute the scraper</strong>:
+python crack<em>uk</em>property.py</li>
+</ol>
+
+<hr />
+
+<h2>🛡️Ethical Note</h2>
+
+<p>To ensure compliance with the target's Terms of Service and to prevent IP blacklisting, the project was concluded once the Proof of Concept (PoC) was achieved. Extensive crawling was intentionally avoided to respect server resources.</p>
+
+<hr />
+
+<h2>📈 Key Learnings</h2>
+
+<p>Difference between static HTML scraping and dynamic DOM interaction.</p>
+
+<p>Debugging Selenium TimeoutExceptions.</p>
+
+<p>Managing Python virtual environments and interpreter paths in VS Code</p>
+
+<hr />
+
+<h2>🛠️ Detailed Tech Stack Logic</h2>
+
+<ul>
+<li><strong>Selenium &amp; WebDriver-Manager</strong>: Leveraged for browser automation to handle dynamic DOM updates and JavaScript execution.</li>
+<li><strong>BeautifulSoup4 (lxml)</strong>: Utilized for high-speed parsing of rendered HTML strings.</li>
+<li><strong>Pydantic Models</strong>: (Planned/Implemented) For strict data typing and validation of scraped property objects.</li>
+<li><strong>Loguru/Logging</strong>: For real-time monitoring of scraper health and error tracking.</li>
+</ul>
+
+<hr />
+
+<h2>🤝 Contributing</h2>
+
+<p>Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+
+<p>If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".</p>
+
+<ol>
+<li><strong>Fork the Project</strong></li>
+<li><strong>Create your Feature Branch</strong> (<code>git checkout -b feature/AmazingFeature</code>)</li>
+<li><strong>Commit your Changes</strong> (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+<li><strong>Push to the Branch</strong> (<code>git push origin feature/AmazingFeature</code>)</li>
+<li><strong>Open a Pull Request</strong></li>
+</ol>
+
+<hr />
+
+<p><details>
+  <summary>📢 Potential Improvements</summary></p>
+
+<p>Since this project was a Proof of Concept (PoC), there are several areas for growth:
+* <strong>Pagination Logic</strong>: Automating the "Next" button click to crawl multiple pages.
+* <strong>Data Cleaning</strong>: Implementing Pydantic models to cast prices as integers and validate addresses.
+* <strong>Headless Mode</strong>: Optimizing the Selenium configuration to run without a visible browser window.
+* <strong>Proxy Integration</strong>: Adding rotating proxies to further reduce the risk of IP rate-limiting.
+* <strong>Integration</strong>: Adding Playwright - behaves like a real user and can scrape more
+effectively.</p>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>💖 Acknowledgments</summary></p>
+
+<ul>
+<li><strong>Future Contributors</strong>: A huge thank you in advance to anyone who forks this repo. Your insights help turn small scripts into robust tools.</li>
+<li><strong>The Real Estate Tech Community</strong>: Gratitude for the documentation and forums that help navigate the complex landscape of property data.</li>
+<li><strong>Open Source Community</strong>: For providing powerful tools like Selenium and BeautifulSoup that make "cracking" these challenges possible.</li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<ul>
+<li><strong>NOTE</strong>: This project was built for educational purposes to demonstrate advanced web automation techniques. Respect robots.txt and stay ethical!* ✌️</li>
+</ul>
+
+<p><strong>Built By Roy Peters</strong> <a href="https://www.linkedin.com/in/roy-p-74980b382/">Click here for contact details 😁</a></p>
+
+    </div>
+</body>
+</html>

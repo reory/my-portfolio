@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Counter Vault | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Word Counter Vault</h1>
+        <h1>📚 Word Counter Vault — Full-Stack Linguistic Analysis Suite</h1>
+
+<p align="center">
+
+  <!-- Core Tech -->
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Folium-77B829?style=for-the-badge&logo=leaflet&logoColor=white" />
+  <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=000000" />
+
+  <!-- Repo Info -->
+  <img src="https://img.shields.io/github/last-commit/reory/Word-Counter-Vault?style=for-the-badge" />
+  <img src="https://img.shields.io/github/repo-size/reory/Word-Counter-Vault?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" />
+
+</p>
+
+<p>An interactive intelligence dashboard and automated reporting tool built to analyze linguistic patterns and global etymology. This project transforms raw text input into actionable forensic insights using a modern Python stack.</p>
+
+<h2>🎥 Project Walkthrough</h2>
+
+<p><a href="https://www.linkedin.com/posts/roy-p-74980b382_python-django-datascience-ugcPost-7431321183679045632-peek?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF5yzmkBKYhDCqFaGGMG8mt7ntE88OY67k8"><img src="https://img.shields.io/badge/LinkedIn-Video_Walkthrough-blue?style=for-the-badge&logo=linkedin" alt="Watch the Demo on LinkedIn" /></a></p>
+
+<blockquote>
+  <p><strong>Note:</strong> Click the badge above to view the full feature walkthrough and linguistic analysis demo on LinkedIn.</p>
+</blockquote>
+
+<hr />
+
+<h2>📸 Screenshots</h2>
+
+<p>See the full gallery here:
+<details>
+ <summary><b>Click to expand screenshots</b></summary>
+ <br></p>
+
+<p><img src="screenshots/user_UI.png" alt="Main Dashboard" />
+ <img src="screenshots/user_UI2.png" alt="Main Dashboard" />
+ <img src="screenshots/map_of_words_history.png" alt="Main Dashboard Map" />
+ <img src="screenshots/map.png" alt="Main Dashboard Map" />
+ <img src="screenshots/login_view.png" alt="Main Login" />
+ <img src="screenshots/pdf_report.png" alt="PDF Report" />
+ <img src="screenshots/word_document.png" alt="Word Document" />
+ <img src="screenshots/chart.png" alt="Chart View" />
+ <img src="screenshots/indepth_UI.png" alt="Indepth UI" />
+ <img src="screenshots/analysis_history.png" alt="Main Dashboard" />
+ <img src="screenshots/view_delete_buttons.png" alt="View Delete Buttons" />
+</details></p>
+
+<hr />
+
+<h2>🛠️ Project Architecture</h2>
+
+<p>This project is divided into two main components to balance real-time user interaction with deep-dive analytical processing:</p>
+
+<hr />
+
+<h3>1. Interactive Analysis Dashboard (<code>views.py</code> &amp; <code>templates/</code>)</h3>
+
+<p>The <strong>"Frontend"</strong> logic of the project. It provides a real-time interface for users to explore their text data.
+* <strong>Dynamic Geospatial Mapping:</strong> Visualizes the "geographic DNA" of a text by pinpointing word origins across a global map using <strong>Folium</strong>.
+* <strong>Instant Linguistic KPIs:</strong> Calculates Lexical Diversity (TTR), Overused Words, and Passive Voice detection on the fly.
+* <strong>User Vault:</strong> A persistent history system allowing users to search, review, and manage their analysis records securely.</p>
+
+<hr />
+
+<h3>2. Forensic Reporting &amp; Data Engine (<code>services/</code> &amp; <code>models.py</code>)</h3>
+
+<p>The <strong>"Analytical Backend."</strong> This handles the heavy lifting of data management and document generation.
+* <strong>Dual-State Storage:</strong> Manages persistent user history in <strong>SQLite</strong> while offloading high-speed etymological lookups to a <strong>DuckDB</strong> OLAP engine.
+* <strong>Global Etymology Pipeline:</strong> A custom ingestion layer that maps over 500+ words to global coordinates (Latin, Germanic, Arabic, Sanskrit, and more).
+* <strong>Automated Document Generation:</strong> Compiles findings into professional PDF reports (via <strong>WeasyPrint</strong>) and Word documents (<strong>python-docx</strong>) for offline review.</p>
+
+<hr />
+
+<h2>📁 File Structure</h2>
+
+<ul>
+<li><code>word_counter/settings.py</code>: Core configuration for the Django environment.</li>
+<li><code>counter/views.py</code>: Logic for text processing, regex normalization, and dashboard rendering.</li>
+<li><code>counter/services/seed_origins.py</code>: Data pipeline script for ingesting the global word library.</li>
+<li><code>counter/services/word_data.json</code>: The "Source of Truth" containing 500+ global etymology records.</li>
+<li><code>word_vault_analytics.duckdb</code>: High-performance database for geospatial word lookups.</li>
+</ul>
+
+<hr />
+
+<h2>🧰 Tech Stack</h2>
+
+<ul>
+<li><strong>Python 3.10</strong> (Development Environment)</li>
+<li><strong>Django 5.2:</strong> For the web framework and user authentication.</li>
+<li><strong>DuckDB:</strong> For high-performance, local analytical etymology queries.</li>
+<li><strong>SQLite:</strong> For persistent user history and session management.</li>
+<li><strong>Folium/Leaflet:</strong> For interactive geospatial mapping.</li>
+<li><strong>WeasyPrint / python-docx:</strong> For automated forensic report creation.</li>
+<li><strong>Regex:</strong> For high-speed text normalization and cleaning.</li>
+</ul>
+
+<hr />
+
+<h2>⚙️ Installation &amp; Local Usage</h2>
+
+<p>To run this project locally:
+1. <strong>Clone the repo:</strong> <code>git clone https://github.com/reory/Word-Counter-Vault.git</code>
+2. <strong>Install dependencies:</strong> <code>pip install -r requirements.txt</code>
+3. <strong>Seed the Global Vault:</strong> <code>python -m counter.services.seed_origins</code>
+4. <strong>Launch the app:</strong> <code>python manage.py runserver</code></p>
+
+<hr />
+
+<h2>🧪 Quality Assurance &amp; Testing</h2>
+
+<p>This project implements a comprehensive automated testing suite using <strong>Pytest</strong> to ensure data integrity and security across the analytical pipeline.</p>
+
+<h3>Test Coverage:</h3>
+
+<ul>
+<li><strong>Linguistic Logic:</strong> Validates regex normalization, word frequency calculations, and lexical diversity metrics.</li>
+<li><strong>Security &amp; Permissions:</strong> Ensures strict object-level access control (e.g., users cannot view or delete others' analysis history).</li>
+<li><strong>Service Layer &amp; Mocking:</strong> Utilizes <code>pytest-mock</code> to simulate <strong>DuckDB</strong> OLAP connections, allowing for high-speed testing without disk I/O dependency.</li>
+<li><strong>File Extraction:</strong> Verifies robust handling of <code>.txt</code>, <code>.pdf</code>, and <code>.docx</code> uploads using Django's <code>SimpleUploadedFile</code>.</li>
+</ul>
+
+<h3>Running Tests locally:</h3>
+
+<div class="codehilite">
+<pre><span></span><code>pytest
+</code></pre>
+</div>
+
+<h2>🙏 Acknowledgments</h2>
+
+<ul>
+<li><strong>Etymology Sources:</strong> Online Etymology Dictionary for root-word tracking.</li>
+<li><strong>Community:</strong> Thanks to the Django and DuckDB communities for the robust library support.</li>
+</ul>
+
+<hr />
+
+<h2>🛣️ Roadmap</h2>
+
+<ul>
+<li>[x] <strong>Core Architecture:</strong> Dual-Engine (Django + DuckDB) setup.</li>
+<li>[ ] <strong>Data Seeding:</strong> Integration with <code>Faker</code> for large-scale stress testing.</li>
+<li>[ ] <strong>Geospatial Mapping:</strong> Interactive etymology origins via Plotly/Mapbox.</li>
+<li>[x] <strong>Forensic Reporting:</strong> PDF/CSV export functionality for text analysis.</li>
+<li>[x] <strong>User Accounts:</strong> Private storage for linguistic history.</li>
+</ul>
+
+<hr />
+
+<h2>⚖️ License</h2>
+
+<p>This project is licensed under the MIT License - see the <code>LICENSE</code> file for details.</p>
+
+<hr />
+
+<p><strong>Built By Roy Peters</strong> 😁 <a href="https://linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></p>
+
+    </div>
+</body>
+</html>

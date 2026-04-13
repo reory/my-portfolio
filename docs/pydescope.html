@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pydescope | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Pydescope</h1>
+        <h1>🐍 Pydescope: Python Project Dependency Visualiser</h1>
+
+<p><img src="images/pydescope.png" alt="Pydescope Dependency Graph" /></p>
+
+<p><img src="https://img.shields.io/github/last-commit/reory/Pydescope?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/Pydescope?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/NetworkX-v3.0+-0052CC?style=for-the-badge&logo=networkx&logoColor=white" alt="NetworkX" />
+<img src="https://img.shields.io/badge/PyVis-v0.3.0+-FF69B4?style=for-the-badge&logo=javascript&logoColor=green" alt="PyVis" />
+<img src="https://img.shields.io/badge/Click-v8.0+-3DDC84?style=for-the-badge&logo=python&logoColor=white" alt="Click" /></p>
+
+<p>Pydescope is a static analysis tool designed to help developers visualize the internal structure and dependencies of their Python projects. By parsing source code and mapping imports, it generates interactive 2D/3D graphs using NetworkX and PyVis, allowing you to see how different modules interact without the clutter of virtual environments or external libraries.</p>
+
+<hr />
+
+<h1>📸 Screenshots</h1>
+
+<ul>
+<li><strong>Pydescope</strong> renders an interactive dependency map of your codebase. </li>
+<li><strong>Nodes</strong> represent Python modules and packages, while </li>
+<li><strong>Edges</strong> visualize the directed import relationships between them. </li>
+<li>The interface supports real-time filtering and neighborhood highlighting to help developers audit project coupling and structural integrity at a glance.</li>
+</ul>
+
+<p><img src="screenshots/djangocsvcleaner.png" alt="" />
+<img src="screenshots/internetradio.png" alt="" />
+<img src="screenshots/invoicefrauddetector.png" alt="" />
+<img src="screenshots/pydescope.png" alt="" /></p>
+
+<hr />
+
+<h1>🧠 Key Features</h1>
+
+<ul>
+<li>Static Analysis: Scans your .py files and directories to build a map of your code.</li>
+<li>Smart Filtering: Automatically ignores venv, <strong>pycache</strong>, and other non-source directories.</li>
+<li>Interactive Graphs: Generates an HTML-based visualization where you can drag nodes, zoom, and highlight neighborhoods.</li>
+<li>Module Tracking: Distinguishes between package initializations (<strong>init</strong>.py) and standard module files.</li>
+<li>Neighborhood Highlight: Click on a node to highlight its direct dependencies and dim the rest of the graph.</li>
+<li>Search/Filter: Use the built-in search bar (powered by TomSelect) to find specific modules.</li>
+<li>Physics Toggle: Enable or disable the physics engine to stabilize the graph layout.</li>
+</ul>
+
+<hr />
+
+<h1>🏗️ Project Architecture</h1>
+
+<pre><code>pydescope/
+├── .gitignore               # Standard git ignore rules
+├── pyproject.toml           # Build system and dependency configuration
+├── README.md                # Project documentation
+├── CONTRIBUTING.md          # Contributing documentation
+├── LICENSE.md               # License documentation
+├── pydescope/               # Core logic package
+│   ├── __init__.py          # Package initialization
+│   ├── analyzer.py          # Logic for parsing imports and code analysis
+│   ├── graph_builder.py     # NetworkX graph construction
+|   ├── parser.py            # Identifes .py files in projects
+│   ├── renderer.py          # PyVis conversion and HTML generation
+│   └── utils.py             # Internal helper functions
+|   └── cli.py               # User interaction tool
+└── lib/                     # Static assets for the final output
+    └── bindings/
+        └── utils.js         # Custom JS for highlighting and interactivity
+</code></pre>
+
+<ul>
+<li>Pydescope is built with a modular design to ensure efficient parsing and rendering:</li>
+<li><p><strong>parser.py</strong>: The engine that walks through your project and identifies Python files.</p></li>
+<li><p><strong>analyser.py</strong>: Scans individual files to extract import statements and determine relationships.</p></li>
+<li><p><strong>graph_builder.py</strong>: Uses NetworkX to create a mathematical representation of the project dependency tree.</p></li>
+<li><p><strong>renderer.py</strong>: Converts the NetworkX graph into an interactive PyVis HTML file.</p></li>
+<li><p><strong>cli.py</strong>: Provides the Command Line Interface for users to interact with the tool.</p></li>
+</ul>
+
+<hr />
+
+<h1>🛠️ Installation</h1>
+
+<p>Clone your repository (or navigate to the project folder):</p>
+
+<ul>
+<li>Prerequisites
+Before running Pydescope, ensure you have Python 3.9 or higher installed.</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="nb">cd</span><span class="w"> </span>pydescope
+</code></pre>
+</div>
+
+<h2>Install in editable mode:</h2>
+
+<p>This installs the dependencies and allows you to run the pydescope command directly.</p>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</code></pre>
+</div>
+
+<h2>How to Run</h2>
+
+<p>Once installed, you can run Pydescope from your terminal.</p>
+
+<h2>Basic Usage</h2>
+
+<p>Point Pydescope at any Python project directory you want to analyze:</p>
+
+<div class="codehilite">
+<pre><span></span><code>pydescope<span class="w"> </span>&lt;path_to_target_project&gt;
+Command<span class="w"> </span>Options
+Output<span class="w"> </span>Name:<span class="w"> </span>Specify<span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>name<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>HTML<span class="w"> </span>report.
+</code></pre>
+</div>
+
+<div class="codehilite">
+<pre><span></span><code>pydescope<span class="w"> </span>&lt;path_to_project&gt;<span class="w"> </span>--output<span class="w"> </span>my_graph.html
+Exclude<span class="w"> </span>Directories:<span class="w"> </span>Although<span class="w"> </span>it<span class="w"> </span>ignores<span class="w"> </span>venv<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>add<span class="w"> </span>more<span class="w"> </span>exclusions.
+</code></pre>
+</div>
+
+<div class="codehilite">
+<pre><span></span><code>pydescope<span class="w"> </span>&lt;path_to_project&gt;<span class="w"> </span>--exclude<span class="w"> </span>tests,docs
+Visualisation<span class="w"> </span>Controls
+The<span class="w"> </span>generated<span class="w"> </span>HTML<span class="w"> </span>file<span class="w"> </span>includes<span class="w"> </span>advanced<span class="w"> </span>JavaScript-based<span class="w"> </span>controls<span class="w"> </span>located<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>lib/bindings/utils.js<span class="w"> </span>file:
+</code></pre>
+</div>
+
+<hr />
+
+<h1>💻 Tech Stack</h1>
+
+<ul>
+<li><strong>NetworkX</strong> Provides the data structure for the graphs and relationships between the files.</li>
+<li><strong>PyVis</strong> Takes abstract math from NetworkX and converts it into a beautiful HTML/JS interface, that a user can open in a browser.</li>
+<li><strong>Click</strong> Handles all CLI logic</li>
+</ul>
+
+<hr />
+
+<h1>📝 Notes for Developers</h1>
+
+<ul>
+<li>The project uses repomix for codebase packing and analysis.</li>
+<li>Static assets for the visualization (CSS/JS) are stored in the lib/ directory.</li>
+</ul>
+
+<hr />
+
+<ul>
+<li>Built by Roy Peters.😁
+<a href="https://linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

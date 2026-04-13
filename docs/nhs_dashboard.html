@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHS Performance Dashboard | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>NHS Performance Dashboard</h1>
+        <h1>🚀 NHS Performance Dashboard V1</h1>
+
+<p><img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+<img src="https://img.shields.io/github/repo-size/reory/nhs-performance-dashboard?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+<img src="https://img.shields.io/badge/jinja-white?style=for-the-badge&logo=jinja&logoColor=black" alt="Jinja2" />
+<img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+<img src="https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white" alt="Chart.js" />
+<img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" alt="DuckDB" />
+<img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
+<img src="https://img.shields.io/badge/Pydantic-red?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic" />
+<img src="https://img.shields.io/badge/Faker-green?style=for-the-badge" alt="Faker" />
+<img src="https://img.shields.io/badge/NHS--Number-005EB8?style=for-the-badge&logo=nhs&logoColor=white" alt="NHS Number" />
+<img src="https://img.shields.io/github/last-commit/reory/nhs-performance-dashboard?cacheSeconds=60" alt="Last Commit" /></p>
+
+<hr />
+
+<p>An end-to-end Clinical Intelligence suite that monitors patient wait times and predicts RTT (Referral to Treatment) breaches using a high-performance DuckDB analytical engine. This project features a full modular pipeline: synthetic patient generation with Faker and nhs-number validation, high-speed data processing via Polars and Pandas, and a FastAPI-powered dashboard with real-time waitlist metrics and specialty distribution charts</p>
+
+<hr />
+
+<p><details>
+  <summary>📸 Screenshots</summary></p>
+
+<p><img src="screenshots/1.png" alt="NHS Performance Dashboard" />
+<img src="screenshots/2.png" alt="NHS Performance Dashboard" />
+<img src="screenshots/3.png" alt="NHS Performance Dashboard" />
+<img src="screenshots/4.png" alt="NHS Performance Dashboard" /></p>
+
+<p></details></p>
+
+<hr />
+
+<h1>🛠️ Setup Instructions</h1>
+
+<h3>Clone the Repository</h3>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/nhs-performance-dashboard.git
+<span class="nb">cd</span><span class="w"> </span>nhs-performance-dashboard
+</code></pre>
+</div>
+
+<h3>1. Create a Virtual Environment</h3>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/Scripts/activate<span class="w"> </span><span class="c1"># On mac/linux venv/bin/activate</span>
+</code></pre>
+</div>
+
+<h3>2. Install Dependencies</h3>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<h3>Initialize the Data Engine</h3>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>generate_faker_data.py
+</code></pre>
+</div>
+
+<h3>Launch the Dashboard</h3>
+
+<p>Run the Uvicorn server to host the FastAPI application.</p>
+
+<div class="codehilite">
+<pre><span></span><code>uvicorn<span class="w"> </span>app.main:app<span class="w"> </span>--reload
+</code></pre>
+</div>
+
+<p>Navigate to http://127.0.0.1:8000 to view the live clinical suite.</p>
+
+<hr />
+
+<p><details>
+  <summary>📂 Project Structure</summary></p>
+
+<div class="codehilite">
+<pre><span></span><code>nhs_performance_dashboard/
+├── app/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── routers/
+│   │   ├── api.py
+│   │   └── dashboard.py
+│   └── templates/
+|       ├── html_components/
+|       |    └── charts.html
+|       |    ├── metrics.html
+│       |    ├── navbar.html
+│       |    ├── search_bar.html
+│       |    ├── table.html
+|       ├── js_components/
+|       |    └── charts_logic.html
+|       |    ├── js_scripts.html
+│       |    ├── metrics.html
+│       |    ├── search_logic.html
+│       ├── base.html
+|       ├── index.html
+├── data/
+│   └── hospital_data.db
+├── scripts/
+│   └── generate_faker_data.py
+|   └── view_all.py
+├── tests/
+|   └── conftest.py
+|   └── test_clinical_logic.py
+|   └── test_connection.py
+|   └── test_validation.py
+├── .venv
+├── requirements.txt
+├── README.md
+├── CONTRIBUTING.md
+├── LICENCE.md
+├── pytest.ini
+</code></pre>
+</div>
+
+<p></details></p>
+
+<hr />
+
+<h1>💻 Tech Stack</h1>
+
+<ul>
+<li><strong>Framework:</strong> <a href="https://fastapi.tiangolo.com/">FastAPI</a> (High-performance Python API)</li>
+<li><strong>Database:</strong> <a href="https://duckdb.org/">DuckDB</a> (In-process analytical database)</li>
+<li><strong>Validation:</strong> <a href="https://docs.pydantic.dev/">Pydantic</a> &amp; <a href="https://pypi.orgproject/nhs-number/">nhs-number</a></li>
+<li><strong>Testing:</strong> <a href="https://docs.pytest.org/">Pytest</a> (Unit and Logic testing)</li>
+<li><strong>Frontend:</strong> Jinja2 Templates, HTML5, CSS3 (NHS Frontend Framework styles)</li>
+</ul>
+
+<hr />
+
+<h1>🧪 Testing</h1>
+
+<p>Consistent with my professional workflow in the West Yorkshire Traffic Intelligence Suite,and other projects, this project includes a full Pytest suite to ensure RTT breach calculations and search logic remain modular and predictable.</p>
+
+<div class="codehilite">
+<pre><span></span><code>pytest
+</code></pre>
+</div>
+
+<hr />
+
+<h1>🤝 Contributing</h1>
+
+<ul>
+<li><p>Contributions are welcome! If you have ideas to improve the nhs performance dashboard UI or logic:</p></li>
+<li><p>Fork the Project.</p></li>
+<li><p>Create your Feature Branch (git checkout -b feature/AmazingFeature).</p></li>
+<li><p>Commit your Changes (git commit -m 'Add some AmazingFeature').</p></li>
+<li><p>Push to the Branch (git push origin feature/AmazingFeature).</p></li>
+<li><p>Open a Pull Request.</p></li>
+</ul>
+
+<hr />
+
+<p><details>
+  <summary>📝 Notes</summary></p>
+
+<ul>
+<li><p>Data Privacy: This project uses synthetic data generated by Faker. No real patient data is included or required to run the demo.</p></li>
+<li><p>Hybrid Data Strategy: Much like my Word Counter Vault project , this dashboard utilizes DuckDB for high-performance (Analytical) queries while using FastAPI for low-latency web responses. This ensures that complex RTT breach calculations don't block the main application thread</p></li>
+<li><p>Modular Component Architecture: To ensure scalability and maintainability, the UI is architected into standalone html<em>components and js</em>components. This allows for a "plug-and-play" development cycle where individual dashboard metrics can be updated without refactoring the entire core layout.</p></li>
+<li><p>Automated Validation &amp; Testing: The system includes a full Pytest suite and nhs-number checksum validation to ensure clinical data integrity—mirroring the "modular and predictable" package standards implemented in my previous projects.</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+<summary>🗺️ Roadmap</summary></p>
+
+<ul>
+<li><p>[ ] Email Alerts: Auto-notify admins when a patient is nearing the 18 week threshold.</p></li>
+<li><p>[ ] Predictive Analytics (ML Forecasting)
+Implement an XGBoost or Scikit-Learn model to predict potential breach "hotspots" based on historical specialty volume and seasonal trends, similar to the logic used in my Invoicing Fraud Detector.</p></li>
+<li><p>[ ] Geospatial Regional Mapping
+Integrate a Folium/Leaflet map component to visualize patient distribution across West Yorkshire, allowing trust managers to identify geographical barriers to care access.</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>❤️ Thanks</summary></p>
+
+<p><strong>Faker</strong> - For helping create the fake data.
+The NHS Digital Community: For maintaining the open standards and logic found in the nhs-number validation libraries.
+The <strong>FastAPI &amp; NiceGUI</strong> Teams: For creating high-performance frameworks that make complex clinical dashboards possible with Python.
+The Open Source Community: For the Faker and <strong>DuckDB</strong> projects, which allow developers to build and test robust systems without compromising real-world patient privacy.</p>
+
+<p></details></p>
+
+<hr />
+
+<p><strong>Built By Roy Peters</strong> <a href="https://www.linkedin.com/in/roy-p-74980b382/">Click here for contact details😁</a></p>
+
+    </div>
+</body>
+</html>

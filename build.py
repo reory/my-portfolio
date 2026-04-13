@@ -1,0 +1,95 @@
+# This script will take a README and "print" it into a HTML template.
+
+import json
+import markdown2
+from jinja2 import Template
+import os
+
+def build_portfolio():
+
+    if not os.path.exists("docs"):
+        os.makedirs("docs")
+    
+    # Load JSON file of projects
+    with open("projects.json", "r", encoding="utf-8") as f:
+        projects = json.load(f)
+
+    # Load HTML stencil once
+    with open("layout.html", "r", encoding="utf-8") as f:
+        template = Template(f.read())
+
+    built_projects = []
+    
+    # Process every project in the JSON file
+    for p in projects:
+        # Check if the README file actually exists
+        if os.path.exists(p['md']):
+            with open(p['md'], "r", 
+            encoding="utf-8") as f:
+                html_snippet = markdown2.markdown(f.read(), 
+                extras=["fenced-code-blocks", "tables"]
+            )
+
+            # Render the specific project page
+            full_html = template.render(
+                project_name=p['title'], 
+            project_content=html_snippet
+            )
+
+            # Save HTMl inside the docs folder for github
+            output_path = os.path.join("docs", p['out'])
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(full_html)
+            built_projects.append(p)
+            print(f" Published: {p['title']}")
+        else:
+            # If you haven't downloaded the README yet, the script notifies you
+            print(f"⚠️ Skipping {p['title']}: File {p['md']} not found.")
+
+    generate_home_page(built_projects)
+
+def generate_home_page(projects):
+
+    # Template for the homepage list
+    home_template = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My 2026 Portfolio</title>
+        <style>
+            body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+            .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; transition: 0.3s; }
+            .card:hover { border-color: #007bff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+            .tag { font-size: 0.8em; color: #666; text-transform: uppercase; }
+            a { text-decoration: none; color: #007bff; font-weight: bold; }
+        </style>
+    </head>
+    <body>
+        <h1>My Project Portfolio</h1>
+        <p>A collection of my work in Python, Data Visualisation, Data Engineering, and AI.</p>
+        <div class="grid">
+            {% for p in projects %}
+            <div class="card">
+                {% if p.thumbnail %}
+                <img src="{{ p.thumbnail }}" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
+                {% endif %}
+                
+                <span class="tag">{{ p.category }}</span>
+                <h3>{{ p.title }}</h3>
+                <p>{{ p.desc }}</p>
+                <a href="{{ p.out }}">View Project →</a>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+    </html>
+    """
+    t = Template(home_template)
+
+    with open("docs/index.html", "w", encoding="utf-8") as f:
+        f.write(t.render(projects=projects))
+    print("✅ Home Page (index.html) is ready in the docs folder!")
+
+if __name__ == "__main__":
+    build_portfolio()

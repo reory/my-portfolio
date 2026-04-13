@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Fraud Detector | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Invoice Fraud Detector</h1>
+        <h1>🚀 Invoice Fraud Detector Service</h1>
+
+<p><img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+<img src="https://img.shields.io/github/repo-size/reory/Invoice-Fraud-Detector-Service?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
+<img src="https://img.shields.io/badge/XGBoost-black.svg?style=for-the-badge&logo=XGBoost&logoColor=white" alt="XGBoost" />
+<img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
+<img src="https://img.shields.io/badge/Pydantic-red?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic" />
+<img src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
+<img src="https://img.shields.io/badge/Joblib-blue?style=for-the-badge" alt="Joblib" />
+<img src="https://img.shields.io/badge/Imblearn-orange?style=for-the-badge" alt="Imblearn" />
+<img src="https://img.shields.io/badge/Faker-green?style=for-the-badge" alt="Faker" />
+<img src="https://img.shields.io/github/last-commit/reory/Invoice-Fraud-Detector-Service?cacheSeconds=60" alt="Last Commit" /></p>
+
+<p>An end-to-end Machine Learning service that detects fraudulent invoices using <strong>XGBoost</strong>. This project features a full pipeline: synthetic data generation, model training with SMOTE (oversampling), and a Flask-based web dashboard with a real-time risk speedometer.</p>
+
+<hr />
+
+<h2>🛠️ Setup Instructions</h2>
+
+<h3>1. Create a Virtual Environment</h3>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: venv\Scripts\activate</span>
+</code></pre>
+</div>
+
+<h3>2. Install Dependencies</h3>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<hr />
+
+<h2>Run the Pipeline (Sequence is Important!)</h2>
+
+<p>You must run these in order to create the "brain" for the app:</p>
+
+<ul>
+<li><p>Generate Data: python core/generator.py (Creates 100-row fake_invoices.csv)</p></li>
+<li><p>Train AI: python core/trainer.py (Trains the model and saves .pkl files)</p></li>
+<li><p>Start Service: python app.py (Launches the dashboard at http://127.0.0.1:5000)</p></li>
+</ul>
+
+<hr />
+
+<h2>🕵️‍♂️ How to Use the Dashboard</h2>
+
+<p>The AI is trained to recognize specific patterns of risk. To see the "Speedometer" in action, try these test cases:</p>
+
+<h3>✅ Scenario 1: The Trusted Partner (Low Risk)</h3>
+
+<ul>
+<li><p>Vendor: Small Ltd</p></li>
+<li><p>Amount: 250</p></li>
+<li><p>Verdict: The needle will stay in the Green (Low Risk).</p></li>
+</ul>
+
+<h3>⚠️ Scenario 2: High-Value Fraud (High Risk)</h3>
+
+<ul>
+<li><p>Vendor: QuickPay UK</p></li>
+<li><p>Amount: 45000</p></li>
+<li><p>Verdict: The needle will swing to Red (High Risk) because the AI recognizes the   suspicious vendor name and unusually high amount.</p></li>
+</ul>
+
+<h2>🧪 Pro Tip: Find Your Own Test Cases</h2>
+
+<p>Open data/raw/fake<em>invoices.csv. Any row where is</em>fraud is 1 will trigger a high risk score. Any row where is_fraud is 0 should come back clear!</p>
+
+<hr />
+
+<h2>✨ Interactive Features</h2>
+
+<ul>
+<li><strong>🎲 One-Click Demo:</strong> Use the "Load Random Sample" button to automatically pull a real record from the dataset. This allows you to quickly test both fraudulent and legitimate scenarios without manual entry.</li>
+<li><strong>📈 Live Risk Gauge:</strong> The dashboard features a dynamic SVG/CSS needle that reflects the AI's confidence score in real-time.</li>
+<li><strong>📜 Audit Log:</strong> Every analysis is saved to a session log, allowing you to compare different vendors and risk profiles side-by-side.</li>
+</ul>
+
+<hr />
+
+<h2>💻 Tech Stack</h2>
+
+<ul>
+<li><p>Backend: Pydantic, Joblib, Pandas, Faker</p></li>
+<li><p>Machine Learning: XGBoost, Scikit-learn, Imbalanced-learn (SMOTE)</p></li>
+<li><p>Frontend: Flask, HTML5/CSS3 (Animated Gauge), JavaScript (Fetch API)</p></li>
+</ul>
+
+<hr />
+
+<h2>🧪 Automated Testing</h2>
+
+<p>This project includes a comprehensive test suite to ensure the data generator and AI API are perfectly synced. Run them with:</p>
+
+<p>pytest</p>
+
+<hr />
+
+<h2>🤝 Contributing</h2>
+
+<ul>
+<li><p>Contributions are welcome! If you have ideas to improve the fraud detection logic or the dashboard UI:</p></li>
+<li><p>Fork the Project.</p></li>
+<li><p>Create your Feature Branch (git checkout -b feature/AmazingFeature).</p></li>
+<li><p>Commit your Changes (git commit -m 'Add some AmazingFeature').</p></li>
+<li><p>Push to the Branch (git push origin feature/AmazingFeature).</p></li>
+<li><p>Open a Pull Request.</p></li>
+</ul>
+
+<hr />
+
+<h2>📝 Notes</h2>
+
+<ul>
+<li><p>Data Privacy: This project uses synthetic data generated by Faker. No real invoice data is included or required to run the demo.</p></li>
+<li><p>Model Accuracy: The XGBoost model is trained on a small synthetic sample (100 rows by default). For higher accuracy in a production setting, increase the n value in generator.py and retrain.</p></li>
+<li><p>CORS: Ensure Flask-CORS is active if you plan to host the frontend and backend on different ports.</p></li>
+</ul>
+
+<hr />
+
+<h2>🗺️ Roadmap</h2>
+
+<p>[ ] Batch Processing: Ability to upload an entire CSV for bulk fraud scanning.</p>
+
+<p>[ ] User Auth: Secure login for finance team members.</p>
+
+<p>[ ] Email Alerts: Auto-notify admins when a "High Risk" invoice is detected.</p>
+
+<hr />
+
+<h1>❤️ Thanks</h1>
+
+<p>Scikit-learn &amp; XGBoost: For the heavy lifting in the ML pipeline
+Faker - For helping create the fake data.</p>
+
+<hr />
+
+<p><strong>Built By Roy Peters</strong> <a href="https://www.linkedin.com/in/roy-p-74980b382/">Click here for contact details😁</a></p>
+
+    </div>
+</body>
+</html>

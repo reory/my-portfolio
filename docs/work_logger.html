@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Logger | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Work Logger</h1>
+        <h1>📊 Work Logger: Excel-to-SQL Analytics Pipeline Project Overview</h1>
+
+<p><img src="https://img.shields.io/github/last-commit/reory/work-logger?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/work-logger?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/Faker-Data_Generation-ff69b4?style=flat-square" alt="Faker" />
+<img src="https://img.shields.io/badge/Pandas-Data_Analysis-150458?style=flat-square&logo=pandas" alt="Pandas" />
+<img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge" alt="SQL" />
+<img src="https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black" alt="Matplotlib" />
+<img src="https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Microsoft Excel" /></p>
+
+<p>This project automates the tracking of employee work hours. 
+It replaces manual data entry with a robust Python-driven system that stores 
+information in a relational database (SQL) and generates visual performance reports.</p>
+
+<hr />
+
+<h1>📸 Screenshots</h1>
+
+<p><img src="screenshots/excel.png" alt="Excel Worksheet" />
+<img src="screenshots/work_report.png" alt="Data Visualisation" /></p>
+
+<hr />
+
+<p><details>
+  <summary>🔎 The Data Pipeline (Step-by-Step)</summary></p>
+
+<ul>
+<li>Generation (app.py / Initialization)</li>
+<li>Action: Uses the Faker library to create 50 fictional employees.</li>
+<li>Output: Saves these employees to a SQL database and exports a starter Excel template (Work<em>Logger</em>Frontend.xlsx) for the user to fill out.</li>
+<li>Input (User Action in Excel)</li>
+<li>Action: The user opens the Excel file, adds "Hours" and "Date" columns, and inputs the daily work logs.</li>
+<li>Result: Provides a familiar, user-friendly interface for data entry.</li>
+</ul>
+
+<h2>Ingestion &amp; Storage (sync_data.py)</h2>
+
+<ul>
+<li>Action: Reads the Excel file using pandas, cleans the headers (removing spaces/case sensitivity), and maps the data to the SQL structure defined in models.py.SQL </li>
+<li>Logic: Rows are moved from a "flat" spreadsheet into a relational SQL table (work<em>logs), linking every hour logged to a specific employee</em>id.</li>
+</ul>
+
+<h2>Verification (check_db.py)</h2>
+
+<ul>
+<li>Action: A utility script that queries the SQLite database directly.</li>
+<li>Purpose: Confirms the data has been "committed" to the database and is no longer just sitting in a temporary Excel file.</li>
+</ul>
+
+<h2>Visualization (generate_report.py)</h2>
+
+<ul>
+<li>Action: Uses a SQL JOIN to combine employee names with their hours, then uses matplotlib to pivot the data.</li>
+</ul>
+
+<h2>Output:</h2>
+
+<ul>
+<li>Generates a stacked bar chart (work_report.png) showing total hours worked per person, segmented by date.</li>
+</ul>
+
+<h2>Summary</h2>
+
+<ul>
+<li>models.py Main Architecture - The blueprint defining the SQL tables and data rules.</li>
+<li>sync_data.py The Bridge - Reads Excel, cleans it, and "syncs" it to the database.</li>
+<li>check_db.py The Audit - A quick look inside the database to verify success.</li>
+<li>generate_report.py The Analytics - Turns raw numbers into a visual, date-aware bar chart.</li>
+</ul>
+
+<p></details></p>
+
+<h1>Setup the Environment</h1>
+
+<ul>
+<li>Ensure your virtual environment is active and libraries are installed:</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1"># Activate venv (Windows)</span>
+.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</code></pre>
+</div>
+
+<h1>Install dependencies</h1>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>sqlalchemy<span class="w"> </span>openpyxl<span class="w"> </span>matplotlib
+</code></pre>
+</div>
+
+<h2>Prepare the Data</h2>
+
+<ul>
+<li><p>Open Work<em>Logger</em>Frontend.xlsx in the Excel Desktop App.</p></li>
+<li><p>Ensure you have columns for id, name, Hours, and Date.</p></li>
+<li><p>Enter your work logs, Save, and Close Excel (Crucial to avoid Permission Errors).</p></li>
+</ul>
+
+<h2>Sync to Database</h2>
+
+<ul>
+<li>Run the sync script (sync_data.py) to move your Excel rows into the SQL database:</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>sync_data.py
+</code></pre>
+</div>
+
+<ul>
+<li>Check for the success message: 🚀 Success! Synced X rows to SQL.</li>
+</ul>
+
+<h2>Verify (Optional)</h2>
+
+<ul>
+<li>If you want to see the raw data sitting inside the SQL table:</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>check_db.py
+</code></pre>
+</div>
+
+<h2>Generate the Visual Report</h2>
+
+<ul>
+<li>Create the stacked bar chart to analyze the hours:</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>generate_report.py
+</code></pre>
+</div>
+
+<ul>
+<li>This will pop up a window with your graph and save a file named work_report.png.</li>
+</ul>
+
+<p><details>
+  <summary>⚠️ Common Troubleshooting</summary></p>
+
+<ul>
+<li><p>Permission Denied: Ensure Excel is closed before running sync_data.py.</p></li>
+<li><p>KeyError 'Hours': Check that your Excel header is exactly "Hours" (case-sensitive) and in the very first row.</p></li>
+<li><p>ModuleNotFoundError: Ensure you are running the scripts from inside your venv.</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<h1>📁 Project Structure</h1>
+
+<pre><code>data_analysis/
+├── venv/                           # Python Virtual Environment
+├── models.py                       # Database architecture (The Blueprint)
+├── sync_data.py                    # Excel-to-SQL bridge (The Worker)
+├── generate_report.py              # Chart generator (The Visualizer)
+├── check_db.py                     # Database inspector (The Auditor)
+├── work_logger.db                  # The SQLite database file (Auto-generated)
+└── Work_Logger_Frontend.xlsx       # The Excel entry sheet
+</code></pre>
+
+<hr />
+
+<h1>🖥️ Tech Stack:</h1>
+
+<ul>
+<li>Python</li>
+<li>Faker</li>
+<li>SQLite (via SQLAlchemy ORM)</li>
+<li>Data Handling: PandasVisuals: </li>
+<li>Matplotlib PyPlot Interface: Bar Chart</li>
+<li>Microsoft Excel (.xlsx)</li>
+</ul>
+
+<hr />
+
+<h1>🛣️ Roadmap Features</h1>
+
+<ul>
+<li><p>[ ] Automated Email Reports
+Integrate a Python mail library (like smtplib) to automatically email the work_report.png graph to a manager every Friday afternoon.</p></li>
+<li><p>[ ] Interactive Web Dashboard
+Move the project from static Matplotlib images to an interactive web app using Streamlit, allowing users to filter by employee or date range in a browser.</p></li>
+<li><p>[ ] Cloud Deployment
+Migrate the local SQLite database to a cloud database (like PostgreSQL) so multiple people can log hours from different computers at the same time.</p></li>
+</ul>
+
+<hr />
+
+<h1>📑 Notes</h1>
+
+<p>End-to-End ETL Pipeline: 
+- Extracted data from Excel, 
+- Transformed it using Python/Pandas, and 
+- Loaded it into a Relational Database (SQL).</p>
+
+<p>--</p>
+
+<ul>
+<li><strong>Built by Roy Peters</strong>  😁<a href="https://linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

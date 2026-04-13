@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance App | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Finance App</h1>
+        <h1>📌 Overview</h1>
+
+<p><img src="https://img.shields.io/github/last-commit/reory/finance_app?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/finance_app?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+<img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge" alt="Pytest" />
+<img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic" />
+<img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge" alt="PostgreSQL" /></p>
+
+<h1>💰 SaaS FinanceApp</h1>
+
+<p>A modular, pipeline‑driven finance analytics SaaS built with Django &amp; PostgreSQL</p>
+
+<p>FinanceApp is a full‑stack personal finance analytics platform designed to ingest messy real‑world bank CSVs, clean and normalise the data, and present clear financial insights through dashboards, charts, and transaction management tools.</p>
+
+<p>This is Version 1, focused on correctness, stability, modularity, and a clean user experience.
+The architecture is intentionally scalable, with a dedicated ingestion pipeline, logging system, and multi‑app layout.</p>
+
+<hr />
+
+<h1>🚀 Key Features</h1>
+
+<p><details>
+  <summary>📸Screenshots</summary></p>
+
+<p><img src="screenshots/2.png" alt="Analytical Dashboard" />
+<img src="screenshots/dashboard1.png" alt="Main dashboard" />
+<img src="screenshots/dashboard2.png" alt="main dashboard" />
+<img src="screenshots/dashboard3.png" alt="main dashboard" />
+<img src="screenshots/dashboard4.png" alt="Running balance dashboard" />
+<img src="screenshots/login1.png" alt="Main login dashboard" />
+<img src="screenshots/profile1.png" alt="User profile dashboard" />
+<img src="screenshots/testcsv1.png" alt="CSV successfully cleaned dashboard" />
+<img src="screenshots/uploadcsv1.png" alt="Upload CSV dashboard" />
+<img src="screenshots/chart1.png" alt="Analytical Chart Dashboard" /></p>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>📹Demo Video</summary></p>
+
+<p><a href="demo.mp4">![Video of the dashboard]</a></p>
+
+<p></details></p>
+
+<hr />
+
+<h1>⚙️ Tech Stack</h1>
+
+<ul>
+<li>Django</li>
+<li>PostgreSQL</li>
+<li>Pytest</li>
+<li>Pydantic</li>
+<li>Modular multi‑app architecture</li>
+</ul>
+
+<hr />
+
+<p><details>
+  <summary>🔐 Secure User Accounts (accounts app)</summary></p>
+
+<ul>
+<li><p>User registration, login, logout</p></li>
+<li><p>Profile management</p></li>
+<li><p>Per‑user data isolation</p></li>
+<li><p>CSRF‑protected forms</p></li>
+<li><p>Redirect‑safe authentication flow</p></li>
+</ul>
+
+<hr />
+
+<h2>💸 Transaction Management (analytics app)</h2>
+
+<ul>
+<li><p>Add, edit, delete transactions</p></li>
+<li><p>Category normalisation</p></li>
+<li><p>Clean currency formatting</p></li>
+<li><p>Paginated transaction list</p></li>
+<li><p>Per‑user transaction storage in PostgreSQL</p></li>
+</ul>
+
+<hr />
+
+<h2>📊 Dashboard &amp; Analytics</h2>
+
+<ul>
+<li><p>Monthly summaries</p></li>
+<li><p>Category totals</p></li>
+<li><p>Date‑range analytics</p></li>
+<li><p>Chart rendering (via chart.py)</p></li>
+<li><p>Clean UI templates for dashboards and charts</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>📥 CSV Upload &amp; Ingestion Pipeline</summary></p>
+
+<p>This is the heart of SaaS FinanceApp.
+FinanceApp includes a two‑stage ingestion pipeline:</p>
+
+<h2>🧼 Stage 1 — CSVCleaner</h2>
+
+<p>A production‑grade cleaning engine that:</p>
+
+<p>Handles messy CSV exports</p>
+
+<p>Normalises dates into ISO format</p>
+
+<p>Converts amounts into floats</p>
+
+<p>Cleans categories (title‑case, typo fixes)</p>
+
+<hr />
+
+<h2>🏗️ Stage 2 — CSVImporter</h2>
+
+<p>A safe importer that:</p>
+
+<ul>
+<li><p>Accepts cleaned, validated rows</p></li>
+<li><p>Saves them to PostgreSQL</p></li>
+<li><p>Reports any remaining issues</p></li>
+<li><p>Guarantees no type errors or crashes</p></li>
+<li><p>Integrates with Django ORM cleanly</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p></details>
+  <summary>🧱 Modular Architecture</summary></p>
+
+<p>The project is structured into multiple Django apps, each with a clear responsibility:</p>
+
+<pre><code>accounts/        → Authentication, profiles
+apps/
+  analytics/     → Transactions, dashboards, CSV ingestion
+  logs/          → Logging system (analytics, pipeline, security)
+  pipeline/      → Future pipeline engine (categorizer, cleaner, normalizer)
+  uploads/       → Generic upload system (future expansion)
+csv_data/        → Test CSVs
+finance_app/     → Project-level config (settings, URLs, WSGI)
+settings/        → Environment-specific settings (base/dev/prod)
+templates/       → Global templates (login, register, base layout)
+</code></pre>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🗄️ Database</summary></p>
+
+<pre><code>FinanceApp uses PostgreSQL in development and production.
+Environment variables (from .env):
+DB_NAME=finance_app
+DB_USER=postgres
+DB_PASSWORD=yourpassword
+DB_HOST=localhost
+DB_PORT=5432
+</code></pre>
+
+<hr />
+
+<h2>🧩 Logging System (apps/logs/)</h2>
+
+<pre><code>A dedicated logging subsystem with:
+- analytics_logger.py
+- pipeline_logger.py
+- security_logger.py
+- base.py
+
+This allows:
+- pipeline step logging
+- error tracking
+- security event logging
+- analytics access logging
+</code></pre>
+
+<hr />
+
+<h2>🧹 Example Cleaner Output</h2>
+
+<pre><code>When uploading a messy CSV, the app might show:
+Some rows were skipped during cleaning:
+["Row 1: Invalid amount ' £2'",
+ "Row 14: Invalid date format 'date'",
+ "Row 15: Invalid amount '£2500'",
+ "Row 35: Missing date"]
+Valid rows are imported cleanly and appear in the dashboard.
+</code></pre>
+
+<p></details></p>
+
+<hr />
+
+<h1>🛠️ Installation</h1>
+
+<ol>
+<li>## Clone the repo</li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/finance_app.git
+<span class="nb">cd</span><span class="w"> </span>finance_app
+</code></pre>
+</div>
+
+<ol start="2">
+<li>## Create a virtual environment</li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/Scripts<span class="se">\a</span>ctivate<span class="w"> </span><span class="c1"># Windows</span>
+<span class="nb">source</span><span class="w"> </span>venv<span class="se">\b</span>in<span class="se">\a</span>ctivate<span class="w">  </span><span class="c1"># Mac/Linux</span>
+</code></pre>
+</div>
+
+<ol start="3">
+<li>## Install dependencies</li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<ol start="4">
+<li>## Configure environment variables
+Create a .env file in the project root:</li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code><span class="nv">DEBUG</span><span class="o">=</span>True
+<span class="nv">SECRET_KEY</span><span class="o">=</span>your-secret-key
+
+<span class="nv">DB_NAME</span><span class="o">=</span>finance_app
+<span class="nv">DB_USER</span><span class="o">=</span>postgres
+<span class="nv">DB_PASSWORD</span><span class="o">=</span>yourpassword
+<span class="nv">DB_HOST</span><span class="o">=</span>localhost
+<span class="nv">DB_PORT</span><span class="o">=</span><span class="m">5432</span>
+</code></pre>
+</div>
+
+<ol start="5">
+<li>Run migrations</li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</code></pre>
+</div>
+
+<ol start="6">
+<li>Start the server</li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</code></pre>
+</div>
+
+<hr />
+
+<p><details>
+  <summary>🎯 Version 1 Goals Achieved</summary></p>
+
+<ul>
+<li><p>Modular Django architecture</p></li>
+<li><p>PostgreSQL-backed data storage</p></li>
+<li><p>Robust CSV ingestion pipeline</p></li>
+<li><p>Clean UI for transactions</p></li>
+<li><p>Dashboard analytics</p></li>
+<li><p>Logging system</p></li>
+<li><p>Authentication system</p></li>
+<li><p>Error‑tolerant CSV cleaning</p></li>
+</ul>
+
+<p>This is a complete, functional SaaS foundation.</p>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🧪 Testing</summary></p>
+
+<p>This project includes a small, focused test suite that covers the critical paths of the backend:</p>
+
+<ul>
+<li><p>CSV Cleaner – validates incoming CSV rows and rejects invalid data</p></li>
+<li><p>CSV Importer – safely writes cleaned rows into the database</p></li>
+<li><p>Transaction Model – ensures the ORM model stores values correctly</p></li>
+<li><p>Schema &amp; Field Validation – confirms required fields are present and correctly mapped</p></li>
+</ul>
+
+<p>These tests ensure that the ingestion pipeline is stable, predictable, and safe to 
+extend</p>
+
+<p>▶️ Run the Pytest suite:</p>
+
+<div class="codehilite">
+<pre><span></span><code>pytest<span class="w"> </span>-q
+</code></pre>
+</div>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🛣️ Roadmap</summary></p>
+
+<ul>
+<li><p>[] Category inference</p></li>
+<li><p>[] Duplicate transaction detection</p></li>
+<li><p>[] Chart visualisations (Altair, Chart.js, or Plotly)</p></li>
+<li><p>[] Export to CSV</p></li>
+<li><p>[] Multi‑currency support</p></li>
+<li><p>[] Bank‑specific import presets</p></li>
+<li><p>[] Dashboard widgets</p></li>
+<li><p>[] API endpoints (REST or GraphQL)</p></li>
+<li><p>[] Background tasks (Celery or RQ)</p></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<p><details>
+  <summary>🏁 Final Notes</summary></p>
+
+<p>This app manages real‑world data, provides meaningful analytics, and is built with clean, maintainable Django architecture.</p>
+
+<p></details></p>
+
+<hr />
+
+<ul>
+<li><strong>Built by Roy Peters</strong> 😁
+<a href="https://www.linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-Roy%20Peters-blue?logo=linkedin" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

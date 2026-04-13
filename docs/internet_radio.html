@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internet Radio Python | Portfolio</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        nav { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .project-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fafafa; }
+        pre {
+            background-color: #f4f4f4; /* Light grey background */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;       /* Adds a scrollbar if the text is too wide */
+            white-space: pre-wrap;  /* Forces text to wrap to the next line */
+            word-wrap: break-word;  /* Breaks long strings (like paths) so they don't jump out */
+            border: 1px solid #ddd;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }  
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Internet Radio Python</h1>
+        <p><img src="https://img.shields.io/badge/Python-3.11-blue.svg" alt="Python" />
+<img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
+<img src="https://img.shields.io/github/repo-size/reory/Internet_radio_python" alt="Repo Size" />
+<img src="https://img.shields.io/github/last-commit/reory/Internet_radio_python" alt="Last Commit" />
+<img src="https://img.shields.io/github/stars/reory/Internet_radio_python?style=social" alt="Stars" /></p>
+
+<h1>🎵 Internet Radio Player</h1>
+
+<h3>Powered by Python, CustomTkinter, and VLC</h3>
+
+<p>A modern, modular Internet Radio application built with <strong>Python</strong>, <strong>CustomTkinter</strong>, and <strong>python-vlc</strong>. This project features a clean UI, live metadata updates, and a modular architecture designed for easy expansion.</p>
+
+<hr />
+
+<h2>🚀 Features</h2>
+
+<ul>
+<li><strong>Global Streaming:</strong> Play hundreds of online radio stations.</li>
+<li><strong>Live Metadata:</strong> Real-time updates for track titles and artist info.</li>
+<li><strong>Smart Search:</strong> Instant station filtering via the search bar.</li>
+<li><strong>Visual Cues:</strong> Country flags and "Now Playing" live indicators.</li>
+<li><strong>User Control:</strong> Integrated volume slider and stop functionality.</li>
+<li><strong>Modular Design:</strong> Clean separation between GUI components and player logic.</li>
+</ul>
+
+<hr />
+
+<h3>🖥️ Main Window interface</h3>
+
+<p><img src="assets/screenshots/main_.window.png" alt="Main Window" /></p>
+
+<h3>🎵 Feature Gallery</h3>
+
+<table>
+<thead>
+<tr>
+  <th style="text-align:left;">Now Playing Card</th>
+  <th style="text-align:left;">Station List</th>
+  <th style="text-align:left;">Search Bar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left;"><img src="assets/screenshots/now_playing.png" alt="Now Playing" /></td>
+  <td style="text-align:left;"><img src="assets/screenshots/station_list.png" alt="Station List" /></td>
+  <td style="text-align:left;"><img src="assets/screenshots/search_bar.png" alt="Search Bar" /></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2>🧩 Project Structure</h2>
+
+<div class="codehilite">
+<pre><span></span><code>internet_radio/
+├── app.py                 # Main entry point
+├── requirements.txt       # Python dependencies
+├── gui/                   # CustomTkinter UI Components
+│   ├── main_window.py
+│   ├── now_playing.py
+│   ├── station_list.py
+│   ├── controls.py
+│   └── search_bar.py
+├── player/                # Media Engine &amp; Data
+│   ├── radio_player.py
+│   └── stations.json
+└── assets/                # Media &amp; Icons
+    └── icons/
+</code></pre>
+</div>
+
+<hr />
+
+<h2>📦 Installation</h2>
+
+<ol>
+<li><strong>Clone the repository and install:</strong></li>
+</ol>
+
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/Internet_radio_python.git
+<span class="nb">cd</span><span class="w"> </span>Internet_radio_python
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<hr />
+
+<blockquote>
+  <p>[!IMPORTANT]
+  This app requires the VLC media player (64-bit) installed on your system to function.
+  <strong>DOWNLOAD VLC here <a href="https://www.videolan.org/vlc/">here</a></strong></p>
+</blockquote>
+
+<hr />
+
+<h2>Usage</h2>
+
+<p>This project requires both the backend and frontend to be running simultaneously.</p>
+
+<ol>
+<li><strong>Run the app:</strong> 
+<div class="codehilite">
+<pre><span></span><code><span class="w"> </span>python<span class="w"> </span>app.py
+</code></pre>
+</div></li>
+</ol>
+
+<hr />
+
+<h2>Testing🚦</h2>
+
+<p>The project includes a comprehensive suite of 4 tests covering radio searches, radio player, and the radio UI logic.</p>
+
+<p>To run the tests:</p>
+
+<div class="codehilite">
+<pre><span></span><code>pytest
+</code></pre>
+</div>
+
+<hr />
+
+<h2>🗺️ Future Plans &amp; Roadmap</h2>
+
+<p>I am currently working on scaling this project. Planned features include:</p>
+
+<ul>
+<li><p>DuckDB Backend: Migrating stations.json to a high-performance database.</p></li>
+<li><p>Geospatial Discovery: Interactive map for station selection.</p></li>
+<li><p>Graphic Equalizer: Advanced audio frequency control.</p></li>
+</ul>
+
+<hr />
+
+<h2>🤝 Contributing</h2>
+
+<p>Contributions, ideas, and feedback are welcome! This is my first public project, so constructive feedback is especially appreciated as the app continues to grow.</p>
+
+<ul>
+<li><p>Fork the repository.</p></li>
+<li><p>Create a new branch (git checkout -b feature/YourFeature).</p></li>
+<li><p>Commit your changes.</p></li>
+<li><p>Submit a Pull Request.</p></li>
+</ul>
+
+<hr />
+
+<h2>Notes</h2>
+
+<ul>
+<li>Version 1.0 Initial release. </li>
+<li>4 passing unit tests. </li>
+</ul>
+
+<p><strong>Built by Roy Peters</strong> — <a href="https://www.linkedin.com/in/roy-p-74980b382/">Click here for contact info😁</a></p>
+
+    </div>
+</body>
+</html>
