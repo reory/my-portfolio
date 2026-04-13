@@ -1,0 +1,16 @@
+# --- Python Specific ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# --- Tool Specific ---
+generator.log
+
+# --- OS / IDE Specific ---
+.DS_Store
+.vscode/
+.idea/

@@ -4,15 +4,32 @@ import json
 import markdown2
 from jinja2 import Template
 import os
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("generator.log"),
+        logging.StreamHandler()
+    ]
+)
 
 def build_portfolio():
+    logging.info("Starting Portfolio Build Sequence..")
 
     if not os.path.exists("docs"):
         os.makedirs("docs")
+        logging.info("Created missing / docs directory.")
     
     # Load JSON file of projects
-    with open("projects.json", "r", encoding="utf-8") as f:
-        projects = json.load(f)
+    try:
+        with open("projects.json", "r", encoding="utf-8") as f:
+            projects = json.load(f)
+            logging.info(f"Loaded {len(projects)} projects from JSON")
+    except Exception as e:
+        logging.error(f"Failed to load projects.json: {e}")
+        return
 
     # Load HTML stencil once
     with open("layout.html", "r", encoding="utf-8") as f:
@@ -24,27 +41,32 @@ def build_portfolio():
     for p in projects:
         # Check if the README file actually exists
         if os.path.exists(p['md']):
-            with open(p['md'], "r", 
-            encoding="utf-8") as f:
-                html_snippet = markdown2.markdown(f.read(), 
-                extras=["fenced-code-blocks", "tables"]
-            )
+            try:
+                with open(p['md'], "r", encoding="utf-8") as f:
+                    html_snippet = markdown2.markdown(
+                        f.read(), 
+                        extras=["fenced-code-blocks", "tables"]
+                    )
 
-            # Render the specific project page
-            full_html = template.render(
-                project_name=p['title'], 
-            project_content=html_snippet
-            )
+                # Render the specific project page
+                full_html = template.render(
+                    project_name=p['title'], 
+                    project_content=html_snippet
+                )
 
-            # Save HTMl inside the docs folder for github
-            output_path = os.path.join("docs", p['out'])
-            with open(output_path, "w", encoding="utf-8") as f:
-                f.write(full_html)
-            built_projects.append(p)
-            print(f" Published: {p['title']}")
+                # Save HTMl inside the docs folder for github
+                output_path = os.path.join("docs", p['out'])
+                with open(output_path, "w", encoding="utf-8") as f:
+                    f.write(full_html)
+                    
+                built_projects.append(p)
+                logging.info(f" Successfully Published: {p['title']}")
+            except Exception as e:
+                logging.error(f"Error Processing {p['title']}: {e}")
         else:
             # If you haven't downloaded the README yet, the script notifies you
-            print(f"⚠️ Skipping {p['title']}: File {p['md']} not found.")
+            logging.warning(
+                f"⚠️ Skipping {p['title']}: File {p['md']} not found.")
 
     generate_home_page(built_projects)
 
@@ -85,11 +107,13 @@ def generate_home_page(projects):
     </body>
     </html>
     """
-    t = Template(home_template)
-
-    with open("docs/index.html", "w", encoding="utf-8") as f:
-        f.write(t.render(projects=projects))
-    print("✅ Home Page (index.html) is ready in the docs folder!")
+    try:
+        t = Template(home_template)
+        with open("docs/index.html", "w", encoding="utf-8") as f:
+            f.write(t.render(projects=projects))
+        logging.info("Home Page (index.html) successfully generated in /docs")
+    except Exception as e:
+        logging.error(f"Failed to generate home page: {e}")
 
 if __name__ == "__main__":
     build_portfolio()
