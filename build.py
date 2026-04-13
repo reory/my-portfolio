@@ -33,7 +33,7 @@ def build_portfolio():
         return
 
     # Load HTML stencil once
-    with open("layout.html", "r", encoding="utf-8") as f:
+    with open("templates/layout.html", "r", encoding="utf-8") as f:
         template = Template(f.read())
 
     built_projects = []
@@ -73,79 +73,23 @@ def build_portfolio():
 
 def generate_home_page(projects):
 
+    logging.info("Generating home page from external template...")
+    
+    # Prepare the data
     categories = sorted(list(set(p['category'] for p in projects)))
 
-    # Template for the homepage list
-    home_template = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>My Portfolio</title>
-        <style>
-            body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
-            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-            .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; transition: 0.3s; }
-            .card:hover { border-color: #007bff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-            .tag { font-size: 0.8em; color: #666; text-transform: uppercase; }
-            a { text-decoration: none; color: #007bff; font-weight: bold; }
-
-            /* Style for the new filter UI*/
-            .filter-nav { margin-bottom: 30px; background: #f4f4f4; padding: 15px; border-radius: 8px; }
-            select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 200px; }
-        </style>
-    </head>
-    <body>
-        <h1>My Project Portfolio</h1>
-        <p>A collection of my work in Python, Data Visualisation, Data Engineering, and AI.</p>
-        
-        <div class="filter-nav">
-            <label for="catSelect"><strong>Filter by Category:</strong> </label>
-            <select id="catSelect" onchange="filterSelection()">
-                <option value="all">All Projects</option>
-                {% for cat in categories %}
-                <option value="{{ cat }}">{{ cat }}</option>
-                {% endfor %}
-            </select> 
-        </div>     
-        
-        <div class="grid" id="projectGrid">
-            {% for p in projects %}
-            <div class="card" data-category="{{ p.category }}">
-                {% if p.thumbnail %}
-                <img src="{{ p.thumbnail }}" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
-                {% endif %}
-                
-                <span class="tag">{{ p.category }}</span>
-                <h3>{{ p.title }}</h3>
-                <p>{{ p.desc }}</p>
-                <a href="{{ p.out }}">View Project →</a>
-            </div>
-            {% endfor %}
-        </div>
-
-        <script>
-        function filterSelection() {
-            var input = document.getElementById("catSelect");
-            var filter = input.value;
-            var cards = document.getElementsByClassName("card");
-
-            for (var i = 0; i < cards.length; i++) {
-                var category = cards[i].getAttribute("data-category");
-                if (filter === "all" || category === filter) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-        }
-        </script>
-    </body>
-    </html>
-    """
     try:
-        t = Template(home_template)
+        # Open the file where the HTML and other languages live
+        with open("templates/home_template.html", "r", encoding="utf-8") as f:
+            template_content = f.read()
+        # Jinja 2
+        t = Template(template_content)
+        rendered_html = t.render(projects=projects, categories=categories)
+        
+        # Write final result to the docs folder
         with open("docs/index.html", "w", encoding="utf-8") as f:
-            f.write(t.render(projects=projects, categories=categories))
+            f.write(rendered_html)
+
         logging.info("Home Page (index.html) successfully generated in /docs")
     except Exception as e:
         logging.error(f"Failed to generate home page: {e}")
