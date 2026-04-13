@@ -79,13 +79,11 @@
 <li><strong>Clone the repository and install:</strong></li>
 </ol>
 
-<div class="codehilite">
-<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/bus_app.git
-<span class="nb">cd</span><span class="w"> </span>bus_app
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+<pre><code>git clone https://github.com/reory/bus_app.git
+cd bus_app
+pip install -r requirements.txt
+python manage.py migrate
 </code></pre>
-</div>
 
 <hr />
 
@@ -96,24 +94,20 @@ python<span class="w"> </span>manage.py<span class="w"> </span>migrate
 <ol>
 <li><p><strong>Start the backend:</strong> </p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span>
-</code></pre>
-</div></li>
+<pre><code> python manage.py runserver 
+
+</code></pre></li>
 <li><p><strong>Start the frontend:</strong></p>
 
-<div class="codehilite">
-<pre><span></span><code>python<span class="w"> </span>main.py
-</code></pre>
-</div></li>
+<pre><code>python main.py
+</code></pre></li>
 </ol>
 
 <hr />
 
 <h2>Project Structure</h2>
 
-<div class="codehilite">
-<pre><span></span><code>bus_app/
+<pre><code>bus_app/
 ├── api/                  # Main API Gateway &amp; GTFS Imports
 ├── bus_backend/          # Project Core
 │   ├── apps/             # Modular Business Logic
@@ -127,7 +121,6 @@ python<span class="w"> </span>manage.py<span class="w"> </span>migrate
 ├── manage.py             # Django management script
 └── main.py               # Kivy entry point
 </code></pre>
-</div>
 
 <hr />
 
@@ -137,10 +130,8 @@ python<span class="w"> </span>manage.py<span class="w"> </span>migrate
 
 <p>To run the tests:</p>
 
-<div class="codehilite">
-<pre><span></span><code>pytest
+<pre><code>pytest
 </code></pre>
-</div>
 
 <hr />
 

@@ -26,6 +26,7 @@ def build_portfolio():
     try:
         with open("projects.json", "r", encoding="utf-8") as f:
             projects = json.load(f)
+            projects.sort(key=lambda x: x['title'].lower())
             logging.info(f"Loaded {len(projects)} projects from JSON")
     except Exception as e:
         logging.error(f"Failed to load projects.json: {e}")

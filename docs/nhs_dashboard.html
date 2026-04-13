@@ -67,42 +67,32 @@
 
 <h3>Clone the Repository</h3>
 
-<div class="codehilite">
-<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/nhs-performance-dashboard.git
-<span class="nb">cd</span><span class="w"> </span>nhs-performance-dashboard
+<pre><code>git clone https://github.com/reory/nhs-performance-dashboard.git
+cd nhs-performance-dashboard
 </code></pre>
-</div>
 
 <h3>1. Create a Virtual Environment</h3>
 
-<div class="codehilite">
-<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<span class="nb">source</span><span class="w"> </span>venv/Scripts/activate<span class="w"> </span><span class="c1"># On mac/linux venv/bin/activate</span>
+<pre><code>python -m venv venv
+source venv/Scripts/activate # On mac/linux venv/bin/activate
 </code></pre>
-</div>
 
 <h3>2. Install Dependencies</h3>
 
-<div class="codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<pre><code>pip install -r requirements.txt
 </code></pre>
-</div>
 
 <h3>Initialize the Data Engine</h3>
 
-<div class="codehilite">
-<pre><span></span><code>python<span class="w"> </span>generate_faker_data.py
+<pre><code>python generate_faker_data.py
 </code></pre>
-</div>
 
 <h3>Launch the Dashboard</h3>
 
 <p>Run the Uvicorn server to host the FastAPI application.</p>
 
-<div class="codehilite">
-<pre><span></span><code>uvicorn<span class="w"> </span>app.main:app<span class="w"> </span>--reload
+<pre><code>uvicorn app.main:app --reload
 </code></pre>
-</div>
 
 <p>Navigate to http://127.0.0.1:8000 to view the live clinical suite.</p>
 
@@ -111,8 +101,7 @@
 <p><details>
   <summary>📂 Project Structure</summary></p>
 
-<div class="codehilite">
-<pre><span></span><code>nhs_performance_dashboard/
+<pre><code>nhs_performance_dashboard/
 ├── app/
 │   ├── main.py
 │   ├── database.py
@@ -151,7 +140,6 @@
 ├── LICENCE.md
 ├── pytest.ini
 </code></pre>
-</div>
 
 <p></details></p>
 
@@ -173,10 +161,8 @@
 
 <p>Consistent with my professional workflow in the West Yorkshire Traffic Intelligence Suite,and other projects, this project includes a full Pytest suite to ensure RTT breach calculations and search logic remain modular and predictable.</p>
 
-<div class="codehilite">
-<pre><span></span><code>pytest
+<pre><code>pytest
 </code></pre>
-</div>
 
 <hr />
 
