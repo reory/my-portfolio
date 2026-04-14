@@ -157,6 +157,30 @@ def optimise_images():
 
     logger.success("🖼️ Image crunching complete!")
 
+def build_challenges_page(custom_css):
+    """Updates of challenges and solutions faced while creating projects."""
+
+    logger.info("🛠️ Building Challenges page...")
+    
+    try:
+        with open("challenges.json", "r", encoding="utf-8") as f:
+            challenges = json.load(f)
+        
+        with open("templates/challenges_template.html", "r", encoding="utf-8") as f:
+            t = Template(f.read())
+            
+        rendered_html = t.render(
+            challenges=challenges,
+            custom_css=custom_css
+        )
+        
+        with open("docs/challenges.html", "w", encoding="utf-8") as f:
+            f.write(rendered_html)
+            
+        logger.success("✅ Challenges page updated!")
+    except Exception as e:
+        logger.error(f"Failed to build challenges page: {e}")
+
 def generate_home_page(projects, custom_css, skills):
 
     logger.info("🏠 Generating home page...")
@@ -189,5 +213,7 @@ def generate_home_page(projects, custom_css, skills):
 if __name__ == "__main__":
     # Shrink the images with correct aspect ratio
     optimise_images()
+    css = load_theme_css(THEME_NAME)
     # Build the portfolio HTML page
     build_portfolio()
+    build_challenges_page(css)

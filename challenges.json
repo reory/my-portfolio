@@ -1,0 +1,16 @@
+[
+    {
+        "project": "UK Real Estate Scraper",
+        "challenge": "Bot Detection",
+        "description": "The site kept blocking my Selenium requests after only 5-10 pages of data.",
+        "solution": "Implemented custom User-Agent rotation and added random 'human' delays between clicks.",
+        "status": "Documented"
+    },
+    {
+        "project": "Bulk Image Resizer",
+        "challenge": "Memory Management",
+        "description": "Processing massive folders caused Python to crash due to RAM exhaustion.",
+        "solution": "Switched to lazy-loading images and clear-memory garbage collection after each save.",
+        "status": "In Progress"
+    }
+]

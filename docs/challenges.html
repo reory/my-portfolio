@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engineering Challenges | Portfolio</title>
+    <style>body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1e293b; color: #f1f5f9; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+/* Skill Pills Section */
+.skills-container { 
+    margin: 20px 0 30px 0; 
+}
+.skills-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+}
+.skill-pill {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+.skill-count {
+    color: #38bdf8; /* Bright blue accent */
+    background: #1e293b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+.card { 
+    background: #334155; 
+    border: 1px solid #475569; 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.2s; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: #94a3b8; 
+}
+.tag { 
+    color: #cbd5e1; 
+    font-weight: bold; 
+}
+a { 
+    color: #f1f5f9; 
+}
+.filter-nav { 
+    background: #334155; 
+    border: 1px solid #475569; 
+}
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }</style>
+</head>
+<body>
+    <nav><a href="index.html">← Back to Projects</a></nav>
+    
+    <h1>🛠️ Engineering Challenges</h1>
+    <p><em>Note: This page is currently <strong>Under Construction</strong> as I document the 'behind-the-scenes' of my projects.</em></p>
+
+    <div class="challenges-list" style="margin-top: 40px;">
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">UK Real Estate Scraper</span>
+                <span class="skill-pill" style="font-size: 0.7em;">Documented</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Bot Detection</h3>
+            <p><strong>The Problem:</strong> The site kept blocking my Selenium requests after only 5-10 pages of data.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Implemented custom User-Agent rotation and added random 'human' delays between clicks.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Bulk Image Resizer</span>
+                <span class="skill-pill" style="font-size: 0.7em;">In Progress</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Memory Management</h3>
+            <p><strong>The Problem:</strong> Processing massive folders caused Python to crash due to RAM exhaustion.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Switched to lazy-loading images and clear-memory garbage collection after each save.
+            </p>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>© 2026 | Coding Challenges </p>
+    </footer>
+</body>
+</html>

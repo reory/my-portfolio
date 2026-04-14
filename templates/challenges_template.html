@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engineering Challenges | Portfolio</title>
+    <style>{{ custom_css }}</style>
+</head>
+<body>
+    <nav><a href="index.html">← Back to Projects</a></nav>
+    
+    <h1>🛠️ Engineering Challenges</h1>
+    <p><em>Note: This page is currently <strong>Under Construction</strong> as I document the 'behind-the-scenes' of my projects.</em></p>
+
+    <div class="challenges-list" style="margin-top: 40px;">
+        {% for c in challenges %}
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">{{ c.project }}</span>
+                <span class="skill-pill" style="font-size: 0.7em;">{{ c.status }}</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: {{ c.challenge }}</h3>
+            <p><strong>The Problem:</strong> {{ c.description }}</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> {{ c.solution }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>© 2026 | Coding Challenges </p>
+    </footer>
+</body>
+</html>

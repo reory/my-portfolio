@@ -10,6 +10,12 @@
         <h1>My Project Portfolio</h1>
         <p>A collection of my work in Python, Data Visualisation, Data Engineering, and AI.</p>
         
+        <p style="margin-top: -10px; margin-bottom: 25px;">
+            <a href="challenges.html" style="color: #38bdf8; text-decoration: none; font-weight: 600;">
+            🛠️ View the Engineering Project Challenges and Fixes →
+            </a>
+        </p>
+        
         <div class="skills-container">
             <div class="skills-list">
                 {% for skill, count in skills %}
@@ -61,7 +67,13 @@
             }
         }
         </script>
+
         <footer>
+            <p style="margin-bottom: 10px;">
+                <a href="challenges.html" style="opacity: 0.8; text-decoration: none; font-size: 0.9em;">
+                Behind the Scenes: Project Challenges (headaches) & Fixes
+                </a>
+            </p>
             <p>© 2026 | Last Updated: {{ current_date }}</p>
         </footer>
     </body>
