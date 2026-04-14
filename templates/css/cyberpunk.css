@@ -1,0 +1,8 @@
+body { font-family: 'Inter', sans-serif; background-color: #03001c; color: #00f6ff; max-width: 900px; margin: 40px auto; padding: 20px; }
+.card { background: #1b0044; border: 2px solid #ff007f; padding: 20px; border-radius: 4px; transition: transform 0.2s; box-shadow: 5px 5px 0px #00f6ff; }
+.card:hover { transform: translateY(-5px); border-color: #fff000; box-shadow: 5px 5px 0px #fff000; }
+.tag { color: #fff000; font-weight: bold; }
+a { color: #00f6ff; text-decoration: underline; }
+.filter-nav { background: #1b0044; border: 1px solid #ff007f; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 20px; }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
