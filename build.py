@@ -3,6 +3,7 @@
 import json
 import markdown2
 from jinja2 import Template
+from datetime import datetime
 import os
 from loguru import logger
 from PIL import Image
@@ -116,7 +117,10 @@ def optimise_images():
     logger.success("🖼️ Image crunching complete!")
 
 def generate_home_page(projects, custom_css):
+
     logger.info("🏠 Generating home page...")
+
+    formatted_date = datetime.now().strftime("%B %d, %Y")
     
     categories = sorted(list(set(p['category'] for p in projects)))
 
@@ -129,13 +133,14 @@ def generate_home_page(projects, custom_css):
         rendered_html = t.render(
             projects=projects, 
             categories=categories, 
-            custom_css=custom_css
+            custom_css=custom_css,
+            current_date=formatted_date
         )
         
         with open("docs/index.html", "w", encoding="utf-8") as f:
             f.write(rendered_html)
 
-        logger.success("Home Page (index.html) successfully generated!")
+        logger.success(f"Home Page generated with date: {formatted_date}")
     except Exception as e:
         logger.error(f"Failed to generate home page: {e}")
 
