@@ -32,7 +32,7 @@ This project serves as a "Project Factory," automating the deployment of my 22+ 
 ---
 
 ## 📈 Featured Projects
-This engine currently manages **22 repositories**, including:
+This engine currently manages **21 repositories**, including:
 - **Pydescope:** Static analysis & dependency mapping.
 - **Smart File Agent:** Agentic AI pipelines.
 - **Web Atlas:** Technical SEO visualization.
