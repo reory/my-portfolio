@@ -10,6 +10,16 @@
         <h1>My Project Portfolio</h1>
         <p>A collection of my work in Python, Data Visualisation, Data Engineering, and AI.</p>
         
+        <div class="skills-container">
+            <div class="skills-list">
+                {% for skill, count in skills %}
+                    <span class="skill-pill">
+                        {{ skill }} <span class="skill-count">{{ count }}</span>
+                    </span>
+                {% endfor %}
+            </div>
+        </div>
+
         <div class="filter-nav">
             <label for="catSelect"><strong>Filter by Category:</strong> </label>
             <select id="catSelect" onchange="filterSelection()">

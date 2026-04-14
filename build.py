@@ -7,6 +7,7 @@ from datetime import datetime
 import os
 from loguru import logger
 from PIL import Image
+from collections import Counter
 
 THEME_NAME = "slate.css"
 
@@ -46,6 +47,46 @@ def build_portfolio():
         logger.error(f"Failed to load projects.json: {e}")
         return
 
+    # Skill scanning logic
+    all_skills = []
+    for p in projects:
+        tags = ["Python"]
+        desc = p.get('desc', '').lower()
+        cat = p.get('category', '').lower()
+
+        # SQL and Databases
+        if any(w in desc or w in cat for w in [
+            'sql', 'duckdb', 'postgres', 'mongodb', 'sqlite', 'sqlalchemy']):
+            tags.append("SQL and Databases")
+
+        # Data engineering
+        if any(w in desc or w in cat for w in [
+            'pipeline', 'etl', 'polars', 'scraping', 'automation']):
+            tags.append("Data Engineering")
+
+        # Full Stack
+        if any(w in desc or w in cat for w in [
+            'django', 'fastapi', 'reflex', 'kivy', 'flet', 'dash', 'flask']):
+            tags.append("Full Stack")
+
+        # AI and Machine Learning
+        if any(w in desc or w in cat for w in [
+            'agent', 'ml', 'xgboost', 'ai', 'intelligence']):
+            tags.append("AI and Machine Learning")
+
+        # Digitial Forensics and Security
+        if any(w in desc or w in cat for w in [
+            'forensics', 'security', 'password', 'analysis']):
+            if 'forensics' in cat or 'security' in cat:
+                tags.append("Digitial Forensics and Security")
+
+        # Attach tags to the project objects
+        p['tags'] = list(set(tags))
+        all_skills.extend(p['tags'])
+
+    # Get top 6 most frequent skills
+    skill_counts = Counter(all_skills).most_common(6)
+
     # Load Project Page Template (layout.html)
     with open("templates/layout.html", "r", encoding="utf-8") as f:
         template = Template(f.read())
@@ -79,7 +120,7 @@ def build_portfolio():
         else:
             logger.warning(f"Skipping {p['title']}: {p['md']} not found.")
 
-    generate_home_page(built_projects, custom_css)
+    generate_home_page(built_projects, custom_css, skill_counts)
 
 def optimise_images():
     """Shrink images for web performance."""
@@ -116,7 +157,7 @@ def optimise_images():
 
     logger.success("🖼️ Image crunching complete!")
 
-def generate_home_page(projects, custom_css):
+def generate_home_page(projects, custom_css, skills):
 
     logger.info("🏠 Generating home page...")
 
@@ -134,7 +175,8 @@ def generate_home_page(projects, custom_css):
             projects=projects, 
             categories=categories, 
             custom_css=custom_css,
-            current_date=formatted_date
+            current_date=formatted_date,
+            skills=skills
         )
         
         with open("docs/index.html", "w", encoding="utf-8") as f:
