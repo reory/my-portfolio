@@ -4,11 +4,10 @@ import json
 import markdown2
 from jinja2 import Template
 import os
-from loguru import logger  # Swapping standard logging for Loguru
-
+from loguru import logger
+from PIL import Image
 
 THEME_NAME = "slate.css"
-
 
 # Configure Loguru to write to a file and the console
 logger.add("generator.log", rotation="1 MB")
@@ -26,6 +25,7 @@ def load_theme_css(theme_name):
         return ""
 
 def build_portfolio():
+
     logger.info("🚀 Starting Portfolio Build Sequence...")
 
     if not os.path.exists("docs"):
@@ -80,6 +80,41 @@ def build_portfolio():
 
     generate_home_page(built_projects, custom_css)
 
+def optimise_images():
+    """Shrink images for web performance."""
+
+    source_dir = "docs/images"
+
+    if not os.path.exists(source_dir):
+        logger.error(f"❌ Error: The folder {source_dir} does not exist!")
+        return
+
+    logger.info("🚀 Starting image optmisation..")
+
+    for filename in os.listdir(source_dir):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')):
+            img_path = os.path.join(source_dir, filename)
+
+            try:
+                with Image.open(img_path) as img:
+                    img = img.convert("RGB")
+
+                # Resize image if too big - keep aspect ratio
+                max_width = 800
+                if img.width > max_width:
+                    w_percent = (max_width / float(img.width))
+                    h_size = int((float(img.height) * float(w_percent)))
+                    img = img.resize((max_width, h_size), Image.Resampling.LANCZOS)
+
+                # Save with optimisation (80 is a good number for optimisation)
+                img.save(img_path, "JPEG", optimize=True, quality=80)
+                logger.debug(f"Compressed: {filename}")
+
+            except Exception as e:
+                logger.error(f"Failed to optimise {filename}: {e}")
+
+    logger.success("🖼️ Image crunching complete!")
+
 def generate_home_page(projects, custom_css):
     logger.info("🏠 Generating home page...")
     
@@ -105,4 +140,7 @@ def generate_home_page(projects, custom_css):
         logger.error(f"Failed to generate home page: {e}")
 
 if __name__ == "__main__":
+    # Shrink the images with correct aspect ratio
+    optimise_images()
+    # Build the portfolio HTML page
     build_portfolio()
