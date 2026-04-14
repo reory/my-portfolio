@@ -16,6 +16,8 @@ logging.basicConfig(
 )
 
 def build_portfolio():
+    """Build the portfolio."""
+
     logging.info("Starting Portfolio Build Sequence..")
 
     if not os.path.exists("docs"):
@@ -72,6 +74,7 @@ def build_portfolio():
     generate_home_page(built_projects)
 
 def generate_home_page(projects):
+    """Build the homepage which displays all the projects"""
 
     logging.info("Generating home page from external template...")
     
