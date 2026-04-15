@@ -146,28 +146,36 @@ a {
 
 <p>Clone the repository:</p>
 
-<pre><code>git clone https://github.com/yourusername/text2flow.git
-cd text2flow
+<div class="codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/yourusername/text2flow.git
+<span class="nb">cd</span><span class="w"> </span>text2flow
 </code></pre>
+</div>
 
 <h2>Create and activate a virtual environment:</h2>
 
-<pre><code>python -m venv venv
-# Windows
-.\venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="c1"># Windows</span>
+.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<span class="c1"># macOS/Linux</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </code></pre>
+</div>
 
 <h2>Install dependencies:</h2>
 
-<pre><code>pip install fastapi uvicorn graphviz jinja2 python-multipart pyragify
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>fastapi<span class="w"> </span>uvicorn<span class="w"> </span>graphviz<span class="w"> </span>jinja2<span class="w"> </span>python-multipart<span class="w"> </span>pyragify
 </code></pre>
+</div>
 
 <h2>Run the server:</h2>
 
-<pre><code>uvicorn app.main:app --reload
+<div class="codehilite">
+<pre><span></span><code>uvicorn<span class="w"> </span>app.main:app<span class="w"> </span>--reload
 </code></pre>
+</div>
 
 <p>Open your browser to http://127.0.0.1:8000.</p>
 
