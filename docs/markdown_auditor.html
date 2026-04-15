@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Markdown Auditor | Portfolio</title>
+    <style>
+        body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1e293b; color: #f1f5f9; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+/* Skill Pills Section */
+.skills-container { 
+    margin: 20px 0 30px 0; 
+}
+.skills-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+}
+.skill-pill {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+.skill-count {
+    color: #38bdf8; /* Bright blue accent */
+    background: #1e293b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+.card { 
+    background: #334155; 
+    border: 1px solid #475569; 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.2s; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: #94a3b8; 
+}
+.tag { 
+    color: #cbd5e1; 
+    font-weight: bold; 
+}
+a { 
+    color: #f1f5f9; 
+}
+.filter-nav { 
+    background: #334155; 
+    border: 1px solid #475569; 
+}
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } } 
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Markdown Auditor</h1>
+        <h1>🕵🏽 Markdown Auditor</h1>
+
+<p><img src="https://img.shields.io/github/last-commit/reory/markdown_auditor?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/markdown_auditor?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></p>
+
+<p>A sleek, nerdy Python utility designed to scan your project directories for documentation debt. It crawls through your folders, ignores the "noise" (like node_modules and .vscode), and ensures your Markdown files are professional and accessible.</p>
+
+<hr />
+
+<h1>📸 Screenshots</h1>
+
+<p><img src="screenshots/auditor.png" alt="tqdm bar and engine in action" /></p>
+
+<hr />
+
+<h2>✨ Features</h2>
+
+<ul>
+<li><p>Recursive Scanning: Deep-dives into subdirectories to find every .md file.</p></li>
+<li><p>Alt-Text Check: Identifies images missing descriptions (<img src="" alt="" />) to improve SEO and accessibility.</p></li>
+<li><p>Broken Link Detection: Finds empty Markdown links (<a href=""></a>) before you ship them.</p></li>
+<li><p>Smart Filtering: Automatically ignores node_modules, .venv, .vscode, and other non-source folders.</p></li>
+<li><p>Professional Logging: Powered by Loguru for timestamped, color-coded terminal output and persistent log files.</p></li>
+<li><p>Progress Tracking: Includes a tqdm progress bar.</p></li>
+</ul>
+
+<hr />
+
+<h1>🚀 Getting Started</h1>
+
+<p>Prerequisites
+You'll need Python 3.8+ installed. You also need to install the two main dependencies:</p>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>loguru<span class="w"> </span>tqdm
+</code></pre>
+</div>
+
+<hr />
+
+<h2>🛠️ Installation</h2>
+
+<ul>
+<li><p>Clone or copy the auditor.py script into your workspace.</p></li>
+<li><p>Ensure you have a .gitignore file to keep your logs out of version control.</p></li>
+</ul>
+
+<h2>Usage</h2>
+
+<ul>
+<li>Run the script from your terminal. You can point it at any folder:</li>
+</ul>
+
+<p>PowerShell</p>
+
+<h2>Audit the current directory</h2>
+
+<p>python auditor.py .</p>
+
+<h2>Audit a specific project folder</h2>
+
+<ul>
+<li>for eg</li>
+</ul>
+
+<p>python auditor.py C:UsersAdminDesktopcode</p>
+
+<hr />
+
+<h2>🛠️ How it Works</h2>
+
+<p>The auditor performs a three-step operation to keep your environment fresh:</p>
+
+<ul>
+<li><p>The Scout: It builds a manifest of all Markdown files while pruning "junk" directories.</p></li>
+<li><p>The Audit: It uses Regular Expressions (Regex) to scan the text content for empty brackets and parentheses.</p></li>
+<li><p>The Report: Results are summarized in the terminal and appended to audit_history.log for future reference.</p></li>
+</ul>
+
+<hr />
+
+<h1>📂 Project Structure</h1>
+
+<pre><code>markdown_auditor/
+├── auditor.py           # The main script
+├── screenshots          # png of script in action
+├── audit_history.log    # Generated log file (ignored by git)
+├── .gitignore           # Keeps your repo clean
+</code></pre>
+
+<hr />
+
+<h1>🛣️ Roadmap Features</h1>
+
+<ul>
+<li><p>[ ] Auto-Fix Mode (--fix)
+Add a flag that allows the script to automatically inject "TODO" text into empty brackets.</p></li>
+<li><p>[ ] External Link Validator
+Level up from checking if a link is empty to checking if it actually works.</p></li>
+<li><p>[ ] Frontmatter Metadata Audit
+If you ever use static site generators (like Jekyll, Hugo, or Obsidian), your files usually start with "Frontmatter" (tags, dates, and titles).</p></li>
+<li><p>[ ] Duplicate Image Scanner
+Make a script that could track the filenames of every image used and flag any duplicates.</p></li>
+</ul>
+
+<hr />
+
+<h1>📝 Notes</h1>
+
+<p>This project is open-source and ready for you to expand. Happy coding!🐍</p>
+
+<hr />
+
+<ul>
+<li><strong>Built by Roy Peters</strong> 😁 <a href="https://linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

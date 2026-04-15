@@ -167,5 +167,14 @@
         "category": "Automation",
         "desc": "Selenium-based scraper for secured platforms.",
         "thumbnail": "images/web_scraper.png"
+    },
+    {
+        "title": "Markdown Auditor",
+        "md": "readmes/markdown_auditor.md",
+        "out": "markdown_auditor.html",
+        "category": "Automation",
+        "desc": "Python utility designed to scan projects for errors in Markdown",
+        "thumbnail": "images/auditor.png"
     }
 ]
+    
