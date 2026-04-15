@@ -163,19 +163,15 @@ a {
 Before running Pydescope, ensure you have Python 3.9 or higher installed.</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code><span class="nb">cd</span><span class="w"> </span>pydescope
+<pre><code>cd pydescope
 </code></pre>
-</div>
 
 <h2>Install in editable mode:</h2>
 
 <p>This installs the dependencies and allows you to run the pydescope command directly.</p>
 
-<div class="codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<pre><code>pip install -e .
 </code></pre>
-</div>
 
 <h2>How to Run</h2>
 
@@ -185,25 +181,19 @@ Before running Pydescope, ensure you have Python 3.9 or higher installed.</li>
 
 <p>Point Pydescope at any Python project directory you want to analyze:</p>
 
-<div class="codehilite">
-<pre><span></span><code>pydescope<span class="w"> </span>&lt;path_to_target_project&gt;
-Command<span class="w"> </span>Options
-Output<span class="w"> </span>Name:<span class="w"> </span>Specify<span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>name<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>HTML<span class="w"> </span>report.
+<pre><code>pydescope &lt;path_to_target_project&gt;
+Command Options
+Output Name: Specify a custom name for your HTML report.
 </code></pre>
-</div>
 
-<div class="codehilite">
-<pre><span></span><code>pydescope<span class="w"> </span>&lt;path_to_project&gt;<span class="w"> </span>--output<span class="w"> </span>my_graph.html
-Exclude<span class="w"> </span>Directories:<span class="w"> </span>Although<span class="w"> </span>it<span class="w"> </span>ignores<span class="w"> </span>venv<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>add<span class="w"> </span>more<span class="w"> </span>exclusions.
+<pre><code>pydescope &lt;path_to_project&gt; --output my_graph.html
+Exclude Directories: Although it ignores venv by default, you can add more exclusions.
 </code></pre>
-</div>
 
-<div class="codehilite">
-<pre><span></span><code>pydescope<span class="w"> </span>&lt;path_to_project&gt;<span class="w"> </span>--exclude<span class="w"> </span>tests,docs
-Visualisation<span class="w"> </span>Controls
-The<span class="w"> </span>generated<span class="w"> </span>HTML<span class="w"> </span>file<span class="w"> </span>includes<span class="w"> </span>advanced<span class="w"> </span>JavaScript-based<span class="w"> </span>controls<span class="w"> </span>located<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>lib/bindings/utils.js<span class="w"> </span>file:
+<pre><code>pydescope &lt;path_to_project&gt; --exclude tests,docs
+Visualisation Controls
+The generated HTML file includes advanced JavaScript-based controls located in the lib/bindings/utils.js file:
 </code></pre>
-</div>
 
 <hr />
 

@@ -156,18 +156,14 @@ information in a relational database (SQL) and generates visual performance repo
 <li>Ensure your virtual environment is active and libraries are installed:</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1"># Activate venv (Windows)</span>
-.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<pre><code># Activate venv (Windows)
+.\venv\Scripts\activate
 </code></pre>
-</div>
 
 <h1>Install dependencies</h1>
 
-<div class="codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>sqlalchemy<span class="w"> </span>openpyxl<span class="w"> </span>matplotlib
+<pre><code>pip install pandas sqlalchemy openpyxl matplotlib
 </code></pre>
-</div>
 
 <h2>Prepare the Data</h2>
 
@@ -183,10 +179,8 @@ information in a relational database (SQL) and generates visual performance repo
 <li>Run the sync script (sync_data.py) to move your Excel rows into the SQL database:</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code>python<span class="w"> </span>sync_data.py
+<pre><code>python sync_data.py
 </code></pre>
-</div>
 
 <ul>
 <li>Check for the success message: 🚀 Success! Synced X rows to SQL.</li>
@@ -198,10 +192,8 @@ information in a relational database (SQL) and generates visual performance repo
 <li>If you want to see the raw data sitting inside the SQL table:</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code>python<span class="w"> </span>check_db.py
+<pre><code>python check_db.py
 </code></pre>
-</div>
 
 <h2>Generate the Visual Report</h2>
 
@@ -209,10 +201,8 @@ information in a relational database (SQL) and generates visual performance repo
 <li>Create the stacked bar chart to analyze the hours:</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code>python<span class="w"> </span>generate_report.py
+<pre><code>python generate_report.py
 </code></pre>
-</div>
 
 <ul>
 <li>This will pop up a window with your graph and save a file named work_report.webp.</li>
