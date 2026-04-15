@@ -65,6 +65,16 @@ a {
     gap: 25px; 
     margin-top: 20px; 
 }
+/* 🖼️ PROJECT IMAGE STYLING (The New Fix) */
+.project-card img {
+    max-width: 100%;    /* Ensures images never overflow the 900px body */
+    height: auto;       /* Maintains aspect ratio */
+    display: block;     
+    margin: 30px auto;  
+    border-radius: 10px; 
+    border: 1px solid #475569; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
 @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }</style>
 </head>
 <body>

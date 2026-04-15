@@ -116,9 +116,27 @@ def optimise_images():
 
             try:
                 with Image.open(old_path) as img:
+
+                    # Resize images if too big for Portfolio page.
+                    max_width = 800
+                    if img.width > max_width:
+                        w_percent = (max_width / float(img.width))
+                        h_size = int((float(img.height) * float(w_percent)))
+
+                        # Resize images
+                        img = img.resize((
+                            max_width, h_size), 
+                            Image.Resampling.LANCZOS
+                        )
+                        logger.debug(f" Resized {filename} to 600px wide.")
+
+                    # Save as webp
                     img.save(new_path, "WEBP", quality=80)
+
+                # Clean up old file if it was removed as png/jpg
                 if old_path != new_path:
                     os.remove(old_path)
+
             except Exception as e:
                 logger.error(f"Failed to optimise {filename}: {e}")
 
