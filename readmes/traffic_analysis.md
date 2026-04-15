@@ -1,4 +1,3 @@
-# 🚦 West Yorkshire Traffic Analysis & Forensic Reporting
 
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/west_yorkshire_traffic_analysis?cacheSeconds=60)
@@ -28,7 +27,7 @@ An interactive intelligence dashboard and automated reporting tool built to anal
 ---
 
 ## 📸 Screenshots
-See the full gallery here: [screenshots/](screenshots/)
+See the full gallery here: [images/](images/)
 
 ## 🛠️ Project Architecture
 This project is divided into two main components to balance real-time interaction with deep-dive analysis:

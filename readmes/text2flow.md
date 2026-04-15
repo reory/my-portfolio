@@ -1,4 +1,3 @@
-# 📊 Text2Flow
 
 ![Last Commit](https://img.shields.io/github/last-commit/reory/text2flow?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/text2flow?cacheSeconds=60)
@@ -41,9 +40,9 @@ A lightweight, high-performance web application that converts simple text syntax
       <td align="center"><b>View 1</b></td>
     </tr>
     <tr>
-      <td><img src="screenshots/a.png" width="300"></td>
-      <td><img src="screenshots/b.png" width="300"></td>
-      <td><img src="screenshots/c.png" width="300"></td>
+      <td><img src="images/a.webp" width="300"></td>
+      <td><img src="images/b.webp" width="300"></td>
+      <td><img src="images/c.webp" width="300"></td>
     </tr>
   </table>
 

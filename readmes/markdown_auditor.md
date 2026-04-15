@@ -1,4 +1,4 @@
-# 🕵🏽 Markdown Auditor
+
 ![Last Commit](https://img.shields.io/github/last-commit/reory/markdown_auditor?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/markdown_auditor?cacheSeconds=60)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -10,7 +10,7 @@ A sleek, nerdy Python utility designed to scan your project directories for docu
 ---
 
 # 📸 Screenshots
-![tqdm bar and engine in action](screenshots/auditor.png)
+![tqdm bar and engine in action](images/auditor.webp)
 
 ---
 

@@ -1,4 +1,4 @@
-# ✨ Password Strength Simulator
+
 ![Last Commit](https://img.shields.io/github/last-commit/reory/password-strength-sim?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/password-strength-sim?cacheSeconds=60)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -30,9 +30,9 @@ Detailed checks for digits, special characters, and uppercase letters.
 ---
 
 # Screenshots
-![App Screenshot](screenshots/weak.png)
-![App Screenshot](screenshots/moderate.png)
-![App Screenshot](screenshots/strong.png)
+![App Screenshot](images/weak.webp)
+![App Screenshot](images/moderate.webp)
+![App Screenshot](images/strong.webp)
 
 ---
 

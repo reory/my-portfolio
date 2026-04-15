@@ -1,4 +1,4 @@
-# 🚀 NHS Performance Dashboard V1
+
 
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/nhs-performance-dashboard?cacheSeconds=60)
@@ -22,10 +22,10 @@ An end-to-end Clinical Intelligence suite that monitors patient wait times and p
 <details>
   <summary>📸 Screenshots</summary>
 
-![NHS Performance Dashboard](screenshots/1.png)
-![NHS Performance Dashboard](screenshots/2.png)
-![NHS Performance Dashboard](screenshots/3.png)
-![NHS Performance Dashboard](screenshots/4.png)
+![NHS Performance Dashboard](images/nhs1.webp)
+![NHS Performance Dashboard](images/nhs2.webp)
+![NHS Performance Dashboard](images/nhs3.webp)
+![NHS Performance Dashboard](images/nhs4.webp)
 
 </details>
 

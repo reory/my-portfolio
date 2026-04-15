@@ -1,4 +1,3 @@
-# 📚 Word Counter Vault — Full-Stack Linguistic Analysis Suite
 
 <p align="center">
 
@@ -31,17 +30,17 @@ See the full gallery here:
  <summary><b>Click to expand screenshots</b></summary>
  <br>
 
- ![Main Dashboard](screenshots/user_UI.png)
- ![Main Dashboard](screenshots/user_UI2.png)
- ![Main Dashboard Map](screenshots/map_of_words_history.png)
- ![Main Dashboard Map](screenshots/map.png)
- ![Main Login](screenshots/login_view.png)
- ![PDF Report](screenshots/pdf_report.png)
- ![Word Document](screenshots/word_document.png)
- ![Chart View](screenshots/chart.png)
- ![Indepth UI](screenshots/indepth_UI.png)
- ![Main Dashboard](screenshots/analysis_history.png)
- ![View Delete Buttons](screenshots/view_delete_buttons.png)
+ ![Main Dashboard](images/user_UI.webp)
+ ![Main Dashboard](images/user_UI2.webp)
+ ![Main Dashboard Map](images/map_of_words_history.webp)
+ ![Main Dashboard Map](images/map.webp)
+ ![Main Login](images/login_view.webp)
+ ![PDF Report](images/pdf_report.webp)
+ ![Word Document](images/word_document.webp)
+ ![Chart View](images/chart.webp)
+ ![Indepth UI](images/indepth_UI.webp)
+ ![Main Dashboard](images/analysis_history.webp)
+ ![View Delete Buttons](images/view_delete_buttons.webp)
 </details>
 
 ---

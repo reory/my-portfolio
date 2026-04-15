@@ -1,5 +1,3 @@
-# 🚀 Invoice Fraud Detector Service
-
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/Invoice-Fraud-Detector-Service?cacheSeconds=60)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
@@ -13,6 +11,13 @@
 ![Last Commit](https://img.shields.io/github/last-commit/reory/Invoice-Fraud-Detector-Service?cacheSeconds=60)
 
 An end-to-end Machine Learning service that detects fraudulent invoices using **XGBoost**. This project features a full pipeline: synthetic data generation, model training with SMOTE (oversampling), and a Flask-based web dashboard with a real-time risk speedometer.
+
+---
+
+# 📸 Screenshots
+![Image of the main dashboard](images/dashboard_31.png)
+![Risky invoice detected](images/dashboard_22.png)
+![Healthy invoice detected](images/dashboard_43.png)
 
 ---
 

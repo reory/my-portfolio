@@ -1,4 +1,3 @@
-# 🗺️ Geo-Loan UK Predictor
 
 ![Last Commit](https://img.shields.io/github/last-commit/reory/geo-loan-uk-predictor?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/geo-loan-uk-predictor?cacheSeconds=60)
@@ -47,11 +46,11 @@ squish that number into a simple 0 to 1 scale (0% to 100% risk).
 <details>
   <summary>📸Screenshots </summary>
 
-![Screenshot of the dashboard interface](screenshots/dashboard1.png)
-![Screenshot of adding a new loanee](screenshots/dashboard2.png)
-![screenshot of adding a new loanee](screenshots/dashboard3.png)
-![screenshot of new applications entered](screenshots/dashboard4.png)
-![screenshot of the database](screenshots/MySQL_db.png)
+![Screenshot of the dashboard interface](images/dashboard11.webp)
+![Screenshot of adding a new loanee](images/dashboard12.webp)
+![screenshot of adding a new loanee](images/dashboard13.webp)
+![screenshot of new applications entered](images/dashboard14.webp)
+![screenshot of the database](images/MySQL_db.webp)
 
 </details>
 

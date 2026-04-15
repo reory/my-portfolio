@@ -5,7 +5,7 @@
         "out": "pydescope.html",
         "category": "Developer Tools",
         "desc": "Static analysis tool for Python dependency mapping.",
-        "thumbnail": "images/pydescope.png"
+        "thumbnail": "images/pydescope.webp"
     },
     {
         "title": "Smart File Agent",
@@ -13,7 +13,7 @@
         "out": "smart_file_agent.html",
         "category": "AI & Agents",
         "desc": "Agentic AI pipeline demonstration in pure Python.",
-        "thumbnail": "images/agentic_system.png"
+        "thumbnail": "images/agentic_system.webp"
     },
     {
         "title": "Web Atlas",
@@ -21,7 +21,7 @@
         "out": "web_atlas.html",
         "category": "SEO & Network Analysis",
         "desc": "Transforming Screaming Frog exports into interactive graphs.",
-        "thumbnail": "images/web_atlas.png"
+        "thumbnail": "images/web_atlas.webp"
     },  
     {
         "title": "Bus App",
@@ -29,8 +29,7 @@
         "out": "bus_app.html",
         "category": "Mobile & Web",
         "desc": "Transit application using Django and Kivy.",
-        "thumbnail": "images/busapp_login.png"
-        
+        "thumbnail": "images/busapp_login.webp"
     },
     {
         "title": "Geo Loan UK Predictor",
@@ -38,7 +37,7 @@
         "out": "geo_loan.html",
         "category": "Data Science",
         "desc": "Financial analytics dashboard for UK loan risk.",
-        "thumbnail": "images/geoloan_dashboard.png"
+        "thumbnail": "images/geoloan_dashboard.webp"
     },
     {
         "title": "Health Tracker App",
@@ -46,7 +45,7 @@
         "out": "health_tracker.html",
         "category": "Desktop Apps",
         "desc": "Flet-based health tracking with SQLite storage.",
-        "thumbnail": "images/healthtracker_dashboard.png"
+        "thumbnail": "images/healthtracker_dashboard.webp"
     },
     {
         "title": "Interactive City Dashboard",
@@ -54,7 +53,7 @@
         "out": "city_dashboard.html",
         "category": "Data Science",
         "desc": "Geospatial Dash app with Wikipedia integration.",
-        "thumbnail": "images/city_dashboard.png"
+        "thumbnail": "images/city_dashboard.webp"
     },
     {
         "title": "Internet Radio Python",
@@ -62,7 +61,7 @@
         "out": "internet_radio.html",
         "category": "Multimedia",
         "desc": "CustomTkinter radio app powered by VLC.",
-        "thumbnail": "images/internet_radio.png"
+        "thumbnail": "images/internet_radio.webp"
     },
     {
         "title": "Invoice Fraud Detector",
@@ -70,7 +69,7 @@
         "out": "fraud_detector.html",
         "category": "Machine Learning",
         "desc": "End-to-end ML microservice using XGBoost.",
-        "thumbnail": "images/fraud_dashboard.png"
+        "thumbnail": "images/fraud_dashboard.webp"
     },
     {
         "title": "NHS Performance Dashboard",
@@ -78,7 +77,7 @@
         "out": "nhs_dashboard.html",
         "category": "Data Science",
         "desc": "Clinical Intelligence suite using DuckDB.",
-        "thumbnail": "images/nhs_dashboard.png"
+        "thumbnail": "images/nhs_dashboard.webp"
     },
     {
         "title": "Password Strength Sim",
@@ -86,7 +85,7 @@
         "out": "password_sim.html",
         "category": "Security",
         "desc": "Password analysis tool with NumPy and CustomTkinter.",
-        "thumbnail": "images/password_sim.png"
+        "thumbnail": "images/password_sim.webp"
     },
     {
         "title": "West Yorkshire Traffic Analysis",
@@ -94,7 +93,7 @@
         "out": "traffic_analysis.html",
         "category": "Data Engineering",
         "desc": "Traffic incident hotspot pipeline and Data Visual tool.",
-        "thumbnail": "images/west_yorkshire.png"
+        "thumbnail": "images/west_yorkshire.webp"
     },
     {
         "title": "Finance App",
@@ -102,7 +101,7 @@
         "out": "finance_app.html",
         "category": "Full Stack",
         "desc": "Personal finance analytics with PostgreSQL and Django.",
-        "thumbnail": "images/welcome_dashboard.png"
+        "thumbnail": "images/welcome_dashboard.webp"
     },
     {
         "title": "Bulk Image Resizer",
@@ -110,7 +109,7 @@
         "out": "image_resizer.html",
         "category": "Automation",
         "desc": "High-performance multithreaded image optimization.",
-        "thumbnail": "images/bulkimage_resizer.png"
+        "thumbnail": "images/bulkimage_resizer.webp"
     },
     {
         "title": "Word Counter Vault",
@@ -118,7 +117,7 @@
         "out": "word_vault.html",
         "category": "Forensics",
         "desc": "Linguistic intelligence suite using Django and DuckDB.",
-        "thumbnail": "images/word_counter.png"
+        "thumbnail": "images/word_counter.webp"
     },
     {
         "title": "UK Population Tracker",
@@ -126,7 +125,7 @@
         "out": "pop_tracker.html",
         "category": "Data Engineering",
         "desc": "Full-stack platform with Polars and MongoDB.",
-        "thumbnail": "images/pop_tracker.png"
+        "thumbnail": "images/pop_tracker.webp"
     },
     {
         "title": "Work Logger",
@@ -134,7 +133,7 @@
         "out": "work_logger.html",
         "category": "Automation",
         "desc": "Excel-to-SQL ETL pipeline with SQLAlchemy.",
-        "thumbnail": "images/work_logger.png"
+        "thumbnail": "images/work_logger.webp"
     },
     {
         "title": "RepoSync",
@@ -142,7 +141,7 @@
         "out": "reposync.html",
         "category": "Web Apps",
         "desc": "Portfolio builder using Reflex and Python 3.13.",
-        "thumbnail": "images/reposync.png"
+        "thumbnail": "images/reposync.webp"
     },
     {
         "title": "Text2Flow",
@@ -150,7 +149,7 @@
         "out": "text2flow.html",
         "category": "Visualisation",
         "desc": "FastAPI tool for Graphviz flowcharts.",
-        "thumbnail": "images/text2flow.png"
+        "thumbnail": "images/text2flow.webp"
     },
     {
         "title": "Site Uptime Pinger",
@@ -158,7 +157,7 @@
         "out": "uptime_pinger.html",
         "category": "SRE & DevOps",
         "desc": "Production-ready website monitoring tool.",
-        "thumbnail": "images/uptime_pinger.png"
+        "thumbnail": "images/uptime_pinger.webp"
     },
     {
         "title": "UK Real Estate Scraper",
@@ -166,7 +165,7 @@
         "out": "real_estate_scraper.html",
         "category": "Automation",
         "desc": "Selenium-based scraper for secured platforms.",
-        "thumbnail": "images/web_scraper.png"
+        "thumbnail": "images/web_scraper.webp"
     },
     {
         "title": "Markdown Auditor",
@@ -174,7 +173,7 @@
         "out": "markdown_auditor.html",
         "category": "Automation",
         "desc": "Python utility designed to scan projects for errors in Markdown",
-        "thumbnail": "images/auditor.png"
+        "thumbnail": "images/auditor.webp"
     }
 ]
     

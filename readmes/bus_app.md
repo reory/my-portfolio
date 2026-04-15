@@ -1,5 +1,3 @@
-# Bus Tracker
-
 ![Python Version](https://img.shields.io/badge/python-3.11-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/bus_app)
@@ -20,12 +18,12 @@ A Reliable transit apps require robust front-end logic. I built this UK Bus Trac
   <summary>📱 App Gallery</summary>
 
 <p align="center">
-  <img src="screenshots/alerts_screen.png" width="250" alt="Alert Screen">
-  <img src="screenshots/login_screen.png" width="250" alt="Login Screen">
-  <img src="screenshots/maps_screen.png" width="250" alt="Maps Screen">
-  <img src="screenshots/prediction_screen.png" width="250" alt="Prediction Screen">
-  <img src="screenshots/select_route_screen.png" width="250" alt="Routes Screen">
-  <img src="screenshots/stops_screen.png" width="250" alt="Stops Screen">
+  <img src="images/alerts_screen.webp" width="250" alt="Alert Screen">
+  <img src="images/login_screen.webp" width="250" alt="Login Screen">
+  <img src="images/maps_screen.webp" width="250" alt="Maps Screen">
+  <img src="images/prediction_screen.webp" width="250" alt="Prediction Screen">
+  <img src="images/select_route_screen.webp" width="250" alt="Routes Screen">
+  <img src="images/stops_screen.webp" width="250" alt="Stops Screen">
 </p>
 
 </details>

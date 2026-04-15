@@ -1,4 +1,3 @@
-# 🌌 Reposync | The Reactive Portfolio
 
 ![Python Version](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
 ![Framework](https://img.shields.io/badge/framework-Reflex-7e61ff?logo=rocket&logoColor=white)
@@ -13,7 +12,7 @@
 ---
 
 ## 📸 Screenshots
-![Main Webpage](screenshots/webpage.png)
+![Main Webpage](images/reposync_webpage.webp)
 
 ---
 

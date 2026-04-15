@@ -1,108 +1,91 @@
-# This script will take a README and "print" it into a HTML template.
-
 import json
 import markdown2
 from jinja2 import Template
 from datetime import datetime
 import os
+import shutil  # Added for moving files
+import re      # Added for fixing links
 from loguru import logger
 from PIL import Image
 from collections import Counter
 
 THEME_NAME = "slate.css"
-
-# Configure Loguru to write to a file and the console
 logger.add("generator.log", rotation="1 MB")
 
 def load_theme_css(theme_name):
-    """Reads the CSS file from the templates folder."""
-
     css_path = os.path.join("templates", "css", theme_name)
     try:
         with open(css_path, "r", encoding="utf-8") as f:
-            logger.info(f"🎨 Applying theme: {theme_name}")
             return f.read()
     except Exception as e:
         logger.error(f"Could not load theme {theme_name}: {e}")
         return ""
 
+def sync_images():
+    """Moves images from root /images to docs/images before optimization."""
+    src = "images"
+    dest = "docs/images"
+    if os.path.exists(src):
+        if not os.path.exists(dest):
+            os.makedirs(dest)
+        for f in os.listdir(src):
+            shutil.copy(os.path.join(src, f), os.path.join(dest, f))
+        logger.success("✅ Raw images synced to docs/images")
+
 def build_portfolio():
-
     logger.info("🚀 Starting Portfolio Build Sequence...")
-
     if not os.path.exists("docs"):
         os.makedirs("docs")
-        logger.info("Created missing /docs directory.")
     
-    # Load CSS content once to inject into all pages
     custom_css = load_theme_css(THEME_NAME)
 
-    # Load JSON file of projects
     try:
         with open("projects.json", "r", encoding="utf-8") as f:
             projects = json.load(f)
             projects.sort(key=lambda x: x['title'].lower())
-            logger.info(f"📦 Loaded {len(projects)} projects from JSON")
     except Exception as e:
         logger.error(f"Failed to load projects.json: {e}")
         return
 
-    # Skill scanning logic
+    # Skill scanning
     all_skills = []
     for p in projects:
         tags = ["Python"]
         desc = p.get('desc', '').lower()
         cat = p.get('category', '').lower()
-
-        # SQL and Databases
-        if any(w in desc or w in cat for w in [
-            'sql', 'duckdb', 'postgres', 'mongodb', 'sqlite', 'sqlalchemy']):
+        if any(w in desc or w in cat for w in ['sql', 'duckdb', 'postgres', 'mongodb', 'sqlite', 'sqlalchemy']):
             tags.append("SQL and Databases")
-
-        # Data engineering
-        if any(w in desc or w in cat for w in [
-            'pipeline', 'etl', 'polars', 'scraping', 'automation']):
+        if any(w in desc or w in cat for w in ['pipeline', 'etl', 'polars', 'scraping', 'automation']):
             tags.append("Data Engineering")
-
-        # Full Stack
-        if any(w in desc or w in cat for w in [
-            'django', 'fastapi', 'reflex', 'kivy', 'flet', 'dash', 'flask']):
+        if any(w in desc or w in cat for w in ['django', 'fastapi', 'reflex', 'kivy', 'flet', 'dash', 'flask']):
             tags.append("Full Stack")
-
-        # AI and Machine Learning
-        if any(w in desc or w in cat for w in [
-            'agent', 'ml', 'xgboost', 'ai', 'intelligence']):
+        if any(w in desc or w in cat for w in ['agent', 'ml', 'xgboost', 'ai', 'intelligence']):
             tags.append("AI and Machine Learning")
+        if any(w in desc or w in cat for w in ['forensics', 'security', 'password', 'analysis']):
+            tags.append("Digital Forensics and Security") # Fixed typo here
 
-        # Digitial Forensics and Security
-        if any(w in desc or w in cat for w in [
-            'forensics', 'security', 'password', 'analysis']):
-            if 'forensics' in cat or 'security' in cat:
-                tags.append("Digitial Forensics and Security")
-
-        # Attach tags to the project objects
         p['tags'] = list(set(tags))
         all_skills.extend(p['tags'])
 
-    # Get top 6 most frequent skills
     skill_counts = Counter(all_skills).most_common(6)
 
-    # Load Project Page Template (layout.html)
     with open("templates/layout.html", "r", encoding="utf-8") as f:
         template = Template(f.read())
 
     built_projects = []
-    
     for p in projects:
         if os.path.exists(p['md']):
             try:
                 with open(p['md'], "r", encoding="utf-8") as f:
-                    html_snippet = markdown2.markdown(
-                        f.read(), 
-                        extras=["fenced-code-blocks", "tables"]
-                    )
+                    content = f.read()
+                    
+                    # FIX: Change .png to .webp inside the HTML content dynamically
+                    content = re.sub(r'\.(png|jpg|jpeg)', '.webp', content)
+                    content = content.replace('./images/', 'images/')
 
-                # Pass custom_css to the template
+                html_snippet = markdown2.markdown(
+                    content, extras=["fenced-code-blocks", "tables"])
+
                 full_html = template.render(
                     project_name=p['title'], 
                     project_content=html_snippet,
@@ -112,108 +95,68 @@ def build_portfolio():
                 output_path = os.path.join("docs", p['out'])
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write(full_html)
-                    
+                
                 built_projects.append(p)
                 logger.success(f"Published: {p['title']}")
             except Exception as e:
                 logger.error(f"Error Processing {p['title']}: {e}")
-        else:
-            logger.warning(f"Skipping {p['title']}: {p['md']} not found.")
 
     generate_home_page(built_projects, custom_css, skill_counts)
 
 def optimise_images():
-    """Shrink images for web performance."""
-
     source_dir = "docs/images"
-
-    if not os.path.exists(source_dir):
-        logger.error(f"❌ Error: The folder {source_dir} does not exist!")
+    if not os.path.exists(source_dir): 
         return
 
-    logger.info("🚀 Starting image optmisation..")
-
     for filename in os.listdir(source_dir):
-        if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')):
-            img_path = os.path.join(source_dir, filename)
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            old_path = os.path.join(source_dir, filename)
+            base_name = os.path.splitext(filename)[0]
+            new_path = os.path.join(source_dir, f"{base_name}.webp")
 
             try:
-                with Image.open(img_path) as img:
-                    img = img.convert("RGB")
-
-                # Resize image if too big - keep aspect ratio
-                max_width = 800
-                if img.width > max_width:
-                    w_percent = (max_width / float(img.width))
-                    h_size = int((float(img.height) * float(w_percent)))
-                    img = img.resize((max_width, h_size), Image.Resampling.LANCZOS)
-
-                # Save with optimisation (80 is a good number for optimisation)
-                img.save(img_path, "JPEG", optimize=True, quality=80)
-                logger.debug(f"Compressed: {filename}")
-
+                with Image.open(old_path) as img:
+                    img.save(new_path, "WEBP", quality=80)
+                if old_path != new_path:
+                    os.remove(old_path)
             except Exception as e:
                 logger.error(f"Failed to optimise {filename}: {e}")
 
-    logger.success("🖼️ Image crunching complete!")
-
 def build_challenges_page(custom_css):
-    """Updates of challenges and solutions faced while creating projects."""
-
-    logger.info("🛠️ Building Challenges page...")
-    
     try:
         with open("challenges.json", "r", encoding="utf-8") as f:
             challenges = json.load(f)
-        
         with open("templates/challenges_template.html", "r", encoding="utf-8") as f:
             t = Template(f.read())
-            
-        rendered_html = t.render(
-            challenges=challenges,
-            custom_css=custom_css
-        )
-        
+        rendered_html = t.render(challenges=challenges, custom_css=custom_css)
         with open("docs/challenges.html", "w", encoding="utf-8") as f:
             f.write(rendered_html)
-            
-        logger.success("✅ Challenges page updated!")
     except Exception as e:
         logger.error(f"Failed to build challenges page: {e}")
 
 def generate_home_page(projects, custom_css, skills):
-
-    logger.info("🏠 Generating home page...")
-
     formatted_date = datetime.now().strftime("%B %d, %Y")
-    
     categories = sorted(list(set(p['category'] for p in projects)))
-
     try:
         with open("templates/home_template.html", "r", encoding="utf-8") as f:
-            template_content = f.read()
+            t = Template(f.read())
         
-        t = Template(template_content)
-        # Pass custom_css here
+        # Ensure the home page thumbnails also point to .webp
+        for p in projects:
+            p['thumbnail'] = p['thumbnail'].replace('.png', '.webp').replace('.jpg', '.webp')
+
         rendered_html = t.render(
-            projects=projects, 
-            categories=categories, 
-            custom_css=custom_css,
-            current_date=formatted_date,
-            skills=skills
+            projects=projects, categories=categories, 
+            custom_css=custom_css, current_date=formatted_date, skills=skills
         )
-        
         with open("docs/index.html", "w", encoding="utf-8") as f:
             f.write(rendered_html)
-
-        logger.success(f"Home Page generated with date: {formatted_date}")
     except Exception as e:
         logger.error(f"Failed to generate home page: {e}")
 
 if __name__ == "__main__":
-    # Shrink the images with correct aspect ratio
-    optimise_images()
+    sync_images()      # 1. Move them to docs/images first
+    optimise_images()  # 2. Turn them into webp
     css = load_theme_css(THEME_NAME)
-    # Build the portfolio HTML page
-    build_portfolio()
+    build_portfolio()  # 3. Generate HTML with webp links
     build_challenges_page(css)

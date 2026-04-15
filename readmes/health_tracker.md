@@ -1,4 +1,3 @@
-# Health Tracker App
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Platform](https://img.shields.io/badge/Platform-Flet-orange)
@@ -48,34 +47,34 @@ The architecture follows a clean separation of concerns with repositories, valid
   <summary>📸 Screenshots</summary>
 
 ## Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](images/health_trackerdashboard.webp)
 
 ## Appointments
-![Appointments](screenshots/appointments_screen.png)
+![Appointments](images/appointments_screen.webp)
 
 ## Add Appointment
-![Add Appointment](screenshots/add_appointment_screen.png)
+![Add Appointment](images/add_appointment_screen.webp)
 
 ## Edit Appointment
-![Edit Appointment](screenshots/edit_appointment_screen.png)
+![Edit Appointment](images/edit_appointment_screen.webp)
 
 ## Medications
-![Medications](screenshots/edit_medication_screen.png)
+![Medications](images/edit_medication_screen.webp)
 
 ## Schedules
-![Schedules](screenshots/edit_schedulescreen.png)
+![Schedules](images/edit_schedulescreen.webp)
 
 ## Settings
-![Settings](screenshots/settings_screen.png)
+![Settings](images/settings_screen.webp)
 
 ## Dark Mode
-![Dark Mode](screenshots/settingsdarkmode.png)
+![Dark Mode](images/settingsdarkmode.webp)
 
 ## User Profile
-![User Profile](screenshots/userprofilescreenupdated.png)
+![User Profile](images/userprofilescreenupdated.webp)
 
 ## Analytics Dashboard
-![Analytics Dashboard](screenshots/analyticsdashboard.png)
+![Analytics Dashboard](images/analyticsdashboard.webp)
 
 </details>
 

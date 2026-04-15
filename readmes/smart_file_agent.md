@@ -1,4 +1,3 @@
-# 🗄️ Smart File Agent
 
 - A tiny, educational demonstration of an agentic AI pipeline — no LLMs, no APIs, just pure Python.
 
@@ -35,7 +34,7 @@ This project is intentionally small and easy to understand.
 
 ---
 
-![Logic flow of the file sorting system](smart_file_agent/agent/screenshots/agentic_system.png)
+![Logic flow of the file sorting system](images/agentic_system.webp)
 
 ---
 

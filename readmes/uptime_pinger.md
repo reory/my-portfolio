@@ -1,4 +1,3 @@
-# 🌐 Python Site Uptime Monitor
 
 ![Last Commit](https://img.shields.io/github/last-commit/reory/site-uptime-pinger?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/site-uptime-pinger?cacheSeconds=60)
@@ -9,7 +8,7 @@ A robust, lightweight Synthetic Monitoring tool built with Python. This script t
 ---
 
 # 📸 Screenshots
-![Terminal Screenshot](screenshots/dashboard.png)
+![Terminal Screenshot](images/uptimepinger_dashboard.webp)
 
 ---
 

@@ -1,4 +1,4 @@
-# 🕸️ WebAtlas: Interactive SEO Link Visualizer
+
 ![Last Commit](https://img.shields.io/github/last-commit/reory/web-atlas?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/web-atlas?cacheSeconds=60)
 ![License](https://img.shields.io/badge/License-MIT-green)

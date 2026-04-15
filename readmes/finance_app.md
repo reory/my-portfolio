@@ -26,16 +26,16 @@ The architecture is intentionally scalable, with a dedicated ingestion pipeline,
 <details>
   <summary>📸Screenshots</summary>
 
-![Analytical Dashboard](screenshots/2.png)
-![Main dashboard](screenshots/dashboard1.png)
-![main dashboard](screenshots/dashboard2.png)
-![main dashboard](screenshots/dashboard3.png)
-![Running balance dashboard](screenshots/dashboard4.png)
-![Main login dashboard](screenshots/login1.png)
-![User profile dashboard](screenshots/profile1.png)
-![CSV successfully cleaned dashboard](screenshots/testcsv1.png)
-![Upload CSV dashboard](screenshots/uploadcsv1.png)
-![Analytical Chart Dashboard](screenshots/chart1.png)
+![Analytical Dashboard](images/2.webp)
+![Main dashboard](images/dashboard1.webp)
+![main dashboard](images/dashboard2.webp)
+![main dashboard](images/dashboard3.webp)
+![Running balance dashboard](images/dashboard4.webp)
+![Main login dashboard](images/login1.webp)
+![User profile dashboard](images/profile1.webp)
+![CSV successfully cleaned dashboard](images/testcsv1.webp)
+![Upload CSV dashboard](images/uploadcsv1.webp)
+![Analytical Chart Dashboard](images/chart1.webp)
 
 </details>
 

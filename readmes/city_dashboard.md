@@ -22,8 +22,6 @@
 
 </p>
 
-# 🗺️ Interactive City Map + Population Dashboard
-
 - A fully interactive Dash application that visualises world cities with:
 - A dynamic Mapbox map
 - A responsive population bar chart
@@ -86,17 +84,17 @@ Click below to watch the 1 minute demo:
    <summary>📸Screenshots</summary>
 
 ### Dashboard (Light Mode)
-![Dashboard Light](screenshots/dashboard.png)
+![Dashboard Light](images/light_dashboard.webp)
 
 ### Dashboard (Dark Mode)
-![Dashboard Dark](screenshots/dashboard-darkmode.png)
+![Dashboard Dark](images/dashboard-darkmode.webp)
 
 ### City Views
-![City 1](screenshots/cities%201.png)
-![City 2](screenshots/cities%202.png)
-![City 3](screenshots/cities%203.png)
-![City 4](screenshots/cities%204.png)
-![City 5](screenshots/cities%205.png)
+![City 1](images/cities%201.webp)
+![City 2](images/cities%202.webp)
+![City 3](images/cities%203.webp)
+![City 4](images/cities%204.webp)
+![City 5](images/cities%205.webp)
 
 </details>
 

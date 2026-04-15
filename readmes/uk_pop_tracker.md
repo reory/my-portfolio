@@ -1,4 +1,3 @@
-# UK Population Tracker GB
 
 - An end-to-end data engineering and visualization platform that transforms raw UK     population data into actionable geographic insights.
 
@@ -36,22 +35,22 @@ Below are snapshots of the application in action, highlighting the Dark/Silver a
 
 ### 1. Main Dashboard
 *Overview of the Stat cards and latest population snapshots.*
-![Dashboard Screenshot](screenshots/7.png)
+![Dashboard Screenshot](images/7a.webp)
 
 ### 2. Population Trends
 *Interactive bar charts showing percentage change across the 12 UK regions.*
-![Bar Chart Graph Main Overview](screenshots/1.png)
-![Line Chart Overview](screenshots/8.png)
-![Region Overview](screenshots/1a.png)
+![Bar Chart Graph Main Overview](images/1a.webp)
+![Line Chart Overview](images/8a.webp)
+![Region Overview](images/1a.webp)
 
 
 ### 3. Geospatial Analytics
 *Interactive choropleth maps generated via Geopandas and Plotly.*
-![UK Population Tracker Maps](screenshots/4.png)
-![UK Population Tracker Maps](screenshots/5.png)
-![UK Population Tracker Maps](screenshots/6.png)
-![Interactve Map](screenshots/3.png)
-![Interactive Map](screenshots/2.png)
+![UK Population Tracker Maps](images/4a.webp)
+![UK Population Tracker Maps](images/5a.webp)
+![UK Population Tracker Maps](images/6a.webp)
+![Interactve Map](images/3a.webp)
+![Interactive Map](images/2c.webp)
 
 </details>
 

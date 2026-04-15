@@ -1,4 +1,4 @@
-# Bulk Image Resizer 🚀
+
 ![Last Commit](https://img.shields.io/github/last-commit/reory/bulk_image_resizer?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/bulk_image_resizer?cacheSeconds=60)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -45,7 +45,7 @@ python resizer.py
 # 🗺️ Future Roadmap Features
 - [ ] CLI Support: Use argparse to pass paths and dimensions via terminal.
 
-- [ ] Format Expansion: Add .webp and .png support with auto-conversion.
+- [ ] Format Expansion: Add .webp and .webp support with auto-conversion.
 
 - [ ] Efficiency Report: Calculate and log total "MB Saved" at session end.
 

@@ -1,6 +1,6 @@
-# 🐍 Pydescope: Python Project Dependency Visualiser
 
-![Pydescope Dependency Graph](images/pydescope.png)
+
+![Pydescope Dependency Graph](images/pydescope.webp)
 
 ![Last Commit](https://img.shields.io/github/last-commit/reory/Pydescope?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/Pydescope?cacheSeconds=60)
@@ -21,10 +21,10 @@ Pydescope is a static analysis tool designed to help developers visualize the in
 * **Edges** visualize the directed import relationships between them. 
 - The interface supports real-time filtering and neighborhood highlighting to help developers audit project coupling and structural integrity at a glance.
 
-![Pydescope module dependency map 1](screenshots/djangocsvcleaner.png)
-![Pydescope module dependency map 2](screenshots/internetradio.png)
-![Pydescope module dependency map 3](screenshots/invoicefrauddetector.png)
-![Pydescope module dependency map 4](screenshots/pydescope.png)
+![Pydescope module dependency map 1](images/djangocsvcleaner.webp)
+![Pydescope module dependency map 2](images/internetradio.webp)
+![Pydescope module dependency map 3](images/invoicefrauddetector.webp)
+![Pydescope module dependency map 4](images/pydescope.webp)
 
 ---
 

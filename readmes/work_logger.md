@@ -1,4 +1,3 @@
-# 📊 Work Logger: Excel-to-SQL Analytics Pipeline Project Overview
 
 ![Last Commit](https://img.shields.io/github/last-commit/reory/work-logger?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/work-logger?cacheSeconds=60)
@@ -18,8 +17,8 @@ information in a relational database (SQL) and generates visual performance repo
 ---
 
 # 📸 Screenshots
-![Excel Worksheet](screenshots/excel.png)
-![Data Visualisation](screenshots/work_report.png)
+![Excel Worksheet](images/excel.webp)
+![Data Visualisation](images/work_report.webp)
 
 ---
 <details>
@@ -44,7 +43,7 @@ information in a relational database (SQL) and generates visual performance repo
 - Action: Uses a SQL JOIN to combine employee names with their hours, then uses matplotlib to pivot the data.
 
 ## Output: 
-- Generates a stacked bar chart (work_report.png) showing total hours worked per person, segmented by date.
+- Generates a stacked bar chart (work_report.webp) showing total hours worked per person, segmented by date.
 
 ## Summary
 - models.py Main Architecture - The blueprint defining the SQL tables and data rules.
@@ -95,7 +94,7 @@ python check_db.py
 ```Bash
 python generate_report.py
 ```
-- This will pop up a window with your graph and save a file named work_report.png.
+- This will pop up a window with your graph and save a file named work_report.webp.
 
 <details>
   <summary>⚠️ Common Troubleshooting</summary>
@@ -136,7 +135,7 @@ data_analysis/
 
 # 🛣️ Roadmap Features
 - [ ] Automated Email Reports
-Integrate a Python mail library (like smtplib) to automatically email the work_report.png graph to a manager every Friday afternoon.
+Integrate a Python mail library (like smtplib) to automatically email the work_report.webp graph to a manager every Friday afternoon.
 
 - [ ] Interactive Web Dashboard
 Move the project from static Matplotlib images to an interactive web app using Streamlit, allowing users to filter by employee or date range in a browser.

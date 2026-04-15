@@ -1,4 +1,3 @@
-# 🏠 UK Real Estate Scraper (Technical Challenge)
 
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/UK-Real-Estate-Scraper?cacheSeconds=60)
