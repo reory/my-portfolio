@@ -1,16 +1,31 @@
 [
-    {
-        "project": "UK Real Estate Scraper",
-        "challenge": "Bot Detection",
-        "description": "The site kept blocking my Selenium requests after only 5-10 pages of data.",
-        "solution": "Implemented custom User-Agent rotation and added random 'human' delays between clicks.",
-        "status": "Documented"
-    },
-    {
+    {   
         "project": "Bulk Image Resizer",
         "challenge": "Memory Management",
         "description": "Processing massive folders caused Python to crash due to RAM exhaustion.",
         "solution": "Switched to lazy-loading images and clear-memory garbage collection after each save.",
-        "status": "In Progress"
-    }
+        "status": "Resolved"
+    },
+    {   
+        "project": "Health Tracker App",
+        "challenge": "Library Compatibility",
+        "description": "The latest Flet version had breaking changes and installation conflicts with the Python runtime.",
+        "solution": "Performed a version rollback to an earlier, stable Flet release to restore UI rendering and functionality.",
+        "status": "Resolved" 
+    },  
+    {
+        "project": "Patch Gap Auditor",
+        "challenge": "API Performance",
+        "description": "Sequential vulnerability lookups for each package created significant network latency.",
+        "solution": "Implemented the OSV querybatch endpoint to audit the entire environment in a single request.",
+        "status": "Resolved"
+    },
+    {   
+        "project": "UK Real Estate Scraper",
+        "challenge": "Bot Detection",
+        "description": "The site kept blocking my Selenium requests after only 5-10 pages of data.",
+        "solution": "Implemented custom User-Agent rotation and added random 'human' delays between clicks.",
+        "status": "Resolved" 
+    } 
 ]
+    
