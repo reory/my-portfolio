@@ -172,9 +172,21 @@ def generate_home_page(projects, custom_css, skills):
     except Exception as e:
         logger.error(f"Failed to generate home page: {e}")
 
+def clean_docs():
+    """Removes all generated HTML files to ensure a fresh build"""
+    if not os.path.exists("docs"):
+        os.makedirs("docs")
+        return
+
+    for f in os.listdir("docs"):
+        if f.endswith(".html"):
+            os.remove(os.path.join("docs", f))
+    logger.info("🧹 Successfully cleaned old HTML files from/docs")
+
 if __name__ == "__main__":
-    sync_images()      # 1. Move them to docs/images first
-    optimise_images()  # 2. Turn them into webp
+    clean_docs()       # Wipe the slate clean
+    sync_images()      # Get the images ready
+    optimise_images()  # Turn them into webp
     css = load_theme_css(THEME_NAME)
     build_portfolio()  # 3. Generate HTML with webp links
     build_challenges_page(css)
