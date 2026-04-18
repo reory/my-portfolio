@@ -1,0 +1,9 @@
+{
+    "project": "ReliefScope",
+    "challenge": "Main Thread Blocking",
+    "description": "The UI would freeze and become unresponsive whenever the application processed large data sets or map updates.",
+    "solution": "Refactored the logic to use asynchronous tasks, allowing heavy computations to run in the background without locking the interface.",
+    "status": "Resolved"
+}
+
+add this to the portflio when you upload ReliefScope
