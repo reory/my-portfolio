@@ -13,7 +13,7 @@ A lightweight, cross-platform (Windows-focused) network auditing tool built with
 ---
 
 # 📸 Screenshot
-![UI of the Network scanner User Interface](docs/images/scanner.webp)
+![UI of the Network scanner User Interface](images/scanner.webp)
 
 ---
 
