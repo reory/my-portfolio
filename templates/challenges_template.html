@@ -8,14 +8,14 @@
     <nav><a href="index.html">← Back to Projects</a></nav>
     
     <h1>🛠️ Engineering Challenges</h1>
-    <p><em>Note: This page is currently <strong>Under Construction</strong> as I document the 'behind-the-scenes' of my projects.</em></p>
+    <p>A deep dive into the technical hurdles and solutions encountered during development.</p>
 
     <div class="challenges-list" style="margin-top: 40px;">
         {% for c in challenges %}
         <div class="card" style="margin-bottom: 20px;">
             <div style="display: flex; justify-content: space-between;">
                 <span class="tag">{{ c.project }}</span>
-                <span class="skill-pill" style="font-size: 0.7em;">{{ c.status }}</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">{{ c.status }}</span>
             </div>
             <h3 style="color: #38bdf8;">The Challenge: {{ c.challenge }}</h3>
             <p><strong>The Problem:</strong> {{ c.description }}</p>

@@ -81,31 +81,55 @@ a {
     <nav><a href="index.html">← Back to Projects</a></nav>
     
     <h1>🛠️ Engineering Challenges</h1>
-    <p><em>Note: This page is currently <strong>Under Construction</strong> as I document the 'behind-the-scenes' of my projects.</em></p>
+    <p>A deep dive into the technical hurdles and solutions encountered during development.</p>
 
     <div class="challenges-list" style="margin-top: 40px;">
         
         <div class="card" style="margin-bottom: 20px;">
             <div style="display: flex; justify-content: space-between;">
-                <span class="tag">UK Real Estate Scraper</span>
-                <span class="skill-pill" style="font-size: 0.7em;">Documented</span>
-            </div>
-            <h3 style="color: #38bdf8;">The Challenge: Bot Detection</h3>
-            <p><strong>The Problem:</strong> The site kept blocking my Selenium requests after only 5-10 pages of data.</p>
-            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
-                <strong>The Solution:</strong> Implemented custom User-Agent rotation and added random 'human' delays between clicks.
-            </p>
-        </div>
-        
-        <div class="card" style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between;">
                 <span class="tag">Bulk Image Resizer</span>
-                <span class="skill-pill" style="font-size: 0.7em;">In Progress</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
             </div>
             <h3 style="color: #38bdf8;">The Challenge: Memory Management</h3>
             <p><strong>The Problem:</strong> Processing massive folders caused Python to crash due to RAM exhaustion.</p>
             <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
                 <strong>The Solution:</strong> Switched to lazy-loading images and clear-memory garbage collection after each save.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Health Tracker App</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Library Compatibility</h3>
+            <p><strong>The Problem:</strong> The latest Flet version had breaking changes and installation conflicts with the Python runtime.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Performed a version rollback to an earlier, stable Flet release to restore UI rendering and functionality.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Patch Gap Auditor</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: API Performance</h3>
+            <p><strong>The Problem:</strong> Sequential vulnerability lookups for each package created significant network latency.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Implemented the OSV querybatch endpoint to audit the entire environment in a single request.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">UK Real Estate Scraper</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Bot Detection</h3>
+            <p><strong>The Problem:</strong> The site kept blocking my Selenium requests after only 5-10 pages of data.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Implemented custom User-Agent rotation and added random 'human' delays between clicks.
             </p>
         </div>
         
