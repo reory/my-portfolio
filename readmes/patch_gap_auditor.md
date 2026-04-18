@@ -1,4 +1,4 @@
-# 🛡️ Patch Gap Auditor
+
 ![Last Commit](https://img.shields.io/github/last-commit/reory/patch_gap_auditor?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/patch_gap_auditor?cacheSeconds=60)
 ![License](https://img.shields.io/badge/License-MIT-green)

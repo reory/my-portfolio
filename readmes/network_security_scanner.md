@@ -1,4 +1,4 @@
-# Network Security Scanner 🛡️
+
 
 ![Last Commit](https://img.shields.io/github/last-commit/reory/network_security_scanner?cacheSeconds=60)
 ![Repo Size](https://img.shields.io/github/repo-size/reory/network_security_scanner?cacheSeconds=60)
