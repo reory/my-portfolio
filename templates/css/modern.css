@@ -1,0 +1,32 @@
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    background-color: #f8fafc; 
+    color: #1e293b; 
+    max-width: 1000px; 
+}
+.card { 
+    background: #ffffff; 
+    border: none; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+    border-radius: 16px; 
+}
+.card:hover { 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); 
+}
+.filter-nav { 
+    background: #ffffff; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+}
+h1 { color: #0f172a; letter-spacing: -1px; }
+.grid { 
+    display: grid; 
+    /* This forces exactly 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Osint Dashboard | Portfolio</title>
+    <style>
+        body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1e293b; color: #f1f5f9; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+/* Skill Pills Section */
+.skills-container { 
+    margin: 20px 0 30px 0; 
+}
+.skills-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+}
+.skill-pill {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+.skill-count {
+    color: #38bdf8; /* Bright blue accent */
+    background: #1e293b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+.card { 
+    background: #334155; 
+    border: 1px solid #475569; 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.2s; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: #94a3b8; 
+}
+.tag { 
+    color: #cbd5e1; 
+    font-weight: bold; 
+}
+a { 
+    color: #f1f5f9; 
+}
+.filter-nav { 
+    background: #334155; 
+    border: 1px solid #475569; 
+}
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+/* 🖼️ PROJECT IMAGE STYLING (The New Fix) */
+.project-card img {
+    max-width: 100%;    /* Ensures images never overflow the 900px body */
+    height: auto;       /* Maintains aspect ratio */
+    display: block;     
+    margin: 30px auto;  
+    border-radius: 10px; 
+    border: 1px solid #475569; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } } 
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Osint Dashboard</h1>
+        <p><img src="https://img.shields.io/github/last-commit/reory/osint_dashboard?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/osint_dashboard?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/Powered_By-Maigret-1e40af?style=plastic&logo=terminal&logoColor=white" alt="Maigret Engine" />
+<img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+<img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+<img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic" />
+<img src="https://img.shields.io/badge/uvicorn-2094f3?style=for-the-badge&logo=uvicorn&logoColor=white" alt="Uvicorn" />
+<img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" /></p>
+
+<p>A powerful, full-stack Open Source Intelligence (OSINT) workstation that automates username footprinting across the web. The platform utilizes an asynchronous decoupled architecture to execute background investigations, stream network telemetry, and compile raw data into a clean, human-readable visual intelligence dossier.</p>
+
+<hr />
+
+<p><details>
+  <summary>📸 Screenshots</summary></p>
+
+<p><img src="images/osint_1.webp" alt="main dashboard1" />
+<img src="images/osint_2.webp" alt="view discovered profiles1" />
+<img src="images/osint_3.webp" alt="main dashboard2" />
+<img src="images/osint_4.webp" alt="view discovered profiles2" /></p>
+
+<p></details></p>
+
+<hr />
+
+<h2>🚀 Key Features</h2>
+
+<ul>
+<li><strong>Decoupled Architecture:</strong> Utilizes a Django web user interface backed by a high-performance, asynchronous FastAPI scanning engine.</li>
+<li><strong>Automated Target Scouting:</strong> Leverages <code>Maigret</code> via robust CLI execution pipelines to scan across 100+ top platforms simultaneously.</li>
+<li><strong>Windows-Hardened Pipelines:</strong> Built-in environment encoding overrides to completely prevent terminal-pipe string glitches (<code>UnicodeDecodeError</code>).</li>
+<li><strong>Disk-Reader File Syncing:</strong> Bypasses buggy network webhooks on local machines by dynamically mapping and analyzing raw JSON report footprints right off the disk.</li>
+<li><strong>Beautiful Intelligence Dossiers:</strong> Automatically extracts profile imagery, user bios, tags, location vectors, and platform metrics from raw nested data streams.</li>
+</ul>
+
+<hr />
+
+<h2>📂 Project Structure</h2>
+
+<div class="codehilite">
+<pre><span></span><code><span class="n">osint_dashboard</span><span class="o">/</span>
+<span class="err">│</span>
+<span class="err">├──</span> <span class="n">api</span><span class="o">/</span>                       <span class="c1"># FASTAPI ASYNC SCANNING ENGINE</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>                <span class="c1"># Core background worker &amp; Pydantic request models</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>       <span class="c1"># Engine specific dependencies (fastapi, pydantic, uvicorn)</span>
+<span class="err">│</span>
+<span class="err">├──</span> <span class="n">core</span><span class="o">/</span>                      <span class="c1"># DJANGO WEB APPLICATION ROOT</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span>              <span class="c1"># Django management CLI wrapper</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">core</span><span class="o">/</span>                  <span class="c1"># Main settings and project routing configuration</span>
+<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="n">settings</span><span class="o">.</span><span class="n">py</span>
+<span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+<span class="err">│</span>   <span class="err">│</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="n">scanner</span><span class="o">/</span>               <span class="c1"># WEB DASHBOARD APPLICATION INTERFACE</span>
+<span class="err">│</span>       <span class="err">├──</span> <span class="n">models</span><span class="o">.</span><span class="n">py</span>          <span class="c1"># Database schema (TargetSearch tracking, DiscoveredProfile)</span>
+<span class="err">│</span>       <span class="err">├──</span> <span class="n">views</span><span class="o">.</span><span class="n">py</span>           <span class="c1"># Human-readable JSON engine logic &amp; web handlers</span>
+<span class="err">│</span>       <span class="err">├──</span> <span class="n">urls</span><span class="o">.</span><span class="n">py</span>            <span class="c1"># App routing paths</span>
+<span class="err">│</span>       <span class="err">└──</span> <span class="n">templates</span><span class="o">/</span>
+<span class="err">│</span>           <span class="err">└──</span> <span class="n">scanner</span><span class="o">/</span>
+<span class="err">│</span>               <span class="err">├──</span> <span class="n">dashboard</span><span class="o">.</span><span class="n">html</span> <span class="c1"># Search entry center &amp; historic hunt listing</span>
+<span class="err">│</span>               <span class="err">└──</span> <span class="n">results</span><span class="o">.</span><span class="n">html</span>   <span class="c1"># Modern cleaned OSINT visual dossier</span>
+<span class="err">│</span>
+<span class="err">└──</span> <span class="n">reports</span><span class="o">/</span>                   <span class="c1"># Disk storage directory for raw Maigret output</span>
+<span class="err">└──</span> <span class="n">screenshots</span>                <span class="c1"># Images of the dashboard</span>
+<span class="err">└──</span> <span class="n">tests</span><span class="o">/</span>                     <span class="c1"># Pytest/Hypothesis suite</span>
+<span class="o">|</span>   <span class="err">├──</span> <span class="n">test_api_worker</span><span class="o">.</span><span class="n">py</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">test_models</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|</span>   <span class="err">├──</span> <span class="n">test_views_logic</span><span class="o">.</span><span class="n">py</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h1>🛠️ Installation &amp; Setup</h1>
+
+<p>Prerequisites
+Python 3.11+ installed (Verified stable on Python 3.13)</p>
+
+<p>Windows OS (PowerShell / Command Prompt access)</p>
+
+<h3>Global Tools Installation</h3>
+
+<p>Ensure maigret is installed and registered globally on your computer terminal:</p>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>maigret
+</code></pre>
+</div>
+
+<h3>Configure the FastAPI Async Worker</h3>
+
+<p>Open a fresh terminal window, navigate to your API folder, and spin up the engine:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dmin<span class="se">\D</span>esktop<span class="se">\c</span>ode<span class="se">\o</span>sint_dashboard<span class="se">\a</span>pi
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+uvicorn<span class="w"> </span>api.main:app<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span><span class="w"> </span>--reload
+</code></pre>
+</div>
+
+<ul>
+<li>The background scanner is now operational on port 8001.</li>
+</ul>
+
+<h3>Configure the Django Web UI Front-End</h3>
+
+<p>Open a second terminal window, navigate to your core project directory, prepare your database migrations, and activate the server:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dmin<span class="se">\D</span>esktop<span class="se">\c</span>ode<span class="se">\o</span>sint_dashboard<span class="se">\c</span>ore
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">127</span>.0.0.1:8000
+</code></pre>
+</div>
+
+<ul>
+<li>The web front-end interface is now operational on port 8000.</li>
+</ul>
+
+<hr />
+
+<h2>🎯 How To Run An Investigation</h2>
+
+<ul>
+<li><p>Fire up your web browser and open http://127.0.0.1:8000/.</p></li>
+<li><p>Input a target username (e.g., reory35) into the dashboard form search bar and click Initiate Scout Search.</p></li>
+<li><p>The dashboard UI logs the status as pending and immediately pushes the workload to the FastAPI worker via a background thread.</p></li>
+<li><p>Once the scan is marked complete, click View Intelligence Feeds to pull the disk-parsed visual dossier straight into view.</p></li>
+</ul>
+
+<hr />
+
+<p><details>
+  <summary>🛣️ Future Roadmap</summary></p>
+
+<ul>
+<li><p>[ ] Email &amp; Domain OSINT: Integrate tools like theHarvester or holehe directly into the worker subprocess arrays.</p></li>
+<li><p>[ ] Biometric Pfp Matching: Add automated image similarity scanning across confirmed profile avatar images using Pillow and DeepFace.</p></li>
+<li><p>[ ] Interactive Graphs: Implement interactive relationship network webs using vis.js or cytoscape.js.</p></li>
+<li><p>[ ] Dossier Exports: One-click automated PDF intelligence report generation using WeasyPrint.
+</details></p></li>
+</ul>
+
+<hr />
+
+<ul>
+<li><strong>Built by Roy Peters</strong> 😁
+<a href="https://www.linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-Roy%20Peters-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+body { font-family: 'Inter', sans-serif; background-color: #002b36; color: #839496; max-width: 900px; margin: 40px auto; padding: 20px; }
+.card { background: #073642; border: 1px solid #586e75; padding: 20px; border-radius: 12px; transition: transform 0.2s; }
+.card:hover { transform: translateY(-5px); border-color: #268bd2; }
+.tag { color: #2aa198; font-weight: bold; }
+a { color: #268bd2; }
+.filter-nav { background: #073642; border: 1px solid #586e75; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 20px; }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }

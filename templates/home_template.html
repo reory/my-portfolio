@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My Portfolio</title>
+        <style>
+            {{ custom_css }}
+        </style>
+    </head>
+    <body>
+        <h1>Roy Peters | Project Portfolio</h1>
+        <p>A collection of my work in Python, Data Visualisation, Data Engineering, and AI.</p>
+        
+        <p style="margin-top: -10px; margin-bottom: 25px;">
+            <a href="challenges.html" style="color: #38bdf8; text-decoration: none; font-weight: 600;">
+            🛠️ View the Engineering Project Challenges and Fixes →
+            </a>
+        </p>
+        
+        <div class="skills-container">
+            <div class="skills-list">
+                {% for skill, count in skills %}
+                    <span class="skill-pill">
+                        {{ skill }} <span class="skill-count">{{ count }}</span>
+                    </span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="filter-nav">
+            <label for="catSelect"><strong>Filter by Category:</strong> </label>
+            <select id="catSelect" onchange="filterSelection()">
+                <option value="all">All Projects</option>
+                {% for cat in categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select> 
+        </div>     
+        
+        <div class="grid" id="projectGrid">
+            {% for p in projects %}
+            <div class="card" data-category="{{ p.category }}">
+                {% if p.thumbnail %}
+                <img src="{{ p.thumbnail }}" style="width:100%; height:150px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
+                {% endif %}
+                
+                <span class="tag">{{ p.category }}</span>
+                <h3>{{ p.title }}</h3>
+                <p>{{ p.desc }}</p>
+                <a href="{{ p.out }}">View Project →</a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <script>
+        function filterSelection() {
+            var input = document.getElementById("catSelect");
+            var filter = input.value;
+            var cards = document.getElementsByClassName("card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var category = cards[i].getAttribute("data-category");
+                if (filter === "all" || category === filter) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+
+        <footer>
+            <p style="margin-bottom: 10px;">
+                <a href="challenges.html" style="opacity: 0.8; text-decoration: none; font-size: 0.9em;">
+                Behind the Scenes: Project Challenges (headaches) & Fixes
+                </a>
+            </p>
+            <p>© 2026 | Last Updated: {{ current_date }}</p>
+        </footer>
+    </body>
+    </html>

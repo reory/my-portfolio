@@ -1,0 +1,242 @@
+[
+    {
+        "title": "Pydescope",
+        "md": "readmes/pydescope.md",
+        "out": "pydescope.html",
+        "category": "Developer Tools",
+        "desc": "Static analysis tool for Python dependency mapping.",
+        "thumbnail": "images/pydescope.webp"
+    },
+    {
+        "title": "Smart File Agent",
+        "md": "readmes/smart_file_agent.md",
+        "out": "smart_file_agent.html",
+        "category": "AI & Agents",
+        "desc": "Agentic AI pipeline demonstration in pure Python.",
+        "thumbnail": "images/agentic_system.webp"
+    },
+    {
+        "title": "Web Atlas",
+        "md": "readmes/web_atlas.md",
+        "out": "web_atlas.html",
+        "category": "SEO & Network Analysis",
+        "desc": "Transforming Screaming Frog exports into interactive graphs.",
+        "thumbnail": "images/web_atlas.webp"
+    },  
+    {
+        "title": "Bus App",
+        "md": "readmes/bus_app.md",
+        "out": "bus_app.html",
+        "category": "Mobile & Web",
+        "desc": "Transit application using Django and Kivy.",
+        "thumbnail": "images/busapp_login.webp"
+    },
+    {
+        "title": "Geo Loan UK Predictor",
+        "md": "readmes/geo_loan.md",
+        "out": "geo_loan.html",
+        "category": "Data Science",
+        "desc": "Financial analytics dashboard for UK loan risk.",
+        "thumbnail": "images/geoloan_dashboard.webp"
+    },
+    {
+        "title": "Health Tracker App",
+        "md": "readmes/health_tracker.md",
+        "out": "health_tracker.html",
+        "category": "Desktop Apps",
+        "desc": "Flet-based health tracking with SQLite storage.",
+        "thumbnail": "images/healthtracker_dashboard.webp"
+    },
+    {
+        "title": "Interactive City Dashboard",
+        "md": "readmes/city_dashboard.md",
+        "out": "city_dashboard.html",
+        "category": "Data Science",
+        "desc": "Geospatial Dash app with Wikipedia integration.",
+        "thumbnail": "images/city_dashboard.webp"
+    },
+    {
+        "title": "Internet Radio Python",
+        "md": "readmes/internet_radio.md",
+        "out": "internet_radio.html",
+        "category": "Multimedia",
+        "desc": "CustomTkinter radio app powered by VLC.",
+        "thumbnail": "images/internet_radio.webp"
+    },
+    {
+        "title": "Invoice Fraud Detector",
+        "md": "readmes/fraud_detector.md",
+        "out": "fraud_detector.html",
+        "category": "Machine Learning",
+        "desc": "End-to-end ML microservice using XGBoost.",
+        "thumbnail": "images/fraud_dashboard.webp"
+    },
+    {
+        "title": "NHS Performance Dashboard",
+        "md": "readmes/nhs_dashboard.md",
+        "out": "nhs_dashboard.html",
+        "category": "Data Science",
+        "desc": "Clinical Intelligence suite using DuckDB.",
+        "thumbnail": "images/nhs_dashboard.webp"
+    },
+    {
+        "title": "Password Strength Sim",
+        "md": "readmes/password_sim.md",
+        "out": "password_sim.html",
+        "category": "Security",
+        "desc": "Password analysis tool with NumPy and CustomTkinter.",
+        "thumbnail": "images/password_sim.webp"
+    },
+    {
+        "title": "West Yorkshire Traffic Analysis",
+        "md": "readmes/traffic_analysis.md",
+        "out": "traffic_analysis.html",
+        "category": "Data Engineering",
+        "desc": "Traffic incident hotspot pipeline and Data Visual tool.",
+        "thumbnail": "images/west_yorkshire.webp"
+    },
+    {
+        "title": "Finance App",
+        "md": "readmes/finance_app.md",
+        "out": "finance_app.html",
+        "category": "Full Stack",
+        "desc": "Personal finance analytics with PostgreSQL and Django.",
+        "thumbnail": "images/welcome_dashboard.webp"
+    },
+    {
+        "title": "Bulk Image Resizer",
+        "md": "readmes/image_resizer.md",
+        "out": "image_resizer.html",
+        "category": "Automation",
+        "desc": "High-performance multithreaded image optimization.",
+        "thumbnail": "images/bulkimage_resizer.webp"
+    },
+    {
+        "title": "Word Counter Vault",
+        "md": "readmes/word_vault.md",
+        "out": "word_vault.html",
+        "category": "Forensics",
+        "desc": "Linguistic intelligence suite using Django and DuckDB.",
+        "thumbnail": "images/word_counter.webp"
+    },
+    {
+        "title": "UK Population Tracker",
+        "md": "readmes/uk_pop_tracker.md",
+        "out": "pop_tracker.html",
+        "category": "Data Engineering",
+        "desc": "Full-stack platform with Polars and MongoDB.",
+        "thumbnail": "images/pop_tracker.webp"
+    },
+    {
+        "title": "Work Logger",
+        "md": "readmes/work_logger.md",
+        "out": "work_logger.html",
+        "category": "Automation",
+        "desc": "Excel-to-SQL ETL pipeline with SQLAlchemy.",
+        "thumbnail": "images/work_logger.webp"
+    },
+    {
+        "title": "RepoSync",
+        "md": "readmes/reposync.md",
+        "out": "reposync.html",
+        "category": "Web Apps",
+        "desc": "Portfolio builder using Reflex and Python 3.13.",
+        "thumbnail": "images/reposync.webp"
+    },
+    {
+        "title": "Text2Flow",
+        "md": "readmes/text2flow.md",
+        "out": "text2flow.html",
+        "category": "Visualisation",
+        "desc": "FastAPI tool for Graphviz flowcharts.",
+        "thumbnail": "images/text2flow.webp"
+    },
+    {
+        "title": "Site Uptime Pinger",
+        "md": "readmes/uptime_pinger.md",
+        "out": "uptime_pinger.html",
+        "category": "SRE & DevOps",
+        "desc": "Production-ready website monitoring tool.",
+        "thumbnail": "images/uptime_pinger.webp"
+    },
+    {
+        "title": "UK Real Estate Scraper",
+        "md": "readmes/uk_real_estate_scraper.md",
+        "out": "real_estate_scraper.html",
+        "category": "Automation",
+        "desc": "Selenium-based scraper for secured platforms.",
+        "thumbnail": "images/web_scraper.webp"
+    },
+    {
+        "title": "Markdown Auditor",
+        "md": "readmes/markdown_auditor.md",
+        "out": "markdown_auditor.html",
+        "category": "Automation",
+        "desc": "Python utility designed to scan projects for errors in Markdown",
+        "thumbnail": "images/auditor.webp"
+    },
+    {
+        "title": "Network Security Scanner",
+        "md": "readmes/network_security_scanner.md",
+        "out": "network_scanner.html",
+        "category": "Security",
+        "desc": "Python utility designed to scan active devices and identify vulnerabilities on a local network",
+        "thumbnail": "images/scanner.webp"
+    },
+    {
+        "title": "Patch Gap Auditor",
+        "md": "readmes/patch_gap_auditor.md",
+        "out": "patch_gap_auditor.html",
+        "category": "Automation",
+        "desc": "Python utility designed to identify vulnerabilities in a projects dependency tree",
+        "thumbnail": "images/gap.webp"
+    },
+    {
+        "title": "MCP Server",
+        "md": "readmes/mcp_server.md",
+        "out": "mcp_server.html",
+        "category": "AI & Agents",
+        "desc": "A lightweight Model Context Protocol (MCP) server that provides a bridge between Claude AI and your a Python environment.",
+        "thumbnail": "images/mcp_server.webp"
+    },
+    {
+        "title": "Rag Library AI",
+        "md": "readmes/rag_library_ai.md",
+        "out": "rag_library_ai.html",
+        "category": "AI & Agents",
+        "desc": "This project is a Retrieval-Augmented Generation (RAG) application designed to act as an intelligent librarian.",
+        "thumbnail": "images/chat_interface.webp"
+    },  
+    {
+        "title": "Billing Engine",
+        "md": "readmes/billing_engine.md",
+        "out": "billing_engine.html",
+        "category": "Data Engineering",
+        "desc": "It ingests usage events, aggregates them, prices them, and generates invoices — all without any frontend or dashboard.",
+        "thumbnail": "images/billing_engine.webp"
+    },
+        {
+        "title": "Mini Embedding Explorer",
+        "md": "readmes/mini_embedding_explorer.md",
+        "out": "mini_embedding_explorer.html",
+        "category": "Visualisation",
+        "desc": "A lightweight, business-ready analytics tool that transforms raw text into visual insights.",
+        "thumbnail": "images/mini_embedding_explorer_dashboard.webp"
+    },
+    {
+        "title": "Py Leeds Poster",
+        "md": "readmes/py_leeds_poster.md",
+        "out": "py_leeds_poster.html",
+        "category": "Visualisation",
+        "desc": "An automated Python pipeline that extracts live geographic vector nodes from the OpenStreetMap API and compiles a complete, print-ready art gallery of Leeds, England",
+        "thumbnail": "images/leeds_autumn.webp"
+    },
+    {
+        "title": "Osint Dashboard",
+        "md": "readmes/osint_dashboard.md",
+        "out": "osint_dashboard.html",
+        "category": "Forensics",
+        "desc": "The platform utilizes an asynchronous decoupled architecture to execute background investigations, stream network telemetry, and compile raw data into a clean, human-readable visual intelligence dossier.",
+        "thumbnail": "images/osint_dashboard.webp"
+    }
+]

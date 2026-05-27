@@ -1,0 +1,5 @@
+# Language Detection overrides
+docs/** linguist-vendored
+templates/** linguist-vendored
+*.css linguist-detectable=false
+*.html linguist-detectable=false

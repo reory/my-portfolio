@@ -1,0 +1,8 @@
+body { font-family: 'Georgia', serif; background-color: #fdf6e3; color: #586e75; max-width: 900px; margin: 40px auto; padding: 20px; }
+.card { background: #eee8d5; border: 1px solid #93a1a1; padding: 20px; border-radius: 0; transition: transform 0.2s; border-bottom: 4px solid #93a1a1; }
+.card:hover { transform: translateY(-5px); border-color: #268bd2; }
+.tag { color: #b58900; font-weight: bold; text-transform: uppercase; }
+a { color: #268bd2; font-weight: bold; }
+.filter-nav { background: #eee8d5; border: 1px solid #93a1a1; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 20px; }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }

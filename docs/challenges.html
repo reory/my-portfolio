@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engineering Challenges | Portfolio</title>
+    <style>body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1e293b; color: #f1f5f9; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+/* Skill Pills Section */
+.skills-container { 
+    margin: 20px 0 30px 0; 
+}
+.skills-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+}
+.skill-pill {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+.skill-count {
+    color: #38bdf8; /* Bright blue accent */
+    background: #1e293b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+.card { 
+    background: #334155; 
+    border: 1px solid #475569; 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.2s; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: #94a3b8; 
+}
+.tag { 
+    color: #cbd5e1; 
+    font-weight: bold; 
+}
+a { 
+    color: #f1f5f9; 
+}
+.filter-nav { 
+    background: #334155; 
+    border: 1px solid #475569; 
+}
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+/* 🖼️ PROJECT IMAGE STYLING (The New Fix) */
+.project-card img {
+    max-width: 100%;    /* Ensures images never overflow the 900px body */
+    height: auto;       /* Maintains aspect ratio */
+    display: block;     
+    margin: 30px auto;  
+    border-radius: 10px; 
+    border: 1px solid #475569; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }</style>
+</head>
+<body>
+    <nav><a href="index.html">← Back to Projects</a></nav>
+    
+    <h1>🛠️ Engineering Challenges</h1>
+    <p>A deep dive into the technical hurdles and solutions encountered during development.</p>
+
+    <div class="challenges-list" style="margin-top: 40px;">
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Bulk Image Resizer</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Memory Management</h3>
+            <p><strong>The Problem:</strong> Processing massive folders caused Python to crash due to RAM exhaustion.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Switched to lazy-loading images and clear-memory garbage collection after each save.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Health Tracker App</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Library Compatibility</h3>
+            <p><strong>The Problem:</strong> The latest Flet version had breaking changes and installation conflicts with the Python runtime.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Performed a version rollback to an earlier, stable Flet release to restore UI rendering and functionality.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Patch Gap Auditor</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: API Performance</h3>
+            <p><strong>The Problem:</strong> Sequential vulnerability lookups for each package created significant network latency.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Implemented the OSV querybatch endpoint to audit the entire environment in a single request.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">UK Real Estate Scraper</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Bot Detection</h3>
+            <p><strong>The Problem:</strong> The site kept blocking my Selenium requests after only 5-10 pages of data.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Implemented custom User-Agent rotation and added random 'human' delays between clicks.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">NHS Performance Dashboard</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Data Cleaning & Standardization</h3>
+            <p><strong>The Problem:</strong> Inconsistent date formats and missing values in the raw healthcare datasets caused plotting errors in the dashboard.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Built a preprocessing pipeline using Pandas to normalize datetime objects and apply forward-fill logic for missing metrics.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Geo-Loan UK Predictor</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: State Synchronization (Folium/JS)</h3>
+            <p><strong>The Problem:</strong> Python variables wouldn't update based on Leaflet.js map clicks, creating a disconnect between the UI and the backend.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Injected custom JavaScript into the Folium header to bridge the gap via a Python-Flask endpoint for real-time state updates.
+            </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="tag">Bus App</span>
+                <span class="skill-pill" style="font-size: 0.7em; background: #064e3b; color: #34d399; padding: 2px 8px; border-radius: 12px;">Resolved</span>
+            </div>
+            <h3 style="color: #38bdf8;">The Challenge: Silent Failures (Kivy)</h3>
+            <p><strong>The Problem:</strong> Application would crash on launch with zero traceback or logs, specifically during the KV language parsing phase.</p>
+            <p style="border-left: 3px solid #38bdf8; padding-left: 15px; background: #1e293b; padding: 10px;">
+                <strong>The Solution:</strong> Implemented a modular 'Build-and-Test' approach, isolating UI elements into separate files to identify the specific layout syntax causing the silent crash.
+            </p>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>© 2026 | Coding Challenges </p>
+    </footer>
+</body>
+</html>

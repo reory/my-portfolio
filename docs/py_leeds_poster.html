@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Py Leeds Poster | Portfolio</title>
+    <style>
+        body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1e293b; color: #f1f5f9; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+/* Skill Pills Section */
+.skills-container { 
+    margin: 20px 0 30px 0; 
+}
+.skills-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+}
+.skill-pill {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+.skill-count {
+    color: #38bdf8; /* Bright blue accent */
+    background: #1e293b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+.card { 
+    background: #334155; 
+    border: 1px solid #475569; 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.2s; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: #94a3b8; 
+}
+.tag { 
+    color: #cbd5e1; 
+    font-weight: bold; 
+}
+a { 
+    color: #f1f5f9; 
+}
+.filter-nav { 
+    background: #334155; 
+    border: 1px solid #475569; 
+}
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+/* 🖼️ PROJECT IMAGE STYLING (The New Fix) */
+.project-card img {
+    max-width: 100%;    /* Ensures images never overflow the 900px body */
+    height: auto;       /* Maintains aspect ratio */
+    display: block;     
+    margin: 30px auto;  
+    border-radius: 10px; 
+    border: 1px solid #475569; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } } 
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Py Leeds Poster</h1>
+        <p><img src="https://img.shields.io/github/last-commit/reory/py_leeds_poster?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/py_leeds_poster?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><a href="https://www.python.org"><img src="https://img.shields.io/badge/python-3.12+-blue.svg" alt="Python Version" /></a>
+<a href="https://github.com/originalankur/maptoposter"><img src="https://img.shields.io/badge/engine-maptoposter-red.svg" alt="Library" /></a>
+<a href=""><img src="https://img.shields.io/badge/styling-maptoart-lightgrey.svg" alt="Styling" /></a>
+<a href="https://github.com/astral-sh/uv"><img src="https://img.shields.io/badge/managed%20by-uv-purple.svg" alt="Environment Manager" /></a>
+<a href="https://www.openstreetmap.org"><img src="https://img.shields.io/badge/data-OpenStreetMap-green.svg" alt="Data Source" /></a>
+<a href=""><img src="https://img.shields.io/badge/output-300_DPI_PNG-orange.svg" alt="Output Format" /></a></p>
+
+<p>An automated Python pipeline that extracts live geographic vector nodes from the OpenStreetMap API and compiles a complete, print-ready art gallery of Leeds, England. </p>
+
+<p>By mapping the city's complex highway rings, pedestrian grids, and the River Aire across a massive 10,000-meter radius, this project batch-renders <strong>17 distinct, high-resolution aesthetic map designs</strong> completely automated via a single script loop.</p>
+
+<hr />
+
+<p><details>
+  <summary>📸Screenshots</summary></p>
+
+<ul>
+<li>Example of some designs</li>
+<li>Neon Cyberpunk theme
+<img src="images/leeds_neon_cyberpunk.webp" alt="" /></li>
+<li>Sunset theme
+<img src="images/leeds_sunset.webp" alt="" /></li>
+<li>Terracotta theme
+<img src="images/leeds_terracotta.webp" alt="" /></li>
+<li>Warm Beige theme
+<img src="images/leeds_warm_beige.webp" alt="" /></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<h3>✨ Features</h3>
+
+<ul>
+<li><strong>Explicit Path Routing:</strong> Hardcoded internal virtual environment targeting ensures seamless execution on Windows systems without path distortions.</li>
+<li><strong>Sequential Queue Buffer:</strong> Includes an internal 2-second cooldown delay between render iterations to prevent system RAM locks and safely manage file streams.</li>
+<li><strong>Geospatial Caching:</strong> Automatically utilizes local XML coordinate caches after the first download pass, accelerating the remaining theme builds to seconds per image.</li>
+<li><strong>Print-Ready Output:</strong> Automatically outputs 12" x 16" canvas scales at a crisp <strong>300 DPI</strong> (3600 x 4800 px) straight into a dedicated output directory.</li>
+</ul>
+
+<hr />
+
+<h3>🎨 Included Gallery Themes</h3>
+
+<p>The pipeline loops sequentially through the following 17 official style configurations:</p>
+
+<table>
+<thead>
+<tr>
+  <th style="text-align:left;">Warm / Earth Tones</th>
+  <th style="text-align:left;">Dark Mode / Cyber</th>
+  <th style="text-align:left;">Cool / Stark Minimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left;">🏺 <code>terracotta</code></td>
+  <td style="text-align:left;">🎛️ <code>noir</code></td>
+  <td style="text-align:left;">📐 <code>blueprint</code></td>
+</tr>
+<tr>
+  <td style="text-align:left;">🪵 <code>warm_beige</code></td>
+  <td style="text-align:left;">🌌 <code>midnight_blue</code></td>
+  <td style="text-align:left;">🧊 <code>monochrome_blue</code></td>
+</tr>
+<tr>
+  <td style="text-align:left;">🍂 <code>autumn</code></td>
+  <td style="text-align:left;">⚡ <code>neon_cyberpunk</code></td>
+  <td style="text-align:left;">🏁 <code>contrast_zones</code></td>
+</tr>
+<tr>
+  <td style="text-align:left;">🌸 <code>pastel_dream</code></td>
+  <td style="text-align:left;">🖋️ <code>japanese_ink</code></td>
+  <td style="text-align:left;">🏳️ <code>minimal_stark</code></td>
+</tr>
+<tr>
+  <td style="text-align:left;">🌲 <code>forest</code> / <code>emerald</code></td>
+  <td style="text-align:left;">🌊 <code>ocean</code> / <code>sunset</code></td>
+  <td style="text-align:left;">🏗️ <code>copper_patina</code> / <code>gradient_roads</code></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2>🚀 Getting Started</h2>
+
+<h3>Prerequisites</h3>
+
+<p>This project utilizes <code>uv</code> by <strong>Astral</strong> for lighting-fast Python environment and dependency management. If you don't have it installed yet, run this in your terminal:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c"># Windows PowerShell</span>
+<span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&quot;irm [https://astral.sh/uv/install.ps1](https://astral.sh/uv/install.ps1) | iex&quot;</span>
+</code></pre>
+</div>
+
+<h2>Installation</h2>
+
+<p>Clone or open your project repository folder:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Admin</span><span class="p">\</span><span class="n">Desktop</span><span class="p">\</span><span class="n">code</span><span class="p">\</span><span class="n">py_leeds_poster</span>
+</code></pre>
+</div>
+
+<h3>Initialize the environment and sync dependencies:</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="n">uv</span> <span class="n">init</span> <span class="p">-</span><span class="n">-python</span> <span class="s2">&quot;&gt;=3.12&quot;</span>
+<span class="n">uv</span> <span class="n">add</span> <span class="n">maptoposter</span><span class="p">&lt;=</span><span class="n">0</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">0</span>
+</code></pre>
+</div>
+
+<h3>Running the Pipeline</h3>
+
+<p>To execute the batch process and start your local print shop, spin up the main control script:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="n">uv</span> <span class="n">run</span> <span class="n">generate_leeds</span><span class="p">.</span><span class="n">py</span>
+</code></pre>
+</div>
+
+<p>Note: On its very first pass, the script will pause on the terracotta theme while it queries OpenStreetMap servers for Leeds' vector infrastructure. Once the graph is cached locally, your computer will quickly generate the remaining 16 layouts.</p>
+
+<hr />
+
+<h1>📂 Project Architecture</h1>
+
+<pre><code>py_leeds_poster/
+├── .venv/                 # Isolated environment containing maptoposter-cli.exe
+├── posters/               # Auto-generated destination folder for your PNGs &amp; JSON metadata
+├── generate_leeds.py      # Core automation loop control script
+├── pyproject.toml         # Environment lock configuration
+└── README.md              # Documentation
+</code></pre>
+
+<hr />
+
+<h1>🛣️ Roadmap Features</h1>
+
+<ul>
+<li><p>[ ] Interactive CLI Prompts: Integrate an interactive menu prompt (using click or inquirer) to let users configure target city, radius, and themes dynamically without touching the code.</p></li>
+<li><p>[ ] Multi-Location Profiles: Add a locations.json batch config file to sequentially generate poster sets for multiple global cities completely unattended in a single run.</p></li>
+<li><p>[ ] Automated Mockup Previews: Use the Pillow library to automatically overlay the finished 300 DPI map artwork onto a framed interior stock image for instant product previews.</p></li>
+<li><p>[ ] Print Layout Standards: Introduce padding and boundary multipliers for specific international paper sizes (A1, A2, A3) to lock in precise aspect ratios for printing.</p></li>
+<li><p>[ ] Parallel Processing Engine: Upgrade the loop to use Python's concurrent.futures multiprocessing, allowing the engine to utilize multiple CPU cores and render multiple themes at the same time.</p></li>
+</ul>
+
+<hr />
+
+<h3>📜 Acknowledgments</h3>
+
+<ul>
+<li>Map compilation engine powered by the maptoposter library interface.</li>
+<li>Geographic data provided open-source by OpenStreetMap contributors via Nominatim API.</li>
+</ul>
+
+<hr />
+
+<ul>
+<li><strong>Built by Roy Peters</strong> 😁
+<a href="https://www.linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-Roy%20Peters-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Billing Engine | Portfolio</title>
+    <style>
+        body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1e293b; color: #f1f5f9; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+/* Skill Pills Section */
+.skills-container { 
+    margin: 20px 0 30px 0; 
+}
+.skills-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+}
+.skill-pill {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+.skill-count {
+    color: #38bdf8; /* Bright blue accent */
+    background: #1e293b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+.card { 
+    background: #334155; 
+    border: 1px solid #475569; 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.2s; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: #94a3b8; 
+}
+.tag { 
+    color: #cbd5e1; 
+    font-weight: bold; 
+}
+a { 
+    color: #f1f5f9; 
+}
+.filter-nav { 
+    background: #334155; 
+    border: 1px solid #475569; 
+}
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+/* 🖼️ PROJECT IMAGE STYLING (The New Fix) */
+.project-card img {
+    max-width: 100%;    /* Ensures images never overflow the 900px body */
+    height: auto;       /* Maintains aspect ratio */
+    display: block;     
+    margin: 30px auto;  
+    border-radius: 10px; 
+    border: 1px solid #475569; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } } 
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>Billing Engine</h1>
+        <p><img src="https://img.shields.io/github/last-commit/reory/billing_engine?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/billing_engine?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+<img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+<img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic" />
+<img src="https://img.shields.io/badge/uvicorn-2094f3?style=for-the-badge&logo=uvicorn&logoColor=white" alt="Uvicorn" />
+<img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+<img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy" />
+<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+<img src="https://img.shields.io/badge/RQ-FF0000?style=for-the-badge&logo=python&logoColor=white" alt="RQ" />
+<img src="https://img.shields.io/badge/Swagger_UI-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="Swagger" /></p>
+
+<p>A lightweight, modular, backend‑only billing engine built with FastAPI, SQLAlchemy, and a clean service‑layer architecture.
+It ingests usage events, aggregates them, prices them, and generates invoices — all without any frontend or dashboard.</p>
+
+<p>This project is ideal for demonstrating backend engineering skills such as:</p>
+
+<ul>
+<li>API design</li>
+<li>Background job processing</li>
+<li>Database modeling</li>
+<li>Clean architecture</li>
+<li>Usage metering</li>
+<li>Invoice generation</li>
+<li>Scheduling and workers</li>
+</ul>
+
+<hr />
+
+<h1>✨ Features</h1>
+
+<p>Record usage events (e.g., API calls, storage, workflows)</p>
+
+<p>Daily usage aggregation (group + sum raw events)</p>
+
+<p>Pricing engine (simple per‑unit pricing, easily extendable)</p>
+
+<p>Invoice preview (estimate charges before billing period ends)</p>
+
+<p>Invoice generation (creates real invoice records)</p>
+
+<p>Clean service layer (routers → services → models)</p>
+
+<p>Background‑safe aggregation (manual or scheduled)</p>
+
+<p>SQLite for simplicity (swap for Postgres easily)</p>
+
+<hr />
+
+<h1>📁 Project Structure</h1>
+
+<pre><code>billing_engine/
+│
+├── app/
+│   ├── routers/
+│   │   ├── usage.py
+│   │   ├── invoice.py
+│   │   └── aggregator.py
+│   ├── services/
+│   │   ├── usage_service.py
+│   │   ├── invoice_service.py
+│   │   └── aggregator_service.py
+│   ├── models.py
+|   ├── aggregator.py
+|   ├── pricing.py
+│   ├── schemas.py
+│   ├── deps.py
+│   └── database.py
+│
+├── tests.py/
+|   ├── conftest.py
+|   ├── test_aggregator.py
+|   ├── test_api.py
+|   ├── test_invoice.py
+|   ├── test_usage.py
+├── scheduler.py
+├── main.py
+├── worker.py
+└── README.md
+└── LICENSE.md
+└── CONTRIBUITING.md
+</code></pre>
+
+<hr />
+
+<h1>🚀 Getting Started</h1>
+
+<h2>Create &amp; activate a virtual environment</h2>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">   </span><span class="c1"># macOS/Linux</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">      </span><span class="c1"># Windows</span>
+</code></pre>
+</div>
+
+<h2>Install dependencies</h2>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre>
+</div>
+
+<h2>Start Redis (required for the worker)</h2>
+
+<p>On Windows (WSL recommended):</p>
+
+<div class="codehilite">
+<pre><span></span><code>redis-server
+</code></pre>
+</div>
+
+<p>Start the FastAPI server</p>
+
+<div class="codehilite">
+<pre><span></span><code>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--reload
+</code></pre>
+</div>
+
+<p>Your API is now live at:</p>
+
+<pre><code>http://127.0.0.1:8000
+Swagger UI:
+
+http://127.0.0.1:8000/docs
+</code></pre>
+
+<h2>Start the background worker</h2>
+
+<p>In a new terminal:</p>
+
+<div class="codehilite">
+<pre><span></span><code>rq<span class="w"> </span>worker
+</code></pre>
+</div>
+
+<h2>Start the scheduler (optional)</h2>
+
+<p>In another terminal:</p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>scheduler.py
+</code></pre>
+</div>
+
+<ul>
+<li>This triggers daily aggregation automatically.</li>
+</ul>
+
+<hr />
+
+<h1>🧪 How to Use the API (Step‑by‑Step) Swagger UI</h1>
+
+<ul>
+<li>Record usage</li>
+<li><p>POST /usage</p></li>
+<li><p>Example:</p></li>
+<li><strong>json</strong>
+{
+"customer<em>id": "cust</em>123",
+"metric": "api_calls",
+"units": 500
+}
+<h2>Run aggregation manually</h2></li>
+</ul>
+
+<p>POST /aggregate/run</p>
+
+<ul>
+<li>This groups + sums raw usage into daily totals.</li>
+</ul>
+
+<h2>Preview an invoice</h2>
+
+<p>GET /invoice/preview/{customer_id}</p>
+
+<ul>
+<li>Returns estimated charges for the current billing period.</li>
+</ul>
+
+<h2>Generate a real invoice</h2>
+
+<p>POST /invoice/{customer_id}</p>
+
+<ul>
+<li>Creates an invoice record in the database.</li>
+</ul>
+
+<hr />
+
+<h1>🧠 How It Works (Conceptual Overview)</h1>
+
+<p>Usage Ingestion
+Raw events are stored exactly as they happen:</p>
+
+<ul>
+<li><p>customer</p></li>
+<li><p>metric</p></li>
+<li><p>units</p></li>
+<li><p>timestamp</p></li>
+<li><p>This keeps ingestion fast and append‑only.</p></li>
+</ul>
+
+<h2>Aggregation</h2>
+
+<p>A background job periodically:</p>
+
+<p>fetches raw events</p>
+
+<p>groups them by metric + customer</p>
+
+<p>sums units</p>
+
+<p>writes aggregated rows</p>
+
+<p>This reduces billing load and keeps invoices fast.</p>
+
+<h2>Pricing Engine</h2>
+
+<p>A simple per‑unit pricing dictionary:</p>
+
+<pre><code>PRICING = {
+    "api_calls": 0.0005,
+    "storage_gb": 0.25,
+    "workflows": 0.10,
+}
+</code></pre>
+
+<p>You can easily extend this to:</p>
+
+<p>tiered pricing</p>
+
+<p>free allowances</p>
+
+<p>per‑customer overrides</p>
+
+<h2>Invoice Preview</h2>
+
+<p>Reads aggregated usage so far and returns:</p>
+
+<p>usage totals</p>
+
+<p>estimated amount</p>
+
+<p>billing window</p>
+
+<p>No DB writes.</p>
+
+<h2>Invoice Generation</h2>
+
+<p>Reads aggregated usage, calculates the final amount, and writes an invoice row.</p>
+
+<hr />
+
+<h1>📦 Tech Stack</h1>
+
+<ul>
+<li><p>FastAPI — API framework</p></li>
+<li><p>SQLAlchemy — ORM + models</p></li>
+<li><p>SQLite — local development DB</p></li>
+<li><p>RQ (Redis Queue) — background worker</p></li>
+<li><p>Redis — job queue backend</p></li>
+<li><p>Uvicorn — ASGI server</p></li>
+</ul>
+
+<hr />
+
+<h2>🧱 Database Models</h2>
+
+<ul>
+<li><p>UsageEvent
+Raw usage events.</p></li>
+<li><p>AggregatedUsage
+Daily totals per metric.</p></li>
+<li><p>Invoice
+Final billed amounts.</p></li>
+</ul>
+
+<hr />
+
+<ul>
+<li><strong>Built By Roy Peters</strong> 😁
+<a href="https://www.linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-Roy%20Peters-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>

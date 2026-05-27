@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>MCP Server | Portfolio</title>
+    <style>
+        body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #1e293b; color: #f1f5f9; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 20px; 
+}
+/* Skill Pills Section */
+.skills-container { 
+    margin: 20px 0 30px 0; 
+}
+.skills-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+}
+.skill-pill {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+.skill-count {
+    color: #38bdf8; /* Bright blue accent */
+    background: #1e293b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+.card { 
+    background: #334155; 
+    border: 1px solid #475569; 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.2s; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: #94a3b8; 
+}
+.tag { 
+    color: #cbd5e1; 
+    font-weight: bold; 
+}
+a { 
+    color: #f1f5f9; 
+}
+.filter-nav { 
+    background: #334155; 
+    border: 1px solid #475569; 
+}
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+/* 🖼️ PROJECT IMAGE STYLING (The New Fix) */
+.project-card img {
+    max-width: 100%;    /* Ensures images never overflow the 900px body */
+    height: auto;       /* Maintains aspect ratio */
+    display: block;     
+    margin: 30px auto;  
+    border-radius: 10px; 
+    border: 1px solid #475569; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } } 
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>My Portfolio</strong> | <a href="index.html">Home</a>
+    </nav>
+    
+    <div class="project-card">
+        <h1>MCP Server</h1>
+        <p><img src="https://img.shields.io/github/last-commit/reory/mcp-server?cacheSeconds=60" alt="Last Commit" />
+<img src="https://img.shields.io/github/repo-size/reory/mcp-server?cacheSeconds=60" alt="Repo Size" />
+<img src="https://img.shields.io/badge/License-MIT-green" alt="License" /></p>
+
+<p><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/MCP-Standard-blue?style=for-the-badge&logo=python&logoColor=white" alt="MCP" />
+<img src="https://img.shields.io/badge/Status-Connected-success?style=for-the-badge" alt="Status" /></p>
+
+<p>A lightweight Model Context Protocol (MCP) server that provides a bridge between Claude AI and your local Python environment.</p>
+
+<hr />
+
+<h1>🌟 Overview</h1>
+
+<ul>
+<li>mytool3 is a proof-of-concept MCP server built to demonstrate the seamless integration of local Python execution with Claude Desktop. </li>
+<li>It allows Claude to "step out" of its sandbox and interact with your machine via a standard tool interface.</li>
+</ul>
+
+<hr />
+
+<h1>📸 Screenshots</h1>
+
+<p><img src="images/mcp_server.webp" alt="MCP_server image" /></p>
+
+<hr />
+
+<h1>📁 Project Structure</h1>
+
+<pre><code>mcp_gen/
+├── .venv/                 
+├── mcpgen/                 # generator logic
+├── ├── __init__.py
+|   ├── cli.py
+├   ├── generator.py              
+│   ├── mytool3/            # MCP server       
+│   │   ├── __init__.py   
+│   │   ├── server.py      
+│   │   └── mcp.json                      
+├── .gitignore             
+├── README.md              
+└── pyproject.toml
+</code></pre>
+
+<hr />
+
+<h1>⚒️ Features Standard Discovery:</h1>
+
+<ul>
+<li>Automatically announces its tools to Claude via the list_tools protocol.</li>
+<li>Synchronous Execution: Uses stdio transport for high-speed, local communication.</li>
+<li>Adaptive Integration: Fully compatible with the Claude Desktop interface.</li>
+</ul>
+
+<hr />
+
+<h1>⚒️ Installation &amp; Setup</h1>
+
+<ul>
+<li>Environment Initialization
+Standardize the local environment using a virtual environment to isolate the MCP dependencies.</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/mytool3.git
+<span class="nb">cd</span><span class="w"> </span>mytool3
+</code></pre>
+</div>
+
+<h2>Create and activate virtual environment</h2>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># Automation for Mac/Linux</span>
+**OR:<span class="w"> </span>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w"> </span><span class="o">(</span>Windows<span class="o">)</span>**
+</code></pre>
+</div>
+
+<h2>Upgrade core tooling</h2>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
+</code></pre>
+</div>
+
+<ul>
+<li>Dependency Resolution
+This project leverages the fastmcp SDK for streamlined protocol handling.</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1"># Install required MCP packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>fastmcp<span class="w"> </span>mcp
+</code></pre>
+</div>
+
+<hr />
+
+<h2>Verify installation</h2>
+
+<p>python -c "import fastmcp; print(f'FastMCP version: {fastmcp.<strong>version</strong>}')"
+- Service Registration (Claude Desktop)
+To hook the server into the Claude Desktop runtime, inject the absolute paths into your local configuration.
+Command-line shortcut (PowerShell):
+PowerShell</p>
+
+<hr />
+
+<h2>Open the specific MSIX config path for the Windows Store version</h2>
+
+<ul>
+<li>notepad "$env:LOCALAPPDATA\Packages\Claude<em>pzs8sxrjxfjjc\LocalCache\Roaming\Claude\claude</em>desktop_config.json"
+JSON Payload:</li>
+</ul>
+
+<p>JSON
+{
+  "mcpServers": {
+    "mytool3": {
+      "command": "C:\Absolute\Path\To\.venv\Scripts\python.exe",
+      "args": ["C:\Absolute\Path\To\mcpgen\mytool3\server.py"]
+    }
+  }
+}</p>
+
+<hr />
+
+<h1>🧪 Development Workflow</h1>
+
+<p>Manual Protocol Test
+Before testing in the Claude UI, ensure the server initiates the stdio transport without Python exceptions:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1"># Set unbuffered mode to prevent pipe-hangs</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span>
+python<span class="w"> </span>mcpgen/mytool3/server.py
+</code></pre>
+</div>
+
+<ul>
+<li>Hot-Reloading (Optional)
+If iterating on tool logic, use the fastmcp dev-tools for immediate feedback:</li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code>fastmcp<span class="w"> </span>dev<span class="w"> </span>mcpgen/mytool3/server.py
+</code></pre>
+</div>
+
+<hr />
+
+<h1>🔧 Tools Available</h1>
+
+<table>
+<thead>
+<tr>
+  <th style="text-align:left;">Tool Name</th>
+  <th style="text-align:left;">Parameters</th>
+  <th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left;"><code>hello</code></td>
+  <td style="text-align:left;"><code>name</code> (string)</td>
+  <td style="text-align:left;">Returns a personalized greeting from the local server.</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h1>⚠️ Troubleshooting</h1>
+
+<ul>
+<li>Silent Failures: If the "Running" badge is blue but no tools appear, ensure your server.py is returning CallToolResult and not CallToolRequest.</li>
+<li>The Ghost Sandbox: If changes to the code aren't reflecting, use Task Manager to End Task on all Claude processes to force a config reload.</li>
+<li>Import Errors: Ensure you run pip install mcp specifically for the Python version defined in your command path.</li>
+<li>It specifically calls out the 2026 UI features like the "Connectors" menu, which didn't exist in older versions of the app.Path Accuracy: It preserves that long, annoying "Packages" path we found—this is the #1 thing that trips people up.</li>
+<li>Code Logic: It warns about the Result vs Request trap we just solved.</li>
+</ul>
+
+<hr />
+
+<h1>🛣️ Roadmap Features</h1>
+
+<ul>
+<li><p>[ ] Persistent Memory (SQLite Integration)
+Goal: Give Claude a "long-term memory" that persists across different chat sessions.</p></li>
+<li><p>[ ] File System Sentinel (Local I/O)
+Goal: Allow Claude to safely inspect and summarize local directory structures.</p></li>
+<li><p>[ ] Web Research Bridge (Playwright/Scraper)
+Goal: Enable Claude to fetch real-time data from sites without official APIs (like documentation pages).</p></li>
+</ul>
+
+<hr />
+
+<h1>📁 Notes</h1>
+
+<ul>
+<li>This was challenging to build as FastMcp is a new library in python and the documentation is new and still evolving. I had to cross reference documents from a few different sources. 
+<a href="https://gofastmcp.com/getting-started/welcome">FastMcp</a></li>
+</ul>
+
+<hr />
+
+<ul>
+<li><strong>Built By Roy Peters</strong> Contact 😁<a href="https://linkedin.com/in/roy-p-74980b382/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a></li>
+</ul>
+
+    </div>
+</body>
+</html>
