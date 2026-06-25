@@ -150,39 +150,31 @@ a {
 Standardize the local environment using a virtual environment to isolate the MCP dependencies.</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1"># Clone the repository</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/reory/mytool3.git
-<span class="nb">cd</span><span class="w"> </span>mytool3
+<pre><code># Clone the repository
+git clone https://github.com/reory/mytool3.git
+cd mytool3
 </code></pre>
-</div>
 
 <h2>Create and activate virtual environment</h2>
 
-<div class="codehilite">
-<pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># Automation for Mac/Linux</span>
-**OR:<span class="w"> </span>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w"> </span><span class="o">(</span>Windows<span class="o">)</span>**
+<pre><code>python -m venv .venv
+source .venv/bin/activate  # Automation for Mac/Linux
+**OR: .venv\Scripts\activate (Windows)**
 </code></pre>
-</div>
 
 <h2>Upgrade core tooling</h2>
 
-<div class="codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
+<pre><code>pip install --upgrade pip setuptools
 </code></pre>
-</div>
 
 <ul>
 <li>Dependency Resolution
 This project leverages the fastmcp SDK for streamlined protocol handling.</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1"># Install required MCP packages</span>
-pip<span class="w"> </span>install<span class="w"> </span>fastmcp<span class="w"> </span>mcp
+<pre><code># Install required MCP packages
+pip install fastmcp mcp
 </code></pre>
-</div>
 
 <hr />
 
@@ -220,22 +212,18 @@ JSON Payload:</li>
 <p>Manual Protocol Test
 Before testing in the Claude UI, ensure the server initiates the stdio transport without Python exceptions:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1"># Set unbuffered mode to prevent pipe-hangs</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span>
-python<span class="w"> </span>mcpgen/mytool3/server.py
+<pre><code># Set unbuffered mode to prevent pipe-hangs
+export PYTHONUNBUFFERED=1
+python mcpgen/mytool3/server.py
 </code></pre>
-</div>
 
 <ul>
 <li>Hot-Reloading (Optional)
 If iterating on tool logic, use the fastmcp dev-tools for immediate feedback:</li>
 </ul>
 
-<div class="codehilite">
-<pre><span></span><code>fastmcp<span class="w"> </span>dev<span class="w"> </span>mcpgen/mytool3/server.py
+<pre><code>fastmcp dev mcpgen/mytool3/server.py
 </code></pre>
-</div>
 
 <hr />
 

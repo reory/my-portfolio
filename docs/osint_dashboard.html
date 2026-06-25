@@ -129,36 +129,34 @@ a {
 
 <h2>📂 Project Structure</h2>
 
-<div class="codehilite">
-<pre><span></span><code><span class="n">osint_dashboard</span><span class="o">/</span>
-<span class="err">│</span>
-<span class="err">├──</span> <span class="n">api</span><span class="o">/</span>                       <span class="c1"># FASTAPI ASYNC SCANNING ENGINE</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>                <span class="c1"># Core background worker &amp; Pydantic request models</span>
-<span class="err">│</span>   <span class="err">└──</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>       <span class="c1"># Engine specific dependencies (fastapi, pydantic, uvicorn)</span>
-<span class="err">│</span>
-<span class="err">├──</span> <span class="n">core</span><span class="o">/</span>                      <span class="c1"># DJANGO WEB APPLICATION ROOT</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span>              <span class="c1"># Django management CLI wrapper</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">core</span><span class="o">/</span>                  <span class="c1"># Main settings and project routing configuration</span>
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="n">settings</span><span class="o">.</span><span class="n">py</span>
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="n">urls</span><span class="o">.</span><span class="n">py</span>
-<span class="err">│</span>   <span class="err">│</span>
-<span class="err">│</span>   <span class="err">└──</span> <span class="n">scanner</span><span class="o">/</span>               <span class="c1"># WEB DASHBOARD APPLICATION INTERFACE</span>
-<span class="err">│</span>       <span class="err">├──</span> <span class="n">models</span><span class="o">.</span><span class="n">py</span>          <span class="c1"># Database schema (TargetSearch tracking, DiscoveredProfile)</span>
-<span class="err">│</span>       <span class="err">├──</span> <span class="n">views</span><span class="o">.</span><span class="n">py</span>           <span class="c1"># Human-readable JSON engine logic &amp; web handlers</span>
-<span class="err">│</span>       <span class="err">├──</span> <span class="n">urls</span><span class="o">.</span><span class="n">py</span>            <span class="c1"># App routing paths</span>
-<span class="err">│</span>       <span class="err">└──</span> <span class="n">templates</span><span class="o">/</span>
-<span class="err">│</span>           <span class="err">└──</span> <span class="n">scanner</span><span class="o">/</span>
-<span class="err">│</span>               <span class="err">├──</span> <span class="n">dashboard</span><span class="o">.</span><span class="n">html</span> <span class="c1"># Search entry center &amp; historic hunt listing</span>
-<span class="err">│</span>               <span class="err">└──</span> <span class="n">results</span><span class="o">.</span><span class="n">html</span>   <span class="c1"># Modern cleaned OSINT visual dossier</span>
-<span class="err">│</span>
-<span class="err">└──</span> <span class="n">reports</span><span class="o">/</span>                   <span class="c1"># Disk storage directory for raw Maigret output</span>
-<span class="err">└──</span> <span class="n">screenshots</span>                <span class="c1"># Images of the dashboard</span>
-<span class="err">└──</span> <span class="n">tests</span><span class="o">/</span>                     <span class="c1"># Pytest/Hypothesis suite</span>
-<span class="o">|</span>   <span class="err">├──</span> <span class="n">test_api_worker</span><span class="o">.</span><span class="n">py</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">test_models</span><span class="o">.</span><span class="n">py</span>
-<span class="o">|</span>   <span class="err">├──</span> <span class="n">test_views_logic</span><span class="o">.</span><span class="n">py</span>
+<pre><code>osint_dashboard/
+│
+├── api/                       # FASTAPI ASYNC SCANNING ENGINE
+│   ├── main.py                # Core background worker &amp; Pydantic request models
+│   └── requirements.txt       # Engine specific dependencies (fastapi, pydantic, uvicorn)
+│
+├── core/                      # DJANGO WEB APPLICATION ROOT
+│   ├── manage.py              # Django management CLI wrapper
+│   ├── core/                  # Main settings and project routing configuration
+│   │   ├── settings.py
+│   │   └── urls.py
+│   │
+│   └── scanner/               # WEB DASHBOARD APPLICATION INTERFACE
+│       ├── models.py          # Database schema (TargetSearch tracking, DiscoveredProfile)
+│       ├── views.py           # Human-readable JSON engine logic &amp; web handlers
+│       ├── urls.py            # App routing paths
+│       └── templates/
+│           └── scanner/
+│               ├── dashboard.html # Search entry center &amp; historic hunt listing
+│               └── results.html   # Modern cleaned OSINT visual dossier
+│
+└── reports/                   # Disk storage directory for raw Maigret output
+└── screenshots                # Images of the dashboard
+└── tests/                     # Pytest/Hypothesis suite
+|   ├── test_api_worker.py
+│   ├── test_models.py
+|   ├── test_views_logic.py
 </code></pre>
-</div>
 
 <hr />
 
@@ -173,21 +171,17 @@ Python 3.11+ installed (Verified stable on Python 3.13)</p>
 
 <p>Ensure maigret is installed and registered globally on your computer terminal:</p>
 
-<div class="codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>maigret
+<pre><code>pip install maigret
 </code></pre>
-</div>
 
 <h3>Configure the FastAPI Async Worker</h3>
 
 <p>Open a fresh terminal window, navigate to your API folder, and spin up the engine:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dmin<span class="se">\D</span>esktop<span class="se">\c</span>ode<span class="se">\o</span>sint_dashboard<span class="se">\a</span>pi
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-uvicorn<span class="w"> </span>api.main:app<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span><span class="w"> </span>--reload
+<pre><code>cd C:\Users\Admin\Desktop\code\osint_dashboard\api
+pip install -r requirements.txt
+uvicorn api.main:app --host 127.0.0.1 --port 8001 --reload
 </code></pre>
-</div>
 
 <ul>
 <li>The background scanner is now operational on port 8001.</li>
@@ -197,14 +191,12 @@ uvicorn<span class="w"> </span>api.main:app<span class="w"> </span>--host<span c
 
 <p>Open a second terminal window, navigate to your core project directory, prepare your database migrations, and activate the server:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dmin<span class="se">\D</span>esktop<span class="se">\c</span>ode<span class="se">\o</span>sint_dashboard<span class="se">\c</span>ore
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
-python<span class="w"> </span>manage.py<span class="w"> </span>migrate
-python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">127</span>.0.0.1:8000
+<pre><code>cd C:\Users\Admin\Desktop\code\osint_dashboard\core
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver 127.0.0.1:8000
 </code></pre>
-</div>
 
 <ul>
 <li>The web front-end interface is now operational on port 8000.</li>

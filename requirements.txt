@@ -1,0 +1,7 @@
+colorama==0.4.6
+Jinja2==3.0.3
+loguru==0.7.3
+markdown2==2.5.5
+MarkupSafe==3.0.3
+pillow==12.2.0
+win32_setctime==1.2.0

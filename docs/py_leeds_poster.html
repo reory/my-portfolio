@@ -183,37 +183,29 @@ a {
 
 <p>This project utilizes <code>uv</code> by <strong>Astral</strong> for lighting-fast Python environment and dependency management. If you don't have it installed yet, run this in your terminal:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c"># Windows PowerShell</span>
-<span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&quot;irm [https://astral.sh/uv/install.ps1](https://astral.sh/uv/install.ps1) | iex&quot;</span>
+<pre><code># Windows PowerShell
+powershell -ExecutionPolicy ByPass -c "irm [https://astral.sh/uv/install.ps1](https://astral.sh/uv/install.ps1) | iex"
 </code></pre>
-</div>
 
 <h2>Installation</h2>
 
 <p>Clone or open your project repository folder:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Admin</span><span class="p">\</span><span class="n">Desktop</span><span class="p">\</span><span class="n">code</span><span class="p">\</span><span class="n">py_leeds_poster</span>
+<pre><code>cd C:\Users\Admin\Desktop\code\py_leeds_poster
 </code></pre>
-</div>
 
 <h3>Initialize the environment and sync dependencies:</h3>
 
-<div class="codehilite">
-<pre><span></span><code><span class="n">uv</span> <span class="n">init</span> <span class="p">-</span><span class="n">-python</span> <span class="s2">&quot;&gt;=3.12&quot;</span>
-<span class="n">uv</span> <span class="n">add</span> <span class="n">maptoposter</span><span class="p">&lt;=</span><span class="n">0</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">0</span>
+<pre><code>uv init --python "&gt;=3.12"
+uv add maptoposter&lt;=0.5.0
 </code></pre>
-</div>
 
 <h3>Running the Pipeline</h3>
 
 <p>To execute the batch process and start your local print shop, spin up the main control script:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="n">uv</span> <span class="n">run</span> <span class="n">generate_leeds</span><span class="p">.</span><span class="n">py</span>
+<pre><code>uv run generate_leeds.py
 </code></pre>
-</div>
 
 <p>Note: On its very first pass, the script will pause on the terracotta theme while it queries OpenStreetMap servers for Leeds' vector infrastructure. Once the graph is cached locally, your computer will quickly generate the remaining 16 layouts.</p>
 

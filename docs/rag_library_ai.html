@@ -152,11 +152,9 @@ a {
 
 <h2>Clone the Repo</h2>
 
-<div class="codehilite">
-<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>&lt;https://github.com/reory/Rag_Library_AI.git&gt;
-<span class="nb">cd</span><span class="w"> </span>rag-library-ai
+<pre><code>git clone &lt;https://github.com/reory/Rag_Library_AI.git&gt;
+cd rag-library-ai
 </code></pre>
-</div>
 
 <h2>Setup Environment</h2>
 
@@ -173,17 +171,13 @@ uv add -r requirements.txt
 
 <p>Place your PDFs in data/books/ and run the ingestion script to build the vector database:</p>
 
-<div class="codehilite">
-<pre><span></span><code>uv<span class="w"> </span>python<span class="w"> </span>ingest.py
+<pre><code>uv python ingest.py
 </code></pre>
-</div>
 
 <h2>Run the App</h2>
 
-<div class="codehilite">
-<pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>streamlit<span class="w"> </span>run<span class="w"> </span>app.py
+<pre><code>uv run streamlit run app.py
 </code></pre>
-</div>
 
 <hr />
 
