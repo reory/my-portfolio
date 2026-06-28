@@ -54,5 +54,12 @@
         "description": "App kept crashing for unknown reason.",
         "solution": "Generated a saftey check to prevent app from crashing.",
         "status": "Resolved"
+    },
+    {
+        "project": "news scraper",
+        "challenge": "scrapling had issues scraping details from website",
+        "description": "had to look through documentation and get help from AI to get a fix",
+        "solution": "used playwright with scrapling to get the dashboard to work",
+        "status": "Resolved"
     }
 ]
